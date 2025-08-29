@@ -44,7 +44,5 @@ Profissionais responsáveis por planejar e executar políticas públicas de aces
 
 
 
-### 🎥 Vídeo de Apresentação
 
-https://github.com/user-attachments/assets/2d79c916-ea7e-46d6-b010-6162e34d6315
 
