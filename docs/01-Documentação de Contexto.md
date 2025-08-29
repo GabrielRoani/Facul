@@ -1,18 +1,9 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+As cidades brasileiras enfrentam um sério desafio de acessibilidade, com barreiras onipresentes em calçadas, edifícios e serviços públicos. A falta de infraestrutura adequada, como rampas, banheiros adaptados e sinalização tátil, é um obstáculo diário para muitas pessoas. Agravando o quadro, os relatos sobre esses problemas são feitos de forma dispersa e genérica, dificultando um diagnóstico preciso e a implementação de soluções eficazes para garantir a inclusão de todos.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Atualmente, não há um canal simples e padronizado para que os cidadãos possam reportar, mapear e acompanhar a acessibilidade em diferentes locais. Isso restringe significativamente o planejamento e a vivência urbana, além de privar indivíduos de oportunidades essenciais de lazer e trabalho.
 
 ## Objetivos
 
