@@ -1,23 +1,26 @@
-# TÍTULO DO PROJETO
+# REDUÇÃO DE DESIGUALDADES / ACESSIBILIDADE URBANA
 
-`CURSO`
+`Análise e desenvolvimento de sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de aplicação Web Front-End`
 
-`SEMESTRE`
+`2º Semestre de 2025`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto REDUÇÃO DE DESIGUALDADES / ACESSIBILIDADE URBANA propõe o desevolvimento de um software para registro de ocorrências de falta ou existência de acessibilidade, mapear e reportar barreiras de acesso, evidenciando o nível de acessibilidade de locais públicos e privados para outros usuários, além de dar visão a gestores para planejar obras, priorizar investimentos e acompanhar resultados.
+.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Djulio Anderson Pansera
+* Gabriel Cazzuni Roani
+* Juliana Campos Montandon
+* Marcos Rodrigo dos Santos
+* Maria Eduarda de Oliveira Santos e Silva
+* Sidney Gabriel Abreu Magalhães
 
 ## Orientador
 
-* Nome completo do professor
+* Bernardo Jeunon de Alencar
 
 ## Instruções de Instalação, Execução e Acesso
 
