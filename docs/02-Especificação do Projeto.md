@@ -2,48 +2,29 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
 ## Personas
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
+<img src ="img/1.png">
+<img src ="img/2.png">
+<img src ="img/3.png">
+<img src ="img/4.png">
+<img src ="img/5.png">
+<img src ="img/6.png">
 
-Utilize também como referência o exemplo abaixo:
-
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> 
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
 >
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Ana Clara  | Uma forma de identificar se uma agência é realmente confiável           | Me sentir mais segura ao contratar seus serviços               |
-|Ana Clara       | Ter um mecanismo eficiente e rápido de comunicação                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
+| EU COMO... `PERSONA`            | QUERO/PRECISO ... `FUNCIONALIDADE`                                    | PARA ... `MOTIVO/VALOR`                                                         |
+|---------------------------------|---------------------------------------------------------------------- |---------------------------------------------------------------------------------|
+| Ana Paula (Mobilidade reduzida) | Registrar facilmente barreiras de acessibilidade                      | Para que outras pessoas possam evitar dificuldades e o poder público possa agir |
+| José Souza (Mobilidade reduzida)| Visualizar locais acessíveis próximos a mim                           | Para planejar meus trajetos com segurança e autonomia                           |
+| Larissa Gomes (Cidadã)          | Avaliar locais que frequento                                          | Para contribuir com informações úteis à comunidade                              |
+| Marcos Silva (Gestor municipal) | Acessar relatórios consolidados de ocorrências                        | Para priorizar obras e justificar investimentos em acessibilidade               |
+| Julia Mendes (Mãe de bebê)      | Verificar locais com estrutura adequada para as necessidades do filho | Para planejar deslocamentos com segurança e conforto                            |
+| João Batista (Aposentado)       | Visualizar caminhos com menor risco de quedas e maior acessibilidade  | Para me deslocar com segurança e independência                                  |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Requisitos
 
@@ -51,59 +32,47 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| ALTA | 
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio    | ALTA |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas | ALTA |
+|ID    | Descrição do Requisito                                                                                                                   | Prioridade |
+|------|------------------------------------------------------------------------------------------------------------------------------------------|------------|
+|RF-001| O sistema deve permitir ao usuário registrar ocorrências de acessibilidade, com foto, GPS, categoria, severidade (1–5) e descrição.      | ALTA       | 
+|RF-002| O sistema deve disponibilizar um mapa com pontos de acessibilidade reportados, permitindo consulta por endereço ou geolocalização.       | ALTA       |
+|RF-003| O sistema deve permitir que usuários avaliem locais com notas (1 a 5 estrelas) e comentários opcionais.                                  | MÉDIA      |
+|RF-004| O sistema deve gerar relatórios consolidados de acessibilidade por região, contendo indicadores e mapa georreferenciado.                 | MÉDIA      |
+|RF-005| O sistema deve permitir aplicar filtros simples no mapa por categoria (ex.: rampas, banheiros, calçadas).                                | BAIXA      |
+|RF-006| O sistema deve permitir que, ao clicar em um ponto do mapa, o usuário veja os detalhes da ocorrência: categoria, foto e status.          | ALTA       |
+|RF-007| O sistema deve permitir o registro e a consulta de locais que possuam estruturas de apoio voltadas a diferentes grupos de usuários.      | MÉDIA      |
+|RF-008| O sistema deve permitir que os usuários personalizem a visualização da interface, ajustando o tamanho da fonte para facilitar a leitura. | ALTA       |
+|RF-009| A aplicação deverá ter um sistema de cadastro de conta e login.                                                                          | ALTA       |
+
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID     | Descrição                                                                                                                                             | Prioridade |
+|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| RNF-01 | A plataforma deve garantir segurança e proteção dos dados dos usuários.                                                                               | ALTA       |
+| RNF-02 | A interface deve ser intuitiva e exigir pouco conhecimento tecnológico para realizar o registro.                                                      | ALTA       |
+| RNF-03 | O sistema deve seguir as diretrizes WCAG 2.1, oferecendo suporte a leitores de tela, contraste adequado e fontes redimensionáveis.                    | ALTA       |
+| RNF-04 | O sistema deve ser responsivo e acessível em dispositivos móveis e desktops.                                                                          | ALTA       |
+| RNF-05 | O sistema deve ser compatível com os navegadores mais utilizados (Chrome, Firefox e Edge).                                                            | ALTA       |
+| RNF-06 | O código deve ser organizado e documentado para facilitar evolução (ex: categorias adicionais de acessibilidade).                                     | ALTA       |
+| RNF-07 | Não devem ser coletados dados pessoais sensíveis, com um aviso na área de fotos anexadas, para que sejam anonimizadas.                                | ALTA       |
+| RNF-08 | O sistema deve ser estável e oferecer disponibilidade contínua.                                                                                       | ALTA       |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+| ID    | Restrição                                                                                                                                            |
+|-------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RES01 | O aplicativo deve armazenar apenas dados necessários para o funcionamento (evitando coleta excessiva de informações pessoais).                       |
+| RES02 | O aplicativo não será totalmente acessível a todos os públicos no lançamento, devido a restrições de tempo e recursos da equipe.                     |
+| RES03 | O upload de imagens será limitado em tamanho e quantidade (ex.: até 2 fotos por ocorrência, 5 MB cada).                                              |
+| RES04 | O aplicativo não fará reconhecimento facial nas fotos carregadas.                                                                                    |
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+<img src ="img/diagrama.png">
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
+## Vídeo de apresentação do projeto
 
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)

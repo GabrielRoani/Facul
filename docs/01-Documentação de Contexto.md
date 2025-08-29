@@ -1,43 +1,42 @@
 # Introdução
+As cidades brasileiras apresentam inúmeras barreiras de acessibilidade em calçadas, prédios, serviços públicos e estabelecimentos (como ausência de rampas, banheiros não adaptados, sinalização adequada e piso tátil). Além disso, os relatos de problemas costumam ser realizados de forma dispersa e genérica, muitas vezes em ouvidorias e redes sociais, o que dificulta o diagnóstico real da situação e, consequentemente, a proposição de soluções.
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Essa ausência de padronização para coleta de dados restringe significativamente o planejamento e a vivência urbana, além de privar indivíduos de oportunidades essenciais de lazer e trabalho.
+
+---
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Atualmente, não existe um canal unificado, acessível e padronizado que permita aos cidadãos reportar, mapear e acompanhar as condições de acessibilidade em espaços públicos e privados. Essa ausência gera desinformação e invisibilidade do problema, comprometendo tanto a experiência urbana das pessoas com deficiência ou mobilidade reduzida quanto o planejamento eficiente das cidades. Como consequência, milhões de brasileiros enfrentam diariamente barreiras arquitetônicas que limitam seu direito de ir e vir, prejudicam sua qualidade de vida e reforçam desigualdades sociais já existentes.
+---
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+**Objetivo Geral:**  
+Desenvolver uma aplicação para registrar ocorrências, mapear e reportar barreiras de acesso, evidenciando o nível de acessibilidade de locais para outros usuários e promovendo maior transparência e priorização de intervenções.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+**Objetivos Específicos:**  
+1. Estruturar o registro de ocorrências (positivas ou negativas) com inputs obrigatórios (endereço completo, data, foto/vídeo), garantindo confiabilidade das informações.  
+2. Disponibilizar visualização e análise geográfica por meio de um mapa.  
+3. Criar um sistema de avaliação por estrelas, contabilizando a média de registros de cada local.  
+
+---
 
 ## Justificativa
 
-Explique de forma clara a relevância da aplicação escolhida, justificando os objetivos específicos e os aspectos do software que serão aprofundados, e quantifique o impacto do problema com dados concretos (números, percentuais, indicadores) obtidos por bases oficiais ou outras fontes confiáveis, sempre citadas no padrão ABNT (no formato [Numérico] ou (AUTOR, ANO)).
+O modelo urbano brasileiro ainda apresenta sérias barreiras de acessibilidade, que impactam diretamente a mobilidade e a inclusão social de milhões de pessoas. Dados da Agência de Notícias do IBGE revelam que 68,8% da população urbana vive em áreas sem rampas de acesso para cadeirantes, evidenciando a profundidade do problema e a urgência de medidas efetivas. Essas limitações arquitetônicas não apenas restringem o direito de ir e vir, mas também reduzem oportunidades de participação social, acesso a serviços e inclusão produtiva.
 
-Relacione o problema aos Objetivos de Desenvolvimento Sustentável (ODS), indicando quais ODS e subobjetivos são atendidos e descrevendo como o projeto contribui para cada um deles, garantindo coerência entre o impacto mensurado e as metas selecionadas.
+Nesse contexto, o impacto social é expressivo: a ausência de infraestrutura acessível afeta diretamente pessoas com deficiência, idosos e indivíduos com mobilidade reduzida, ampliando desigualdades já existentes. A criação de uma aplicação colaborativa, que mapeie e disponibilize informações sobre pontos acessíveis e barreiras físicas, torna-se essencial para apoiar tanto usuários no dia a dia quanto gestores públicos no planejamento de políticas urbanas mais inclusivas.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A complexidade do problema e a relevância da solução justificam o desenvolvimento do projeto, que envolverá o uso de tecnologias como APIs de mapas, geolocalização, banco de dados colaborativo e design centrado em acessibilidade. Além de promover benefícios sociais, o projeto representa um desafio acadêmico relevante, integrando inovação tecnológica, impacto social e alinhamento ao ODS 10 (Redução das Desigualdades).
+
+---
 
 ## Público-Alvo
+**Segmento A — Cidadãos:**  
+Usuários comuns que circulam em espaços públicos e desejam reportar ou consultar condições de acessibilidade.  
+*Necessidades:* acesso rápido às informações, conectividade, tempo disponível, dispositivos móveis, superação de barreiras urbanas.
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+**Segmento B — Gestores Públicos:**  
+Profissionais responsáveis por planejar e executar políticas públicas de acessibilidade.  
+*Necessidades:* dados confiáveis para embasar tomadas de decisão e planejar intervenções, como obras de adequação, fiscalização e políticas voltadas à inclusão social.
