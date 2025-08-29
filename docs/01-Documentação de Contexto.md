@@ -41,3 +41,8 @@ Usuários comuns que circulam em espaços públicos e desejam reportar ou consul
 **Segmento B — Gestores Públicos:**  
 Profissionais responsáveis por planejar e executar políticas públicas de acessibilidade.  
 *Necessidades:* dados confiáveis para embasar tomadas de decisão e planejar intervenções, como obras de adequação, fiscalização e políticas voltadas à inclusão social.
+
+
+
+Video de apresentação
+https://github.com/user-attachments/assets/2d79c916-ea7e-46d6-b010-6162e34d6315
