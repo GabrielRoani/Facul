@@ -8,6 +8,7 @@ Essa ausência de padronização para coleta de dados restringe significativamen
 ## Problema
 
 Atualmente, não existe um canal unificado, acessível e padronizado que permita aos cidadãos reportar, mapear e acompanhar as condições de acessibilidade em espaços públicos e privados. Essa ausência gera desinformação e invisibilidade do problema, comprometendo tanto a experiência urbana das pessoas com deficiência ou mobilidade reduzida quanto o planejamento eficiente das cidades. Como consequência, milhões de brasileiros enfrentam diariamente barreiras arquitetônicas que limitam seu direito de ir e vir, prejudicam sua qualidade de vida e reforçam desigualdades sociais já existentes.
+
 ---
 
 ## Objetivos
