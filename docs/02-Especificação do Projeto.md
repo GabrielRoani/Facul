@@ -12,18 +12,25 @@
 <img src ="img/6.png">
 
 >
-## Histórias de Usuários
+## Histórias de Usuários  
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise das personas, foram identificadas as seguintes histórias de usuários:  
 
 | EU COMO... `PERSONA`            | QUERO/PRECISO ... `FUNCIONALIDADE`                                    | PARA ... `MOTIVO/VALOR`                                                         |
-|---------------------------------|---------------------------------------------------------------------- |---------------------------------------------------------------------------------|
+|---------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Ana Paula (Mobilidade reduzida) | Registrar facilmente barreiras de acessibilidade                      | Para que outras pessoas possam evitar dificuldades e o poder público possa agir |
-| José Souza (Mobilidade reduzida)| Visualizar locais acessíveis próximos a mim                           | Para planejar meus trajetos com segurança e autonomia                           |
-| Larissa Gomes (Cidadã)          | Avaliar locais que frequento                                          | Para contribuir com informações úteis à comunidade                              |
+| Ana Paula (Mobilidade reduzida) | Anexar fotos ou vídeos ao registrar uma ocorrência                     | Para dar mais clareza à situação e facilitar a ação do poder público             |
+| José Souza (Mobilidade reduzida)| Visualizar locais acessíveis próximos a mim                            | Para planejar meus trajetos com segurança e autonomia                           |
+| José Souza (Mobilidade reduzida)| Visualizar rotas acessíveis no mapa em tempo real                      | Para escolher o melhor caminho e evitar barreiras inesperadas                   |
+| Larissa Gomes (Cidadã)          | Avaliar locais que frequento                                           | Para contribuir com informações úteis à comunidade                              |
+| Larissa Gomes (Cidadã)          | Editar ou excluir avaliações que já fiz                                | Para manter as informações atualizadas e úteis para a comunidade                |
 | Marcos Silva (Gestor municipal) | Acessar relatórios consolidados de ocorrências                        | Para priorizar obras e justificar investimentos em acessibilidade               |
+| Marcos Silva (Gestor municipal) | Exportar relatórios de acessibilidade em PDF/planilha                  | Para apresentar dados de forma clara em reuniões e planejamentos                |
 | Julia Mendes (Mãe de bebê)      | Verificar locais com estrutura adequada para as necessidades do filho | Para planejar deslocamentos com segurança e conforto                            |
+| Julia Mendes (Mãe de bebê)      | Visualizar no mapa locais com banheiros adaptados e áreas de apoio familiar | Para planejar deslocamentos de forma mais prática com meu filho             |
 | João Batista (Aposentado)       | Visualizar caminhos com menor risco de quedas e maior acessibilidade  | Para me deslocar com segurança e independência                                  |
+| João Batista (Aposentado)       | Consultar avaliações de outros usuários sobre acessibilidade de calçadas e praças | Para escolher caminhos mais seguros e adequados à minha mobilidade      |
+
 
 
 ## Requisitos
