@@ -12,18 +12,25 @@
 <img src ="img/6.png">
 
 >
-## Histórias de Usuários
+## Histórias de Usuários  
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise das personas, foram identificadas as seguintes histórias de usuários:  
 
 | EU COMO... `PERSONA`            | QUERO/PRECISO ... `FUNCIONALIDADE`                                    | PARA ... `MOTIVO/VALOR`                                                         |
-|---------------------------------|---------------------------------------------------------------------- |---------------------------------------------------------------------------------|
+|---------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Ana Paula (Mobilidade reduzida) | Registrar facilmente barreiras de acessibilidade                      | Para que outras pessoas possam evitar dificuldades e o poder público possa agir |
-| José Souza (Mobilidade reduzida)| Visualizar locais acessíveis próximos a mim                           | Para planejar meus trajetos com segurança e autonomia                           |
-| Larissa Gomes (Cidadã)          | Avaliar locais que frequento                                          | Para contribuir com informações úteis à comunidade                              |
+| Ana Paula (Mobilidade reduzida) | Anexar fotos ou vídeos ao registrar uma ocorrência                     | Para dar mais clareza à situação e facilitar a ação do poder público             |
+| José Souza (Mobilidade reduzida)| Visualizar locais acessíveis próximos a mim                            | Para planejar meus trajetos com segurança e autonomia                           |
+| José Souza (Mobilidade reduzida)| Visualizar rotas acessíveis no mapa em tempo real                      | Para escolher o melhor caminho e evitar barreiras inesperadas                   |
+| Larissa Gomes (Cidadã)          | Avaliar locais que frequento                                           | Para contribuir com informações úteis à comunidade                              |
+| Larissa Gomes (Cidadã)          | Editar ou excluir avaliações que já fiz                                | Para manter as informações atualizadas e úteis para a comunidade                |
 | Marcos Silva (Gestor municipal) | Acessar relatórios consolidados de ocorrências                        | Para priorizar obras e justificar investimentos em acessibilidade               |
+| Marcos Silva (Gestor municipal) | Exportar relatórios de acessibilidade em PDF/planilha                  | Para apresentar dados de forma clara em reuniões e planejamentos                |
 | Julia Mendes (Mãe de bebê)      | Verificar locais com estrutura adequada para as necessidades do filho | Para planejar deslocamentos com segurança e conforto                            |
+| Julia Mendes (Mãe de bebê)      | Visualizar no mapa locais com banheiros adaptados e áreas de apoio familiar | Para planejar deslocamentos de forma mais prática com meu filho             |
 | João Batista (Aposentado)       | Visualizar caminhos com menor risco de quedas e maior acessibilidade  | Para me deslocar com segurança e independência                                  |
+| João Batista (Aposentado)       | Consultar avaliações de outros usuários sobre acessibilidade de calçadas e praças | Para escolher caminhos mais seguros e adequados à minha mobilidade      |
+
 
 
 ## Requisitos
@@ -34,15 +41,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito                                                                                                                   | Prioridade |
 |------|------------------------------------------------------------------------------------------------------------------------------------------|------------|
-|RF-001| O sistema deve permitir ao usuário registrar ocorrências de acessibilidade, com foto, GPS, categoria, severidade (1–5) e descrição.      | ALTA       | 
-|RF-002| O sistema deve disponibilizar um mapa com pontos de acessibilidade reportados, permitindo consulta por endereço ou geolocalização.       | ALTA       |
-|RF-003| O sistema deve permitir que usuários avaliem locais com notas (1 a 5 estrelas) e comentários opcionais.                                  | MÉDIA      |
-|RF-004| O sistema deve gerar relatórios consolidados de acessibilidade por região, contendo indicadores e mapa georreferenciado.                 | MÉDIA      |
-|RF-005| O sistema deve permitir aplicar filtros simples no mapa por categoria (ex.: rampas, banheiros, calçadas).                                | BAIXA      |
-|RF-006| O sistema deve permitir que, ao clicar em um ponto do mapa, o usuário veja os detalhes da ocorrência: categoria, foto e status.          | ALTA       |
-|RF-007| O sistema deve permitir o registro e a consulta de locais que possuam estruturas de apoio voltadas a diferentes grupos de usuários.      | MÉDIA      |
-|RF-008| O sistema deve permitir que os usuários personalizem a visualização da interface, ajustando o tamanho da fonte para facilitar a leitura. | ALTA       |
-|RF-009| A aplicação deverá ter um sistema de cadastro de conta e login.                                                                          | ALTA       |
+|RF-001| Permitir ao usuário registrar ocorrências de acessibilidade, com foto, GPS, categoria, severidade (1–5) e descrição.      | ALTA       | 
+|RF-002| Disponibilizar mapa com pontos de acessibilidade reportados, permitindo consulta por endereço ou geolocalização.       | ALTA       |
+|RF-003| Permitir que usuários avaliem locais com notas (1 a 5 estrelas) e comentários opcionais.                                  | MÉDIA      |
+|RF-004| Gerar relatórios consolidados de acessibilidade por região, contendo indicadores e mapa georreferenciado.                 | MÉDIA      |
+|RF-005| Aplicar filtros simples no mapa por categoria (ex.: rampas, banheiros, calçadas).                                | BAIXA      |
+|RF-006| Gerenciar pesquisas no mapa permitindo ao usuário ver os detalhes da ocorrência: categoria, foto e status.          | ALTA       |
+|RF-007| Registrar e  consultar locais que possuam estruturas de apoio voltadas a diferentes grupos de usuários.      | MÉDIA      |
+|RF-008| Gerenciar personalização de visualização da interface, ajustando o tamanho da fonte para facilitar a leitura. | ALTA       |
+|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.                                                                          | ALTA       |
 
 
 ### Requisitos não Funcionais
