@@ -1,9 +1,11 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+## SCRUM
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+A estratégia utilizada neste projeto tem como base o **SCRUM**, um framework ágil que busca melhorar a definição e a condução de projetos. Esse método possibilita uma gestão mais eficiente das equipes, dividindo as atividades e aumentando a produtividade no processo de desenvolvimento.
+
+O SCRUM opera por meio de entregas progressivas do produto, realizadas em ciclos curtos e periódicos chamados de **sprints**. Dessa forma, incentivamos o trabalho em conjunto, estimulando a troca de ideias e o aproveitamento das competências individuais. Essa forma de trabalho simplifica a solução do desafio principal, tornando cada etapa do desenvolvimento mais eficaz.
 
 ## Controle de Versão
 
@@ -26,52 +28,88 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
-
 ## Gerenciamento de Projeto
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+O time implementou metodologias ágeis no desenvolvimento do projeto, compreendendo a importância da flexibilidade, do trabalho colaborativo e da adaptação constante às mudanças nos requisitos. Para guiar esse fluxo dinâmico, escolhemos o framework **Scrum**.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+Sendo assim, o time se organizou da seguinte maneira:
+
+- **Scrum Master**: Maria Eduarda de Oliveira  
+- **Product Owner**: Marcos Rodrigo dos Santos  
+- **Equipe de Desenvolvimento**:  
+- Djulio Anderson Pansera
+- Gabriel Cazzuni Roani
+- Juliana Campos Montandon
+- Marcos Rodrigo dos Santos
+- Maria Eduarda de Oliveira Santos e Silva
+- Sidney Gabriel Abreu Magalhães
+- **Equipe de Design**:  
+- Djulio Anderson Pansera
+- Gabriel Cazzuni Roani
+- Juliana Campos Montandon
+- Sidney Gabriel Abreu Magalhães
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+Para organizar e distribuir as atividades do projeto, a equipe está utilizando o **GitHub Projects**, onde as tarefas são estruturadas em sprints, priorizadas conforme sua relevância, registradas no backlog e distribuídas entre os membros do time para execução, testes e conclusão. O quadro de tarefas segue a seguinte estrutura:
+
+- **To Do**: Representa o Sprint Backlog, contendo as atividades e objetivos do sprint atual, bem como suas prioridades.
+- **In Progress**: Reúne as tarefas em andamento. Manter o status atualizado é essencial para que o Scrum Master possa monitorar o progresso e assegurar que o planejamento esteja sendo seguido.  
+- **Ready**: Reúne as tarefas concluídas, mas aguardando em fase de teste. 
+- **In Review**: Abrange as tarefas em fase de revisão e testes. Nessa etapa, os testadores analisam documentações, códigos e funcionalidades implementadas, verificando seu funcionamento e identificando possíveis falhas para correção.  
+- **Done**: Contém as tarefas que passaram por testes e controle de qualidade e estão prontas para entrega. Não há mais necessidade de revisões ou ajustes, estando a atividade finalizada e pronta para uso.  
+
 
 ### Ferramentas
 
-As ferramentas empregadas no projeto são:
+- **GitHub**: Plataforma utilizada para hospedar repositórios de código-fonte, garantindo a organização dos arquivos do projeto. A equipe realiza commits frequentes e cria branches para o desenvolvimento de novas funcionalidades e correção de bugs. Além disso, o GitHub é empregado para gerenciar um quadro Kanban, auxiliando na organização e no acompanhamento das tarefas.  
+- **Microsoft Teams**: Adotado como principal meio de comunicação e colaboração, permitindo a realização de reuniões virtuais, o compartilhamento de arquivos e documentos essenciais. A ferramenta contribui para a comunicação eficiente entre os membros da equipe.  
+- **WhatsApp**: Embora não seja o canal principal, é utilizado como meio complementar para interações rápidas e informais. Serve para comunicações urgentes, atualizações instantâneas e para manter a equipe conectada fora das reuniões no Teams.  
+- **Figma**: Escolhido para a criação do design de interfaces e prototipagem de telas. A ferramenta possibilita a criação de wireframes e fluxogramas, promovendo a colaboração e facilitando a visualização das necessidades do projeto.  
+- **Canva**: Utilizado para a elaboração de apresentações, identidade visual e a criação da logomarca do MonitorAR.  
+- **Ambiente de Trabalho**: Cada integrante utiliza seu próprio setup, geralmente composto por computadores pessoais ou notebooks com sistemas operacionais compatíveis com as ferramentas de desenvolvimento adotadas.  
+- **Visual Studio Code (VS Code)**: Ambiente de desenvolvimento escolhido pela equipe, oferecendo recursos avançados de edição de código, integração com GitHub e suporte a diversas linguagens de programação, tornando o processo de desenvolvimento mais eficiente e colaborativo.  
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+## Projeto do GitHub com backlog 
+<img src="">
 
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+## Plano de Sprints
+
+###  Semana 1 - Modelagem da Solução
+
+| Tarefa                                              | Responsável                                             |
+|-----------------------------------------------------|---------------------------------------------------------|
+| Diagrama de Classes                                 | Marcos Rodrigo dos Santos e Sidney Gabriel Abreu        |
+| Diagrama de Fluxo (Fluxograma)                      | Maria Eduarda de Oliveira                               |
+| Wireframe Interativo                                | Djulio Anderson Pansera e Gabriel Cazzuni Roani         |
+| Definir Ferramentas do Projeto (Documentação da Metodologia) | Juliana Campos Montandon                       |
+
+ **Objetivo da Semana:** Definir a estrutura do sistema e as ferramentas para desenvolvimento.
+
+---
+
+###  Semana 2 - Modelagem de Dados e Planejamento de Testes
+
+| Tarefa                                              | Responsável                                        |
+|-----------------------------------------------------|----------------------------------------------------|
+| Modelo Entidade-Relacionamento (MER)                | Gabriel Cazzuni Roani e Maria Eduarda de Oliveira  |
+| Projeto da Base de Dados                            | Djulio Anderson Pansera e Juliana Campos Montandon |
+| Plano de Teste de Usabilidade                       | Marcos Rodrigo dos Santos                          |
+| Plano de Teste de Software                          | Sidney Gabriel Abreu                               |
+
+ **Objetivo da Semana:** Estruturar o banco de dados e definir os testes necessários.
+
+---
+
+###  Semana 3 - Gestão e Finalização
+
+| Tarefa                                              | Responsável                          |
+|-----------------------------------------------------|--------------------------------------|
+| Projeto do GitHub (Backlog e Plano de Sprints)      | Todos os membros                     |
+| Revisão Geral dos Artefatos                         | Todos os membros                     |
+| Correções Finais e Entrega no Canvas                | Todos os membros                     |
+
+ **Objetivo da Semana:** Organizar o desenvolvimento no GitHub, revisar o material e finalizar a entrega.
