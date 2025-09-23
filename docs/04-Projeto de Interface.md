@@ -10,9 +10,18 @@
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
-
-Os wireframes são protótipos utilizados no design de interfaces para representar a estrutura de um site e o relacionamento entre suas páginas. Eles funcionam como ilustrações do layout e da disposição dos elementos essenciais da interface.
+<img src="/docs/img/cadastro.png"> 
+<img src="/docs/img/login.png"> 
+<img src="/docs/img/mapa.png"> 
+<img src="/docs/img/ocorrencias.png">
+<img src="/docs/img/registrar_ocorrencia.png"> 
+<img src="/docs/img/avaliacoes.png"> 
+<img src="/docs/img/registrar_avaliacao.png"> 
+<img src="/docs/img/relatorio.png">
 
 Nesta seção, é FUNDAMENTAL indicar, para cada tela/wireframe proposto, quais requisitos do projeto estão sendo contemplados por aquela tela.
+
+## Wireframe Interativo
+https://www.figma.com/make/HZZAkImRYqc2EeXFa4ZIej/Accessa--App-Development?node-id=0-1&p=f&t=cLm0QW76apOGNOKE-0&fullscreen=1
+
  

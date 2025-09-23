@@ -53,7 +53,7 @@ Sendo assim, o time se organizou da seguinte maneira:
 
 ### Processo
 
-Para organizar e distribuir as atividades do projeto, a equipe está utilizando o **GitHub Projects**, onde as tarefas são estruturadas em sprints, priorizadas conforme sua relevância, registradas no backlog e distribuídas entre os membros do time para execução, testes e conclusão. O quadro de tarefas segue a seguinte estrutura:
+Para organizar e distribuir as atividades do projeto, a equipe está utilizando o **Trello**, onde as tarefas são estruturadas em sprints, priorizadas conforme sua relevância, registradas no backlog e distribuídas entre os membros do time para execução, testes e conclusão. O quadro de tarefas segue a seguinte estrutura:
 
 - **To Do**: Representa o Sprint Backlog, contendo as atividades e objetivos do sprint atual, bem como suas prioridades.
 - **In Progress**: Reúne as tarefas em andamento. Manter o status atualizado é essencial para que o Scrum Master possa monitorar o progresso e assegurar que o planejamento esteja sendo seguido.  
@@ -64,7 +64,8 @@ Para organizar e distribuir as atividades do projeto, a equipe está utilizando 
 
 ### Ferramentas
 
-- **GitHub**: Plataforma utilizada para hospedar repositórios de código-fonte, garantindo a organização dos arquivos do projeto. A equipe realiza commits frequentes e cria branches para o desenvolvimento de novas funcionalidades e correção de bugs. Além disso, o GitHub é empregado para gerenciar um quadro Kanban, auxiliando na organização e no acompanhamento das tarefas.  
+- **GitHub**: Plataforma utilizada para hospedar repositórios de código-fonte, garantindo a organização dos arquivos do projeto. A equipe realiza commits frequentes e cria branches para o desenvolvimento de novas funcionalidades e correção de bugs. 
+- **Trello**: Gerenciamento do quadro Kanban, auxiliando na organização e no acompanhamento das tarefas.  
 - **Microsoft Teams**: Adotado como principal meio de comunicação e colaboração, permitindo a realização de reuniões virtuais, o compartilhamento de arquivos e documentos essenciais. A ferramenta contribui para a comunicação eficiente entre os membros da equipe.  
 - **WhatsApp**: Embora não seja o canal principal, é utilizado como meio complementar para interações rápidas e informais. Serve para comunicações urgentes, atualizações instantâneas e para manter a equipe conectada fora das reuniões no Teams.  
 - **Figma**: Escolhido para a criação do design de interfaces e prototipagem de telas. A ferramenta possibilita a criação de wireframes e fluxogramas, promovendo a colaboração e facilitando a visualização das necessidades do projeto.  
@@ -72,9 +73,8 @@ Para organizar e distribuir as atividades do projeto, a equipe está utilizando 
 - **Ambiente de Trabalho**: Cada integrante utiliza seu próprio setup, geralmente composto por computadores pessoais ou notebooks com sistemas operacionais compatíveis com as ferramentas de desenvolvimento adotadas.  
 - **Visual Studio Code (VS Code)**: Ambiente de desenvolvimento escolhido pela equipe, oferecendo recursos avançados de edição de código, integração com GitHub e suporte a diversas linguagens de programação, tornando o processo de desenvolvimento mais eficiente e colaborativo.  
 
-## Projeto do GitHub com backlog 
-<img src="">
-
+## Projeto do Trello com backlog 
+<img src="/docs/img/trello.png">
 
 ## Plano de Sprints
 
