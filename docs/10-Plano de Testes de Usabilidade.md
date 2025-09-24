@@ -2,70 +2,90 @@
 
 Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
 
-Um plano de teste de usabilidade deverá conter: 
+## Definição dos Objetivos
 
-## Definição do(s) objetivo(s)
+Os objetivos deste plano de testes são:
+- Avaliar a facilidade e a eficiência do processo de registro de uma nova ocorrência de acessibilidade.
+- Verificar se os usuários conseguem consultar as informações no mapa de forma clara e intuitiva.
+- Identificar possíveis barreiras de usabilidade para usuários com diferentes perfis e necessidades.
+- Medir o nível de satisfação do usuário ao interagir com as funcionalidades principais da plataforma.
 
-Antes de iniciar os testes, é essencial definir o que se deseja avaliar na usabilidade do sistema. 
-Alguns exemplos de objetivos são:
-- Verificar se os usuários conseguem concluir tarefas essenciais sem dificuldades.
-- Identificar barreiras na navegação e interação com o sistema.
-- Avaliar a eficiência e a satisfação do usuário ao utilizar a interface.
-- Testar a acessibilidade para diferentes perfis de usuários.
+## Seleção dos Participantes
 
-## Seleção dos participantes
+Para os testes, serão selecionados 5 participantes que representem o público-alvo do projeto, incluindo:
+- Pessoas com algum tipo de mobilidade reduzida (usuários de cadeira de rodas, muletas, etc.).
+- Cidadãos engajados em pautas sociais e que não possuem deficiência.
+- Pessoas com diferentes níveis de afinidade com tecnologia (básico, intermediário e avançado).
+- Participantes de diferentes faixas etárias.
 
-Para garantir que o teste reflita o uso real do sistema, escolha participantes representativos do público-alvo.
+## Definição dos Cenários de Teste
 
-**Critérios para selecionar participantes:**
-- Perfis variados (experientes e iniciantes no sistema).
-- Diferentes níveis de familiaridade com tecnologia.
-- Pessoas com necessidades especiais (se aplicável).
+Foram definidos cinco cenários para representar tarefas reais que os usuários executarão no sistema.
 
-**Quantidade recomendada:**
-Mínimo: 5 participantes.
-Ideal: Entre 8 e 12 para maior diversidade.
+---
 
-## Definição de cenários de teste
+### **Cenário 1: Registrar uma barreira urbana**
 
-Os cenários representam tarefas reais que os usuários executam no sistema. Neste projeto, cada grupo deverá definir, no mínimo, **CINCO cenários para a aplicação** e cada cenário deve incluir:
+**Objetivo:** Avaliar a eficiência e clareza do processo de registrar uma barreira urbana, do início ao fim.
+**Contexto:** Você é uma pessoa que utiliza cadeira de rodas e se deparou com uma rampa de acesso bloqueada por um veículo. Você decide usar o aplicativo para registrar essa barreira e alertar outras pessoas.
+**Tarefa(s):**
+1.  Abra o aplicativo e faça login na sua conta.
+2.  Inicie o processo para registrar uma nova ocorrência.
+3.  Preencha os detalhes: classifique a ocorrência, descreva o problema como "rampa obstruída" e defina a severidade.
+4.  Anexe uma foto que você tirou da situação.
+5.  Confirme e salve o registro.
+**Critério de Sucesso:** O usuário consegue registrar a ocorrência em menos de 2 minutos, sem expressar frustração ou cometer erros que o impeçam de concluir a tarefa.
 
-- Objetivo: O que será avaliado.
-- Contexto: A situação que leva o usuário a interagir com o sistema.
-- Tarefa: A ação que o usuário deve realizar.
-- Critério de sucesso: Como determinar se a tarefa foi concluída corretamente.
+---
 
-**Exemplo: Cenário 1**
+### **Cenário 2: Planejar um trajeto seguro**
 
-**Objetivo:** Avaliar a facilidade e eficiência do usuário em pesquisar, adicionar um produto ao carrinho e finalizar a compra sem dificuldades.
+**Objetivo:** Testar a eficácia da consulta de locais e ocorrências no mapa para o planejamento de rotas.
+**Contexto:** Você precisa ir a um local que não conhece bem. Antes de sair de casa, você quer usar o aplicativo para verificar se o trajeto e o destino são acessíveis.
+**Tarefa(s):**
+1.  Abra o aplicativo e acesse o mapa.
+2.  Procure pelo endereço de destino.
+3.  Verifique os pontos de acessibilidade e as barreiras reportadas na área.
+4.  Clique em um ponto de ocorrência para ver os detalhes, como a foto e a descrição.
+**Critério de Sucesso:** O usuário localiza as informações de acessibilidade da região e consegue tomar uma decisão informada sobre sua rota. As informações apresentadas no mapa e nos detalhes da ocorrência são claras e úteis.
 
-**Contexto:** O usuário deseja comprar um notebook para uso pessoal. Para isso, ele deverá entrar no site www.compras.com.br para buscar opções disponíveis, comparar preços, adicionar o produto ao carrinho e finalizar a compra com pagamento via cartão de crédito.
+---
 
-**Tarefa(s):** 
-- Acessar o site e localizar a barra de pesquisa.
-- Pesquisar por "notebook" e utilizar os filtros para refinar a busca (exemplo: marca, preço, processador).
-- Escolher um dos notebooks listados e acessar a página do produto.
-- Adicionar o produto ao carrinho.
-- Finalizar a compra, preenchendo os dados de pagamento e endereço de entrega.
-- Confirmar a transação e verificar a tela de pedido concluído.
+### **Cenário 3: Avaliar um estabelecimento comercial**
 
-**Critério(s) de Sucesso(s):**
-- O usuário consegue encontrar e filtrar os produtos sem dificuldades.
-- O produto é adicionado ao carrinho corretamente.
-- O usuário consegue preencher as informações de pagamento e entrega sem erros.
-- A compra é finalizada com sucesso, e o usuário visualiza a confirmação do pedido.
-- Todo o processo ocorre em menos de 5 minutos, sem necessidade de assistência.
+**Objetivo:** Avaliar a usabilidade do sistema de avaliação de locais.
+**Contexto:** Você está em um restaurante que notou ter um excelente banheiro adaptado e bom espaço para circulação. Você quer avaliar o local positivamente para que a comunidade saiba que é um lugar acessível.
+**Tarefa(s):**
+1.  Encontre o restaurante no mapa do aplicativo.
+2.  Inicie o processo de avaliação do local.
+3.  Dê uma nota de 5 estrelas.
+4.  Adicione um comentário elogiando o banheiro adaptado.
+5.  Envie sua avaliação.
+**Critério de Sucesso:** O usuário consegue completar a avaliação de forma rápida e intuitiva, sentindo que sua contribuição foi registrada com sucesso.
 
-## Métodos de coleta de dados
+---
 
-Os dados coletados devem ajudar a entender a experiência dos usuários e os dados podem ser coletados por observação direta incluindo métricas quantitativas (quantidade de cliques, número de erros, tempo gasto para cada tarefa etc.), métricas qualitativas (dificuldades, comentários etc.) e questionários pós-teste (A interface foi fácil de entender? Você encontrou dificuldades em alguma etapa? O que poderia ser melhorado?)
+### **Cenário 4: Gerar um relatório de ocorrências (Perfil Gestor)**
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
+**Objetivo:** Verificar a funcionalidade de geração de relatórios para tomada de decisão.
+**Contexto:** Você é um gestor público e precisa de dados para justificar um investimento em obras de acessibilidade em um bairro específico. Você usará o sistema para gerar um relatório das ocorrências na região.
+**Tarefa(s):**
+1.  Acesse a área de relatórios do sistema.
+2.  Aplique um filtro para visualizar apenas as ocorrências de um bairro específico.
+3.  Gere o relatório em formato PDF/Excel.
+4.  Verifique se o relatório contém os dados esperados (mapa, indicadores, lista de problemas).
+**Critério de Sucesso:** O gestor consegue gerar um relatório útil e compreensível, que pode ser utilizado para embasar decisões, sem necessidade de conhecimento técnico avançado.
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+---
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+### **Cenário 5: Personalizar a interface para melhor leitura**
+
+**Objetivo:** Testar a funcionalidade de personalização da interface, conforme o requisito RF-008.
+**Contexto:** Você tem alguma dificuldade de leitura e deseja aumentar o tamanho das letras e o contraste das cores do aplicativo para usá-lo de forma mais confortável.
+**Tarefa(s):**
+1.  Acesse o menu de "Configurações" ou "Perfil".
+2.  Encontre as opções de "Acessibilidade" ou "Visualização".
+3.  Aumente o tamanho da fonte para a opção maior.
+4.  Altere o tema para o modo de "Alto Contraste".
+5.  Volte para a tela do mapa e verifique se as alterações foram aplicadas em todo o aplicativo.
+**Critério de Sucesso:** O usuário consegue encontrar e aplicar as configurações de visualização facilmente, e as alterações melhoram sua experiência de leitura na plataforma.

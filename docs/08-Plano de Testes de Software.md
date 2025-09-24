@@ -1,31 +1,36 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
+<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="4-Projeto de Interface.md"> Projeto de Interface</a>
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+A seguir são apresentados os cenários de testes funcionais da aplicação, elaborados com base nos requisitos definidos no projeto.
 
-Não deixe de enumerar os casos de teste de forma sequencial e de garantir que o(s) requisito(s) associado(s) a cada um deles está(ão) correto(s) - de acordo com o que foi definido na seção "2 - Especificação do Projeto". 
-
-Por exemplo:
- 
-| **Caso de Teste** 	| **CT01 – Cadastrar perfil** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-| Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar em "Criar conta" <br> - Preencher os campos obrigatórios (e-mail, nome, sobrenome, celular, CPF, senha, confirmação de senha) <br> - Aceitar os termos de uso <br> - Clicar em "Registrar" |
-|Critério de Êxito | - O cadastro foi realizado com sucesso. |
-|  	|  	|
-| Caso de Teste 	| CT02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
-
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+| **Caso de Teste** | **CT-01 – Cadastro de novo usuário** |
+| :---:              | :---:                                                                                               |
+| **Requisito Associado** | RF-009 - A aplicação deverá ter um sistema de cadastro de conta e login.                         |
+| **Objetivo do Teste** | Verificar se um novo usuário consegue se cadastrar com sucesso no sistema.                        |
+| **Passos** | 1. Acessar a página inicial.<br>2. Clicar na opção "Cadastrar novo usuário".<br>3. Preencher os campos do formulário (Nome, E-mail, Senha, Confirmar Senha).<br>4. Clicar no botão "Confirmar". |
+| **Critério de Êxito** | O sistema deve validar os dados, criar a conta e exibir uma mensagem de "Cadastro realizado com sucesso", redirecionando para a tela de login. |
+|                    |                                                                                                     |
+| **Caso de Teste** | **CT-02 – Efetuar login de usuário** |
+| **Requisito Associado** | RF-009 - A aplicação deverá ter um sistema de cadastro de conta e login.                          |
+| **Objetivo do Teste** | Verificar se um usuário já cadastrado consegue se autenticar com sucesso.                         |
+| **Passos** | 1. Acessar a tela de login.<br>2. Informar um e-mail cadastrado.<br>3. Informar a senha correspondente.<br>4. Clicar no botão "Entrar". |
+| **Critério de Êxito** | O login deve ser realizado com sucesso, e o usuário deve ser redirecionado para a tela principal (mapa). |
+|                    |                                                                                                     |
+| **Caso de Teste** | **CT-03 – Registrar ocorrência de acessibilidade** |
+| **Requisito Associado** | RF-001 - Permitir ao usuário registrar ocorrências de acessibilidade, com foto, GPS, categoria, severidade (1–5) e descrição. |
+| **Objetivo do Teste** | Verificar se um usuário logado consegue registrar uma nova ocorrência de acessibilidade.           |
+| **Passos** | 1. Efetuar login no sistema.<br>2. Navegar até a função "Registrar Nova Ocorrência".<br>3. Preencher os campos obrigatórios (categoria, severidade, descrição).<br>4. Anexar uma foto.<br>5. Permitir o uso do GPS para capturar a localização.<br>6. Clicar em "Salvar". |
+| **Critério de Êxito** | A ocorrência deve ser salva com sucesso e exibida como um novo ponto no mapa, conforme o critério de verificação. |
+|                    |                                                                                                     |
+| **Caso de Teste** | **CT-04 – Consultar detalhes de uma ocorrência no mapa** |
+| **Requisito Associado** | RF-006 - Permitir que, ao clicar em um ponto do mapa, o usuário veja os detalhes da ocorrência: categoria, foto e status. |
+| **Objetivo do Teste** | Verificar se os detalhes de uma ocorrência são exibidos corretamente ao usuário.                   |
+| **Passos** | 1. Acessar o mapa da aplicação.<br>2. Clicar em um dos pontos de ocorrência existentes.<br>3. Observar a janela ou pop-up que é exibida. |
+| **Critério de Êxito** | A janela deve exibir corretamente todos os dados cadastrados da ocorrência, como categoria, foto e status. |
+|                    |                                                                                                     |
+| **Caso de Teste** | **CT-05 – Alterar opções de visualização (Acessibilidade)** |
+| **Requisito Associado** | RF-008 - O sistema deve permitir que os usuários personalizem a visualização da interface, ajustando o tamanho da fonte e o contraste das cores para facilitar a leitura. |
+| **Objetivo do Teste** | Verificar se o usuário consegue alterar o tamanho da fonte e o tema de cores.                        |
+| **Passos** | 1. Acessar o menu de "Configurações" ou "Perfil".<br>2. Localizar as opções de "Acessibilidade" ou "Visualização".<br>3. Selecionar um tamanho de fonte maior.<br>4. Ativar o modo de alto contraste.<br>5. Navegar para outra página e verificar a aplicação das mudanças. |
+| **Critério de Êxito** | A interface da aplicação deve refletir imediatamente as alterações de fonte e contraste selecionadas pelo usuário. |
