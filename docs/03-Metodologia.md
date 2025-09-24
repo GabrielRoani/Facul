@@ -36,16 +36,16 @@ O time implementou metodologias ágeis no desenvolvimento do projeto, compreende
 
 Sendo assim, o time se organizou da seguinte maneira:
 
-- **Scrum Master**: Maria Eduarda de Oliveira  
-- **Product Owner**: Marcos Rodrigo dos Santos  
-- **Equipe de Desenvolvimento**:  
+**Scrum Master**: Maria Eduarda de Oliveira  
+**Product Owner**: Marcos Rodrigo dos Santos  
+**Equipe de Desenvolvimento**:  
 - Djulio Anderson Pansera
 - Gabriel Cazzuni Roani
 - Juliana Campos Montandon
 - Marcos Rodrigo dos Santos
 - Maria Eduarda de Oliveira Santos e Silva
 - Sidney Gabriel Abreu Magalhães
-- **Equipe de Design**:  
+**Equipe de Design**:  
 - Djulio Anderson Pansera
 - Gabriel Cazzuni Roani
 - Juliana Campos Montandon
