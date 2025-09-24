@@ -44,8 +44,8 @@ Sendo assim, o time se organizou da seguinte maneira:
 - Juliana Campos Montandon
 - Marcos Rodrigo dos Santos
 - Maria Eduarda de Oliveira Santos e Silva
-- Sidney Gabriel Abreu Magalhães
-**Equipe de Design**:  
+- Sidney Gabriel Abreu Magalhães <br>
+- **Equipe de Design**:  
 - Djulio Anderson Pansera
 - Gabriel Cazzuni Roani
 - Juliana Campos Montandon
