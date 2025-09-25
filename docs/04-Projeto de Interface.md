@@ -19,8 +19,6 @@
 <img src="/docs/img/registrar_avaliacao.png"> 
 <img src="/docs/img/relatorio.png">
 
-Nesta seção, é FUNDAMENTAL indicar, para cada tela/wireframe proposto, quais requisitos do projeto estão sendo contemplados por aquela tela.
-
 ## Wireframe Interativo
 https://www.figma.com/make/HZZAkImRYqc2EeXFa4ZIej/Accessa--App-Development?node-id=0-1&p=f&t=cLm0QW76apOGNOKE-0&fullscreen=1
 
