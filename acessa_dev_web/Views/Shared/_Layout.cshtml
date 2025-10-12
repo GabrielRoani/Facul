@@ -21,15 +21,19 @@
                 </div>
                 <nav class="nav" role="navigation" aria-label="Navegação principal">
                     <ul class="nav-list">
-                        <li><a href="#inicio" class="nav-link">Início</a></li>
+                        <li><a href="/" class="nav-link">Início</a></li>
                         <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
                         <li><a href="#mapa" class="nav-link">Mapa</a></li>
                         <li><a href="#sobre" class="nav-link">Sobre</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <button class="btn btn-secondary">Entrar</button>
-                    <button class="btn btn-primary">Cadastrar</button>
+                    <a class="btn btn-secondary" asp-controller="Home" asp-action="Login">
+                        Entrar
+                    </a>
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="Cadastro">
+                        Cadastrar
+                    </a>
                 </div>
             </div>
         </div>
@@ -105,7 +109,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @* Seção para JavaScript específico da View *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
