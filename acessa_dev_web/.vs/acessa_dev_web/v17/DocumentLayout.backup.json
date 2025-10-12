@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\login-styles.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:wwwroot\\css\\login-styles.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAQwC8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-12T16:47:26.402Z",
+              "Title": "login.cshtml",
+              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\login.cshtml",
+              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\login.cshtml",
+              "RelativeToolTip": "Views\\Home\\login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T17:16:40.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "login-styles.css",
+              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\login-styles.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\login-styles.css",
+              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\login-styles.css",
+              "RelativeToolTip": "wwwroot\\css\\login-styles.css",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwOgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-12T16:46:42.797Z",
+              "WhenOpened": "2025-10-12T17:15:36.42Z",
               "EditorCaption": ""
             },
             {
@@ -62,20 +66,20 @@
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-12T16:46:21.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAADMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-12T16:42:00.53Z",
               "EditorCaption": ""

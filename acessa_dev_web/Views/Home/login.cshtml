@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faça login no Acessa+ para reportar e acompanhar problemas de acessibilidade">
+    <title>Login - Acessa+</title>
+    <link rel="stylesheet" href="~/css/login-styles.css" asp-append-version="true" />
+
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="logo">Acessa<span class="logo-plus">+</span></h1>
+                <p class="subtitle">Bem-vindo de volta!</p>
+            </div>
+
+            <form class="login-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="seu@email.com"
+                           required
+                           autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password"
+                           id="senha"
+                           name="senha"
+                           placeholder="Digite sua senha"
+                           required
+                           minlength="6"
+                           autocomplete="current-password">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="lembrar" id="lembrar">
+                        <span class="checkbox-label">Lembrar-me</span>
+                    </label>
+                    <a href="recuperar-senha.html" class="link-secundario">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="btn-primary">Entrar</button>
+
+                <div class="divider">
+                    <span>ou</span>
+                </div>
+
+                <a href="cadastro.html" class="btn-secondary">Criar nova conta</a>
+
+                <p class="back-home">
+                    <a href="index.html" class="link-secundario">← Voltar para a página inicial</a>
+                </p>
+            </form>
+        </div>
+
+        <div class="login-info">
+            <div class="info-content">
+                <h2>Faça parte da mudança</h2>
+                <p>Com o Acessa+, você pode reportar problemas de acessibilidade e ajudar a construir cidades mais inclusivas para todos.</p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-icon">📍</span>
+                        <span>Reporte ocorrências com localização precisa</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⭐</span>
+                        <span>Avalie locais acessíveis</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <span>Acompanhe o progresso das melhorias</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🤝</span>
+                        <span>Conecte-se com a comunidade</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/login-script.js"></script>
+
+</body>
+</html>
