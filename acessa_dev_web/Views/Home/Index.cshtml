@@ -1,0 +1,356 @@
+﻿
+@{
+    ViewData["Title"] = "Mapeamento de Acessibilidade";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/styles.css" />
+}
+
+
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <h1>Acessa<span class="logo-plus">+</span></h1>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+                    <li><a href="#mapa" class="nav-link">Mapa</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-secondary">Entrar</button>
+                <button class="btn btn-primary">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">Mapeie a acessibilidade da sua cidade</h2>
+                <p class="hero-description">
+                    Ajude a construir cidades mais inclusivas reportando barreiras e pontos acessíveis.
+                    Juntos, podemos transformar o espaço urbano para todos.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" id="reportarBtn">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Reportar Ocorrência
+                    </button>
+                    <button class="btn btn-outline btn-large">
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Ver Mapa
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">1.247</span>
+                        <span class="stat-label">Ocorrências Registradas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">856</span>
+                        <span class="stat-label">Locais Avaliados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3.421</span>
+                        <span class="stat-label">Usuários Ativos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=500&width=600" alt="Pessoa utilizando o aplicativo Acessa+ em ambiente urbano">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="como-funciona" class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">Como Funciona</h2>
+        <p class="section-subtitle">Contribua para uma cidade mais acessível em 3 passos simples</p>
+
+        <div class="steps">
+            <div class="step-card">
+                <div class="step-icon step-icon-primary">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                </div>
+                <h3 class="step-title">1. Localize</h3>
+                <p class="step-description">
+                    Identifique um local com barreira de acessibilidade ou um ponto positivo que merece destaque.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon step-icon-success">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M21 15l-5-5L5 21" />
+                    </svg>
+                </div>
+                <h3 class="step-title">2. Registre</h3>
+                <p class="step-description">
+                    Tire uma foto, adicione a localização exata e descreva a situação encontrada.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon step-icon-alert">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <h3 class="step-title">3. Compartilhe</h3>
+                <p class="step-description">
+                    Sua contribuição ajuda outras pessoas e gestores públicos a priorizarem melhorias.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mapa" class="map-section">
+    <div class="container">
+        <div class="map-content">
+            <div class="map-info">
+                <h2 class="section-title">Explore o Mapa Interativo</h2>
+                <p class="map-description">
+                    Visualize ocorrências reportadas, avaliações de locais e identifique áreas com maior necessidade de intervenção.
+                </p>
+
+                <div class="map-features">
+                    <div class="feature-item">
+                        <div class="feature-icon feature-icon-success">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Locais Acessíveis</h4>
+                            <p>Pontos com boa avaliação de acessibilidade</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon feature-icon-error">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="8" x2="12" y2="12" stroke="white" stroke-width="2" />
+                                <line x1="12" y1="16" x2="12.01" y2="16" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Barreiras Reportadas</h4>
+                            <p>Locais com problemas de acessibilidade</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon feature-icon-alert">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Avaliações</h4>
+                            <p>Sistema de estrelas para cada local</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary">Acessar Mapa Completo</button>
+            </div>
+
+            <div class="map-preview">
+                <div class="map-placeholder" id="mapPlaceholder">
+                    <img src="/placeholder.svg?height=500&width=700" alt="Prévia do mapa interativo de acessibilidade">
+                    <div class="map-overlay">
+                        <button class="map-overlay-btn">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <h2 class="section-title">Categorias de Ocorrências</h2>
+        <p class="section-subtitle">Reporte diferentes tipos de barreiras e pontos acessíveis</p>
+
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-icon">🚶</div>
+                <h3 class="category-title">Calçadas</h3>
+                <p class="category-description">Buracos, desníveis, obstruções</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">♿</div>
+                <h3 class="category-title">Rampas</h3>
+                <p class="category-description">Ausência ou inadequação de rampas</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🚻</div>
+                <h3 class="category-title">Banheiros</h3>
+                <p class="category-description">Sanitários não adaptados</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🅿️</div>
+                <h3 class="category-title">Estacionamento</h3>
+                <p class="category-description">Vagas para pessoas com deficiência</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🏢</div>
+                <h3 class="category-title">Edifícios</h3>
+                <p class="category-description">Acesso a prédios públicos e privados</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🚌</div>
+                <h3 class="category-title">Transporte</h3>
+                <p class="category-description">Ônibus, metrô e pontos de parada</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Sobre o Acessa+</h2>
+                <p class="about-description">
+                    O Acessa+ é uma plataforma colaborativa que visa mapear e reportar barreiras de acessibilidade
+                    em espaços públicos e privados das cidades brasileiras. Nosso objetivo é promover maior
+                    transparência, facilitar o planejamento urbano inclusivo e garantir o direito de ir e vir
+                    de todas as pessoas.
+                </p>
+                <p class="about-description">
+                    Segundo dados do IBGE, <strong>
+                        68,8% da população urbana vive em áreas sem rampas de acesso
+                        para cadeirantes
+                    </strong>. Com o Acessa+, cidadãos e gestores públicos têm acesso a dados
+                    confiáveis para embasar decisões e priorizar intervenções que realmente fazem a diferença.
+                </p>
+
+                <div class="about-impact">
+                    <h3>Nosso Impacto</h3>
+                    <ul class="impact-list">
+                        <li>✓ Dados padronizados e confiáveis sobre acessibilidade</li>
+                        <li>✓ Empoderamento de pessoas com deficiência e mobilidade reduzida</li>
+                        <li>✓ Suporte ao planejamento de políticas públicas inclusivas</li>
+                        <li>✓ Alinhamento com o ODS 10 - Redução das Desigualdades</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="/placeholder.svg?height=400&width=500" alt="Grupo diverso de pessoas em ambiente urbano acessível">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">Faça Parte da Mudança</h2>
+            <p class="cta-description">
+                Cadastre-se agora e comece a contribuir para cidades mais acessíveis e inclusivas
+            </p>
+            <button class="btn btn-primary btn-large">Criar Conta Gratuita</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Acessa<span class="logo-plus">+</span></h3>
+                <p class="footer-description">
+                    Mapeamento colaborativo de acessibilidade urbana para cidades mais inclusivas.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#mapa">Mapa</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-heading">Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="var(--bg-primary)" />
+                            <circle cx="17.5" cy="6.5" r="1.5" fill="var(--bg-primary)" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Acessa+. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+@section Scripts {
+    <script src="~/js/script.js"></script>
+}
