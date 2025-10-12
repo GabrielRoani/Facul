@@ -1,3 +1,4 @@
+wwwroot\css\cadastro-styles.css
 wwwroot\css\login-styles.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
