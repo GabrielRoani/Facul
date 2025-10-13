@@ -1,21 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\",
+  "WorkspaceRootPath": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:acessa_dev_web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\marcos\\puc\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\marcos\\puc\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\cadastro-styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:wwwroot\\css\\cadastro-styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\users\\medua\\onedrive\\documentos\\faculdade\\ads\\1semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|c:\\marcos\\puc\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{35D654B7-74A2-4367-88A8-4B99FAB47715}|acessa_dev_web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -30,58 +26,45 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "acessa_dev_web",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj",
-              "RelativeDocumentMoniker": "acessa_dev_web.csproj",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj*",
-              "RelativeToolTip": "acessa_dev_web.csproj*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-12T23:05:19.883Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T00:37:40.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Models\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T23:18:43.224Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T00:34:55.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Models\\Usuario.cs*",
-              "RelativeToolTip": "Models\\Usuario.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T23:08:54.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-12T23:06:53.84Z",
+              "Title": "cadastro-styles.css",
+              "DocumentMoniker": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\cadastro-styles.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\cadastro-styles.css",
+              "ToolTip": "C:\\MARCOS\\PUC\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\cadastro-styles.css",
+              "RelativeToolTip": "wwwroot\\css\\cadastro-styles.css",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAwI4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-13T00:35:28.013Z",
               "EditorCaption": ""
             }
           ]

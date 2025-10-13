@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace acessa_dev_web.Models
