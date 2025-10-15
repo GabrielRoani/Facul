@@ -29,11 +29,11 @@ O objetivo principal foi avaliar:
 **Critério de sucesso:** Usuário deve concluir o cadastro em até 2 minutos, sem erros impeditivos.
 
 ### Contexto:
-O participante abre o aplicativo pela primeira vez e precisa criar uma conta informando nome, e-mail, senha e tipo de usuário (com deficiência ou não).
+O participante abre o aplicativo pela primeira vez e precisa criar uma conta informando nome, e-mail, senha e tipo de usuário.
 
 | Usuário | Tempo Total (seg) | Cliques | Tarefa Concluída? | Erros Cometidos | Feedback do Usuário |
 |----------|--------------------|----------|-------------------|------------------|----------------------|
-| Usuário 1 | 140 | 9 | Sim | 1 | "Consegui cadastrar, mas quase não vi o campo de confirmação da senha." |
+| Usuário 1 | 140 | 9 | Sim | 1 | "Consegui cadastrar, mas  não vi o campo de confirmação da senha." |
 | Usuário 2 | 70 | 6 | Sim | 0 | "Processo rápido, bom uso de ícones." |
 | Usuário 3 | 190 | 11 | Sim | 2 | "Letras pequenas e contraste fraco, precisei de ajuda." |
 | Usuário 4 | 60 | 5 | Sim | 0 | "Muito fácil, mas poderia salvar senha automaticamente." |
@@ -80,7 +80,7 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 
 ## 6. Principais Dificuldades Identificadas
 
-- Campos e botões **pequenos para usuários com mobilidade reduzida**;  
+- Campos e botões **pequenos para usuários com problemas de visão**;  
 - **Baixo contraste** entre campos e fundo, dificultando leitura;  
 - Falta de **mensagem de confirmação mais visível** após o cadastro;  
 - Ausência de **acesso alternativo** (como login via Google ou biometria).
@@ -91,7 +91,7 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 
 1. **Aumentar tamanho dos campos e botões** nas telas de autenticação.  
 2. **Melhorar contraste visual** conforme diretrizes WCAG (mínimo 4.5:1).  
-3. **Adicionar feedback visual e sonoro** após cadastro concluído.  
+3. **Adicionar feedback visual** após cadastro concluído.  
 4. **Incluir login social (Google / Facebook)** para usuários avançados.  
 5. **Implementar lembrete de senha visual mais acessível** (ícone mais visível e texto alternativo).
 
