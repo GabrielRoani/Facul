@@ -1,4 +1,4 @@
-# 🧾 Registro de Testes de Usabilidade – Cadastro e Login (Acessa+)
+#  Registro de Testes de Usabilidade – Cadastro e Login (Acessa+)
 
 ## 1. Descrição Geral
 
@@ -39,9 +39,9 @@ O participante abre o aplicativo pela primeira vez e precisa criar uma conta inf
 | Usuário 4 | 60 | 5 | Sim | 0 | "Muito fácil, mas poderia salvar senha automaticamente." |
 | Usuário 5 | 85 | 7 | Sim | 0 | "Gostei da simplicidade, mas faltou mensagem clara de sucesso." |
 
-✅ **Taxa de sucesso:** 100%  
-⏱️ **Tempo médio:** 109s  
-⚠️ **Principais dificuldades:** Fonte pequena, campo de confirmação pouco visível, e ausência de feedback visual após sucesso.
+**Taxa de sucesso:** 100%  
+**Tempo médio:** 109s  
+**Principais dificuldades:** Fonte pequena, campo de confirmação pouco visível, e ausência de feedback visual após sucesso.
 
 ---
 
@@ -61,9 +61,9 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 | Usuário 4 | 35 | 3 | Sim | 0 | "Sem dificuldade, login imediato." |
 | Usuário 5 | 55 | 3 | Sim | 0 | "Funcional, poderia ter login com Google." |
 
-✅ **Taxa de sucesso:** 100%  
-⏱️ **Tempo médio:** 66s  
-⚠️ **Principais dificuldades:** Campos pequenos e falta de opções alternativas (login social).  
+**Taxa de sucesso:** 100%  
+**Tempo médio:** 66s  
+**Principais dificuldades:** Campos pequenos e falta de opções alternativas (login social).  
 
 ---
 
@@ -71,10 +71,10 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 
 | Indicador | Resultado | Meta | Avaliação |
 |------------|------------|------|------------|
-| **Taxa média de sucesso** | 100% | ≥ 90% | ✅ Atingida |
-| **Tempo médio total (cadastro + login)** | 88s | ≤ 120s | ✅ Atingida |
-| **Média de erros** | 0.6 por tarefa | ≤ 2 | ✅ Atingida |
-| **Satisfação geral (escala 1–5)** | 4.5 | ≥ 4.0 | ✅ Atingida |
+| **Taxa média de sucesso** | 100% | ≥ 90% |  Atingida |
+| **Tempo médio total (cadastro + login)** | 88s | ≤ 120s |  Atingida |
+| **Média de erros** | 0.6 por tarefa | ≤ 2 |  Atingida |
+| **Satisfação geral (escala 1–5)** | 4.5 | ≥ 4.0 |  Atingida |
 
 ---
 
@@ -112,11 +112,11 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 Os testes de **Cadastro e Login** indicam que o fluxo principal está **intuitivo, funcional e compreensível** para diferentes perfis de usuários.  
 Os participantes concluíram as tarefas sem dificuldades críticas, demonstrando que a interface atual atende aos critérios de **eficiência e satisfação** definidos no plano de testes.
 
-> ✅ **Conclusão geral:** As telas de autenticação do Acessa+ são usáveis e acessíveis, necessitando apenas de pequenos ajustes visuais e de acessibilidade para atingir excelência.
+>  **Conclusão geral:** As telas de autenticação do Acessa+ são usáveis e acessíveis, necessitando apenas de pequenos ajustes visuais e de acessibilidade para atingir excelência.
 
 ---
 
-📚 **Referências**
+**Referências**
 - ISO 9241-11: Ergonomia da interação humano-sistema  
 - Nielsen, J. – *Usability Engineering*  
 - W3C WAI – *Web Accessibility Initiative*
