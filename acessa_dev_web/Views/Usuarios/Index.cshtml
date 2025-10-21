@@ -1,47 +1,39 @@
 ﻿@model IEnumerable<acessa_dev_web.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuários";
 }
 
-<h1>Cadastro de usuário</h1>
+<link rel="stylesheet" href="~/css/crud-styles.css" asp-append-version="true" />
 
-<p>
-    <a class="btn btn-success" asp-action="Create">Criar novo usuário</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Perfil)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Senha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Perfil)
-            </td>
-            <td>
-                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.id">Editar</a> |
-                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.id">Visualizar</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Apagar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="crud-container">
+    <h1>Cadastro de Usuários</h1>
+
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a class="btn btn-success" asp-action="Create">✚ Criar Novo Usuário</a>
+    </div>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.Perfil)</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Perfil)</td>
+                    <td class="action-buttons">
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.id">Editar</a>
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.id">Ver</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
