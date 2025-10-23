@@ -36,12 +36,12 @@ O participante abre o aplicativo pela primeira vez e precisa criar uma conta inf
 | Usuário 1 | 140 | 9 | Sim | 1 | "Consegui cadastrar, mas  não vi o campo de confirmação da senha." |
 | Usuário 2 | 70 | 6 | Sim | 0 | "Processo rápido, bom uso de ícones." |
 | Usuário 3 | 190 | 11 | Sim | 2 | "Letras pequenas e contraste fraco, precisei de ajuda." |
-| Usuário 4 | 60 | 5 | Sim | 0 | "Muito fácil, mas poderia salvar senha automaticamente." |
+| Usuário 4 | 60 | 5 | Sim | 0 | "Muito fácil." |
 | Usuário 5 | 85 | 7 | Sim | 0 | "Gostei da simplicidade, mas faltou mensagem clara de sucesso." |
 
 **Taxa de sucesso:** 100%  
 **Tempo médio:** 109s  
-**Principais dificuldades:** Fonte pequena, campo de confirmação pouco visível, e ausência de feedback visual após sucesso.
+**Principais dificuldades:** Fonte pequena, campo de confirmação e ausência de feedback visual após sucesso.
 
 ---
 
@@ -57,7 +57,7 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 |----------|--------------------|----------|-------------------|------------------|----------------------|
 | Usuário 1 | 90 | 4 | Sim | 0 | "Rápido, mas os campos são pequenos para digitar." |
 | Usuário 2 | 40 | 3 | Sim | 0 | "Fácil, gostei da opção de mostrar senha." |
-| Usuário 3 | 110 | 5 | Sim | 1 | "Errei a senha uma vez, mas a mensagem de erro foi clara." |
+| Usuário 3 | 110 | 5 | Sim | 1 | "Errei a senha uma vez a mensagem de erro foi clara." |
 | Usuário 4 | 35 | 3 | Sim | 0 | "Sem dificuldade, login imediato." |
 | Usuário 5 | 55 | 3 | Sim | 0 | "Funcional, poderia ter login com Google." |
 
@@ -92,8 +92,7 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 1. **Aumentar tamanho dos campos e botões** nas telas de autenticação.  
 2. **Melhorar contraste visual** conforme diretrizes WCAG (mínimo 4.5:1).  
 3. **Adicionar feedback visual** após cadastro concluído.  
-4. **Incluir login social (Google / Facebook)** para usuários avançados.  
-5. **Implementar lembrete de senha visual mais acessível** (ícone mais visível e texto alternativo).
+4. **Incluir login social (Google / Facebook)** para usuários avançados. 
 
 ---
 
@@ -102,7 +101,7 @@ Usuário já cadastrado acessa o aplicativo novamente e precisa realizar login c
 | Nível | Descrição | Exemplo | Ação |
 |--------|------------|----------|------|
 | **Crítico** | Dificuldade de leitura em usuários idosos | Contraste baixo nos campos de texto | Corrigir no próximo ciclo |
-| **Moderado** | Campos pequenos em telas móveis | Dificuldade de toque em botões de “Cadastrar” e “Entrar” | Ajustar layout responsivo |
+| **Moderado** | Campos pequenos em telas móveis | Ajustar layout responsivo |
 | **Leve** | Falta de login alternativo | Login apenas por e-mail e senha | Adicionar opção futura |
 
 ---
