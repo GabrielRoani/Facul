@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("acessa_dev_web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd954de3e3bd2f1dee39c01720aaa326d8b148e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+880fca74163081d5eb617edfeaf28a8dc7e67f21")]
 [assembly: System.Reflection.AssemblyProductAttribute("acessa_dev_web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("acessa_dev_web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

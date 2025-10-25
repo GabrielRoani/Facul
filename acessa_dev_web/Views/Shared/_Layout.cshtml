@@ -24,20 +24,21 @@
                         <li><a href="/" class="nav-link">Início</a></li>
                         <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
                         <li><a href="#mapa" class="nav-link">Mapa</a></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li><a href="/Usuarios" class="nav-link">Usuários</a></li>
+                        }                        
                         <li><a href="#sobre" class="nav-link">Sobre</a></li>
                     </ul>
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
-                        {
-  
+                        {  
                             <li class="nav-item header-user-actions" style="margin-bottom: 0;">
                                 <span class="nav-link text-dark" style="padding-right: 0;">Olá, @User.Identity.Name</span>
                             </li>
                             <li class="nav-item header-user-actions" style="margin-bottom: 0;">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Logout" style="padding-left: 0;">Sair</a>
                             </li>
-
-
                         }
                         else
                         {

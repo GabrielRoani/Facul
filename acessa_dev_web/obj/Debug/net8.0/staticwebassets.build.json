@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/5ldbCFqqq2t1IV4j2NL2dIBJxgt6WazI+1oEtEZzEc=",
+  "Hash": "4ul15fkrq8mlIY6mF9fCDGqZlcI6iALA3dVW5d5KCYk=",
   "Source": "acessa_dev_web",
   "BasePath": "_content/acessa_dev_web",
   "Mode": "Default",
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fhcgrho8u8",
-      "Integrity": "zf1hQF4ZkUWWwydOKOEPMwE2Z6vzc7xPOXzWzS99/TM=",
+      "Fingerprint": "1dhtposkjl",
+      "Integrity": "Jda+o85sQHd8g+nffI8UoS3twko6PCiL3QXk4d5d7Uw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1794,6 +1794,51 @@
       ]
     },
     {
+      "Route": "css/site.1dhtposkjl.css",
+      "AssetFile": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15993"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jda+o85sQHd8g+nffI8UoS3twko6PCiL3QXk4d5d7Uw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 25 Oct 2025 22:40:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1dhtposkjl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jda+o85sQHd8g+nffI8UoS3twko6PCiL3QXk4d5d7Uw="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1804,7 +1849,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15767"
+          "Value": "15993"
         },
         {
           "Name": "Content-Type",
@@ -1812,11 +1857,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"zf1hQF4ZkUWWwydOKOEPMwE2Z6vzc7xPOXzWzS99/TM=\""
+          "Value": "\"Jda+o85sQHd8g+nffI8UoS3twko6PCiL3QXk4d5d7Uw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 24 Oct 2025 14:57:46 GMT"
+          "Value": "Sat, 25 Oct 2025 22:40:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1826,52 +1871,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-zf1hQF4ZkUWWwydOKOEPMwE2Z6vzc7xPOXzWzS99/TM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.fhcgrho8u8.css",
-      "AssetFile": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "15767"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zf1hQF4ZkUWWwydOKOEPMwE2Z6vzc7xPOXzWzS99/TM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Oct 2025 14:57:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "fhcgrho8u8"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zf1hQF4ZkUWWwydOKOEPMwE2Z6vzc7xPOXzWzS99/TM="
+          "Value": "sha256-Jda+o85sQHd8g+nffI8UoS3twko6PCiL3QXk4d5d7Uw="
         }
       ]
     },

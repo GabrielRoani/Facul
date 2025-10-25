@@ -12,8 +12,10 @@ using System.Security.Claims;
 
 namespace acessa_dev_web.Controllers
 {
+    
     public class UsuariosController : Controller
-    {
+    {        
+
         private readonly AppDbContext _context;
 
         public UsuariosController(AppDbContext context)
@@ -33,6 +35,7 @@ namespace acessa_dev_web.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
@@ -128,6 +131,7 @@ namespace acessa_dev_web.Controllers
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+
             }
             return View(usuario);
         }

@@ -25,6 +25,7 @@ namespace acessa_dev_web.Models
     public enum Perfil
     {
         Cidadao,
-        Gestor
+        Gestor,
+        Admin
     }
 }
