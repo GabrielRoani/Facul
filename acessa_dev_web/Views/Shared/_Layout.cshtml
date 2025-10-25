@@ -26,15 +26,37 @@
                         <li><a href="#mapa" class="nav-link">Mapa</a></li>
                         <li><a href="#sobre" class="nav-link">Sobre</a></li>
                     </ul>
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">                                
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Logout">
+                                    Sair
+                                </a>
+                                Olá, @User.Identity.Name
+                            </li>
+                        }
+                        else
+                        {
+                            <div class="header-actions">
+                                <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
+                                    Entrar
+                                </a>
+                                <a class="btn btn-primary" asp-controller="Usuarios" asp-action="Create">
+                                    Cadastrar
+                                </a>
+                            </div>
+                        }
+                    </ul>
                 </nav>
-                <div class="header-actions">
-                    <a class="btn btn-secondary" asp-controller="Home" asp-action="Login">
+                <!--<div class="header-actions">
+                    <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
                         Entrar
                     </a>
                     <a class="btn btn-primary" asp-controller="Usuarios" asp-action="Create">
                         Cadastrar
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </header>

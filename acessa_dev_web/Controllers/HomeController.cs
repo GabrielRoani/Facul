@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using acessa_dev_web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace acessa_dev_web.Controllers
@@ -13,6 +14,7 @@ namespace acessa_dev_web.Controllers
             _logger = logger;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();

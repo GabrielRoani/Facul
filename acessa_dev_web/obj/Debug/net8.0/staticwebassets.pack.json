@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\cadastro-styles.css"
     },
     {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\crud-styles.css",
+      "PackagePath": "staticwebassets\\css\\crud-styles.css"
+    },
+    {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\login-styles.css",
       "PackagePath": "staticwebassets\\css\\login-styles.css"
     },
