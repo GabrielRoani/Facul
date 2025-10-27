@@ -4,19 +4,21 @@
 
 A seguir são apresentados os cenários de testes funcionais da aplicação, elaborados com base nos requisitos definidos no projeto.
 
+#ETAPA 03
+
 | **Caso de Teste** | **CT-01 – Cadastro de novo usuário** |
 | :---:              | :---:                                                                                               |
 | **Requisito Associado** | RF-009 - A aplicação deverá ter um sistema de cadastro de conta e login.                         |
 | **Objetivo do Teste** | Verificar se um novo usuário consegue se cadastrar com sucesso no sistema.                        |
-| **Passos** | 1. Acessar a página inicial.<br>2. Clicar na opção "Cadastrar novo usuário".<br>3. Preencher os campos do formulário (Nome, E-mail, Senha, Confirmar Senha).<br>4. Clicar no botão "Confirmar". |
+| **Passos** | 1. Acessar a página inicial.<br>2. Clicar na opção "Cadastrar novo usuário".<br>3. Preencher os campos do formulário (Nome, Senha).<br>4. Clicar no botão "Criar Conta". |
 | **Critério de Êxito** | O sistema deve validar os dados, criar a conta e exibir uma mensagem de "Cadastro realizado com sucesso", redirecionando para a tela de login. |
 |                    |                                                                                                     |
 | **Caso de Teste** | **CT-02 – Efetuar login de usuário** |
-| **Requisito Associado** | RF-009 - A aplicação deverá ter um sistema de cadastro de conta e login.                          |
+| **Requisito Associado** | RF-009 - A aplicação deverá ter uma tela para logar e autenticar o usuário.                          |
 | **Objetivo do Teste** | Verificar se um usuário já cadastrado consegue se autenticar com sucesso.                         |
-| **Passos** | 1. Acessar a tela de login.<br>2. Informar um e-mail cadastrado.<br>3. Informar a senha correspondente.<br>4. Clicar no botão "Entrar". |
+| **Passos** | 1. Acessar a tela de login.<br>2. Informar um usuário cadastrado.<br>3. Informar a senha correspondente.<br>4. Clicar no botão "Entrar". |
 | **Critério de Êxito** | O login deve ser realizado com sucesso, e o usuário deve ser redirecionado para a tela principal (mapa). |
-|                    |                                                                                                     |
+|#FIM ETAPA 03
 | **Caso de Teste** | **CT-03 – Registrar ocorrência de acessibilidade** |
 | **Requisito Associado** | RF-001 - Permitir ao usuário registrar ocorrências de acessibilidade, com foto, GPS, categoria, severidade (1–5) e descrição. |
 | **Objetivo do Teste** | Verificar se um usuário logado consegue registrar uma nova ocorrência de acessibilidade.           |
