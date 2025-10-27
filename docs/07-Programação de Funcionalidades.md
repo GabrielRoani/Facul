@@ -3,33 +3,18 @@
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
 
 
-
-**O que DEVE ser utilizado para o desenvolvimento da aplicação:**
-- Microsoft Visual Studio (IDE de Codificação)
-- HTML e CSS (frontend)
-- Javascript (frontend)
-- C# (backend)
-- MySQL ou SQLServer(Base de Dados)
-- Bootstrap (template responsivo para frontend)
-- Github (documentação e controle de versão)
-
-**O que NÃO PODE ser utilizado:**
-- Template React (e qualquer outro template - exceto o Bootstrap)
-- Qualquer outra liguagem de programação diferente de C#
-
+# Requisito atendido
+RF-009: O site deve permitir ao usuário cadastrar uma conta.
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
-|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.| Página de login/Página de cadastro de usuários/Tabela de usuários no banco de dados SQL|Marcos/Maria Eduarda/Djulio|
+|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.| Página de login/Página de cadastro de usuários/Tabela de usuários no banco de dados SQL|Marcos/Maria Eduarda/Djulio/Juliana|
 
-Tela de Cadastro (RF-009)
+# Tela de Cadastro (RF-009)
 
-Responsável: Maria Eduarda / Marcos Rodrigo
+Responsável: Maria Eduarda / Marcos Rodrigo / Djulio / Juliana
 
 <img src= "/docs/img/Cadastro.png">
-
-Requisito atendido
-RF-009: O site deve permitir ao usuário cadastrar uma conta.
 
 Artefatos da funcionalidade
 ●Create.cshtml
@@ -43,10 +28,12 @@ Artefatos da funcionalidade
 
 Abra o visual studio execute o programa em mode http, ao acessar o sistema vá até o botão "Cadastrar", ao clicar no notão será direcionado para a tela de cadastro de usuário e logo depois do cadastro efetuado, será redicionado para a página de CRUD de usuário.
 
+# Tela Crud Usuários
 <img src= "/docs/img/Crud_usuarios.png">
 
 Depois de cadastrar o usuário volte a página inicial e vá até o botão de "Entrar", onde serão solicitados o nome e senha para acesso ao sistema, fazendo assim a validação e autenticação do usuário.
 
+# Tela de Login
 <img src= "/docs/img/Login.png">
 
 > **Links Úteis**:
