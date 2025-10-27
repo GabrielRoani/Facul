@@ -21,9 +21,7 @@ A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando 
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| |  |
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio     |  |  |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas |  |  |
+|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.| Página de login/Página de cadastro de usuários/Tabela de usuários no banco de dados SQL|Marcos/Maria Eduarda/Djulio|
 
 
 # Instruções de acesso
