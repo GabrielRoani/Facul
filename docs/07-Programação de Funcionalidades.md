@@ -17,7 +17,6 @@ Nesta seção, a implementação do sistema descrita por meio dos requisitos fun
 - Template React (e qualquer outro template - exceto o Bootstrap)
 - Qualquer outra liguagem de programação diferente de C#
 
-A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando os artefatos desenvolvidos.
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
