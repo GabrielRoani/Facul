@@ -155,22 +155,74 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary">Acessar Mapa Completo</button>
+                    <button class="btn btn-primary" id="abrirMapa" onclick="abrirMapaCompleto()">
+                        Acessar Mapa Completo
+                    </button>
+
+                    <script>
+                        function abrirMapaCompleto() {
+                            // Redireciona para a rota MVC /Home/Maps
+                            window.location.href = '/Home/Maps';
+                        }
+                    </script>
+
+
             </div>
 
-            <div class="map-preview">
-                <div class="map-placeholder" id="mapPlaceholder">
-                    <img src="/placeholder.svg?height=500&width=700" alt="Prévia do mapa interativo de acessibilidade">
-                    <div class="map-overlay">
-                        <button class="map-overlay-btn">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
-                            </svg>
-                        </button>
+                <div class="map-preview">
+                    <div class="map-placeholder" id="mapPlaceholder">
+                        <div id="map" style="width:100%; height:500px; border-radius:12px; overflow:hidden;"></div>
                     </div>
                 </div>
-            </div>
+
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+                <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+                <script>
+                    // Inicializa o mapa OSM
+                    const map = new ol.Map({
+                        target: 'map',
+                        layers: [
+                            new ol.layer.Tile({
+                                source: new ol.source.OSM()
+                            })
+                        ],
+                        view: new ol.View({
+                            center: ol.proj.fromLonLat([-46.6333, -23.5505]), // São Paulo
+                            zoom: 13
+                        })
+                    });
+
+                    // Exemplo: dois marcadores locais
+                    const barreira = new ol.Feature({
+                        geometry: new ol.geom.Point(ol.proj.fromLonLat([-46.635, -23.55])),
+                        tipo: "Barreira",
+                        descricao: "Calçada obstruída"
+                    });
+                    barreira.setStyle(new ol.style.Style({
+                        image: new ol.style.Icon({ src: "https://cdn-icons-png.flaticon.com/512/463/463574.png", scale: 0.07 })
+                    }));
+
+                    const acessivel = new ol.Feature({
+                        geometry: new ol.geom.Point(ol.proj.fromLonLat([-46.63, -23.553])),
+                        tipo: "Acessível",
+                        descricao: "Rampa adequada e piso tátil"
+                    });
+                    acessivel.setStyle(new ol.style.Style({
+                        image: new ol.style.Icon({ src: "https://cdn-icons-png.flaticon.com/512/190/190411.png", scale: 0.07 })
+                    }));
+
+                    // Adiciona os marcadores
+                    const marcadores = new ol.source.Vector({ features: [barreira, acessivel] });
+                    map.addLayer(new ol.layer.Vector({ source: marcadores }));
+
+                    // Mostra popup simples ao clicar
+                    map.on('singleclick', evt => {
+                        map.forEachFeatureAtPixel(evt.pixel, f => {
+                            alert(`🗺️ ${f.get('tipo')}\n${f.get('descricao')}`);
+                        });
+                    });
+                </script>
+
         </div>
     </div>
 </section>

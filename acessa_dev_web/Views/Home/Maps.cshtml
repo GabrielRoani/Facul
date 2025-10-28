@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Mapa Completo";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+<script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #mapFull {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .btn-voltar {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+</style>
+
+<button class="btn-voltar" onclick="window.history.back()">← Voltar</button>
+<div id="mapFull"></div>
+
+<script>
+
+    // Inicializa o mapa
+    const map = new ol.Map({
+        target: 'mapFull',
+        layers: [ new ol.layer.Tile({ source: new ol.source.OSM() }) ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([-46.6333, -23.5505]), // São Paulo
+            zoom: 13
+        })
+    });
+
+    const vectorSource = new ol.source.Vector();
+    const vectorLayer = new ol.layer.Vector({ source: vectorSource });
+    map.addLayer(vectorLayer);
+
+    // Função para criar marcador
+    function criarMarcador(lon, lat, tipo, descricao) {
+        const iconeUrl = {
+            "bar": "https://cdn-icons-png.flaticon.com/512/3075/3075977.png",
+            "school": "https://cdn-icons-png.flaticon.com/512/167/167707.png",
+            "hospital": "https://cdn-icons-png.flaticon.com/512/2965/2965567.png"
+        }[tipo] || "https://cdn-icons-png.flaticon.com/512/190/190411.png"; // default acessível
+
+        const feature = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])),
+            tipo: tipo,
+            descricao: descricao
+        });
+
+        feature.setStyle(new ol.style.Style({
+            image: new ol.style.Icon({ src: iconeUrl, scale: 0.07 })
+        }));
+
+        vectorSource.addFeature(feature);
+    }
+
+    // Função para consultar Overpass API
+    async function carregarEstabelecimentos() {
+        const bbox = [-46.645, -23.56, -46.62, -23.54]; // [minLon, minLat, maxLon, maxLat] - exemplo São Paulo
+        const query = `
+            [out:json][timeout:25];
+            (
+              node["amenity"="bar"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
+              node["amenity"="school"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
+              node["amenity"="hospital"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
+            );
+            out body;
+        `;
+
+        const url = "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query);
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            data.elements.forEach(el => {
+                const tipo = el.tags.amenity;
+                const nome = el.tags.name || tipo;
+                criarMarcador(el.lon, el.lat, tipo, nome);
+            });
+        } catch (err) {
+            console.error("Erro ao carregar dados do Overpass API:", err);
+        }
+    }
+
+    // Adiciona interação de clique nos marcadores
+    map.on('singleclick', evt => {
+        map.forEachFeatureAtPixel(evt.pixel, f => {
+            alert(`🗺️ ${f.get('tipo')}\n${f.get('descricao')}`);
+        });
+    });
+
+    // Chama a função para carregar estabelecimentos reais
+    carregarEstabelecimentos();
+    // Interação: ao clicar em um marcador, atualiza o painel lateral
+map.on('singleclick', function(evt) {
+    map.forEachFeatureAtPixel(evt.pixel, function(feature) {
+        const tipo = feature.get('tipo');
+        const nome = feature.get('nome');
+
+        document.getElementById('infoContent').innerHTML = `
+            <h2>${nome}</h2>
+            <button class="info-btn" onclick="avaliar('${nome}')">Avaliar</button>
+            <button class="info-btn" onclick="reportar('${nome}')">Reportar</button>
+        `;
+    });
+});
+
+// Funções para os botões
+function avaliar(nome) {
+    alert('Avaliar: ' + nome);
+}
+
+function reportar(nome) {
+    alert('Reportar: ' + nome);
+}
+
+</script>

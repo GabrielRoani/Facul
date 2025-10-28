@@ -35,6 +35,12 @@ namespace acessa_dev_web.Controllers
         {
             return View();
         }
+        
+            // GET: /Home/Maps
+            public IActionResult Maps()
+            {
+                return View();
+            }
 
         public IActionResult Cadastro()
         {
