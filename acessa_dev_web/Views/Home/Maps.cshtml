@@ -12,6 +12,7 @@
         padding: 0;
         height: 100%;
         overflow: hidden;
+        font-family: Arial, sans-serif;
     }
 
     #mapFull {
@@ -32,106 +33,183 @@
         z-index: 1000;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
+
+    .painel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 320px;
+        background: rgba(255,255,255,0.95);
+        border-radius: 10px;
+        padding: 12px;
+        z-index: 1001;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        overflow-y: auto;
+        max-height: 90vh;
+    }
+
+        .painel h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .painel input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 8px;
+        }
+
+        .painel label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .painel img {
+            width: 18px;
+            height: 18px;
+        }
+
+    @@media (max-width: 768px) {
+        .painel {
+            width: 90%;
+            left: 5%;
+            right: 5%;
+            top: 12px;
+        }
+    }
 </style>
 
 <button class="btn-voltar" onclick="window.history.back()">← Voltar</button>
 <div id="mapFull"></div>
 
-<script>
+<div class="painel">
+    <h3>Filtros</h3>
+    <input type="text" id="filtroTexto" placeholder="Buscar por nome..." />
+    <div id="filtros"></div>
+    <small>Dados reais do OpenStreetMap via Overpass API.</small>
+</div>
 
-    // Inicializa o mapa
+<script>
     const map = new ol.Map({
         target: 'mapFull',
         layers: [ new ol.layer.Tile({ source: new ol.source.OSM() }) ],
         view: new ol.View({
-            center: ol.proj.fromLonLat([-46.6333, -23.5505]), // São Paulo
-            zoom: 13
+            center: ol.proj.fromLonLat([-46.6333, -23.5505]),
+            zoom: 14
         })
     });
 
-    const vectorSource = new ol.source.Vector();
-    const vectorLayer = new ol.layer.Vector({ source: vectorSource });
-    map.addLayer(vectorLayer);
+    // Categorias configuradas
+    const categorias = {
+        bar: { label: "Bares / Cafés", filtro: '["amenity"~"bar|cafe|restaurant"]', icon: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png" },
+        school: { label: "Escolas / Universidades", filtro: '["amenity"~"school|university|library"]', icon: "https://cdn-icons-png.flaticon.com/512/167/167707.png" },
+        hospital: { label: "Hospitais / Clínicas / Farmácias", filtro: '["amenity"~"hospital|clinic|pharmacy"]', icon: "https://cdn-icons-png.flaticon.com/512/2965/2965567.png" },
+        shop: { label: "Lojas / Supermercados", filtro: '["shop"]', icon: "https://cdn-icons-png.flaticon.com/512/1077/1077114.png" },
+        transport: { label: "Transporte / Estacionamento", filtro: '["amenity"~"bus_station|parking"]', icon: "https://cdn-icons-png.flaticon.com/512/2203/2203163.png" }
+    };
 
-    // Função para criar marcador
-    function criarMarcador(lon, lat, tipo, descricao) {
-        const iconeUrl = {
-            "bar": "https://cdn-icons-png.flaticon.com/512/3075/3075977.png",
-            "school": "https://cdn-icons-png.flaticon.com/512/167/167707.png",
-            "hospital": "https://cdn-icons-png.flaticon.com/512/2965/2965567.png"
-        }[tipo] || "https://cdn-icons-png.flaticon.com/512/190/190411.png"; // default acessível
-
-        const feature = new ol.Feature({
-            geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])),
-            tipo: tipo,
-            descricao: descricao
-        });
-
-        feature.setStyle(new ol.style.Style({
-            image: new ol.style.Icon({ src: iconeUrl, scale: 0.07 })
-        }));
-
-        vectorSource.addFeature(feature);
+    // Camadas para cada categoria
+    const layers = {};
+    for (const key in categorias) {
+        const src = new ol.source.Vector();
+        const layer = new ol.layer.Vector({ source: src });
+        map.addLayer(layer);
+        layers[key] = { source: src, layer, visible: true };
     }
 
-    // Função para consultar Overpass API
-    async function carregarEstabelecimentos() {
-        const bbox = [-46.645, -23.56, -46.62, -23.54]; // [minLon, minLat, maxLon, maxLat] - exemplo São Paulo
-        const query = `
-            [out:json][timeout:25];
-            (
-              node["amenity"="bar"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
-              node["amenity"="school"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
-              node["amenity"="hospital"](${bbox[1]},${bbox[0]},${bbox[3]},${bbox[2]});
-            );
-            out body;
-        `;
+    // Painel de filtros (se existir)
+    const filtrosDiv = document.getElementById('filtros');
+    if (filtrosDiv) {
+        for (const key in categorias) {
+            const cat = categorias[key];
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" checked data-cat="${key}"><img src="${cat.icon}" width="18"> ${cat.label}`;
+            filtrosDiv.appendChild(label);
+        }
 
-        const url = "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query);
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            data.elements.forEach(el => {
-                const tipo = el.tags.amenity;
-                const nome = el.tags.name || tipo;
-                criarMarcador(el.lon, el.lat, tipo, nome);
+        filtrosDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', e => {
+                const cat = e.target.getAttribute('data-cat');
+                layers[cat].layer.setVisible(e.target.checked);
             });
-        } catch (err) {
-            console.error("Erro ao carregar dados do Overpass API:", err);
+        });
+    }
+
+    // Função para criar marcador
+    function criarMarcador(lon, lat, nome, tipo, iconUrl) {
+        const f = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])),
+            nome, tipo
+        });
+        f.setStyle(new ol.style.Style({
+            image: new ol.style.Icon({ src: iconUrl, scale: 0.06 })
+        }));
+        return f;
+    }
+
+    // === 🔍 Função unificada e corrigida para carregar estabelecimentos ===
+    async function carregarPOIs() {
+        const extent = map.getView().calculateExtent(map.getSize());
+        const bottomLeft = ol.proj.toLonLat(ol.extent.getBottomLeft(extent));
+        const topRight = ol.proj.toLonLat(ol.extent.getTopRight(extent));
+        const south = bottomLeft[1];
+        const west = bottomLeft[0];
+        const north = topRight[1];
+        const east = topRight[0];
+        const bbox = `${south},${west},${north},${east}`;
+
+        if (map.getView().getZoom() < 13) {
+            console.warn("🔎 Zoom muito distante. Aproxime para carregar estabelecimentos reais.");
+            return;
+        }
+
+        for (const key in categorias) {
+            const cat = categorias[key];
+            const query = `[out:json][timeout:25];
+                (
+                    node${cat.filtro}(${bbox});
+                );
+                out body;`;
+            const url = "https://overpass.kumi.systems/api/interpreter?data=" + encodeURIComponent(query);
+            console.log("📡 Buscando:", key, url);
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                layers[key].source.clear();
+
+                data.elements.forEach(el => {
+                    if (el.type === "node" && el.lon && el.lat) {
+                        const nome = el.tags.name || "(sem nome)";
+                        const feat = criarMarcador(el.lon, el.lat, nome, key, cat.icon);
+                        layers[key].source.addFeature(feat);
+                    }
+                });
+                console.log(`✅ ${data.elements.length} pontos carregados para ${cat.label}`);
+            } catch (err) {
+                console.error("❌ Erro ao buscar categoria", key, err);
+            }
         }
     }
 
-    // Adiciona interação de clique nos marcadores
+    // Recarrega quando mover o mapa
+    map.on('moveend', carregarPOIs);
+
+    // Carrega automaticamente no início
+    carregarPOIs();
+
+    // Popup simples ao clicar
     map.on('singleclick', evt => {
         map.forEachFeatureAtPixel(evt.pixel, f => {
-            alert(`🗺️ ${f.get('tipo')}\n${f.get('descricao')}`);
+            const nome = f.get('nome');
+            const tipo = f.get('tipo');
+            alert(`📍 ${nome}\nCategoria: ${categorias[tipo]?.label || tipo}`);
         });
     });
-
-    // Chama a função para carregar estabelecimentos reais
-    carregarEstabelecimentos();
-    // Interação: ao clicar em um marcador, atualiza o painel lateral
-map.on('singleclick', function(evt) {
-    map.forEachFeatureAtPixel(evt.pixel, function(feature) {
-        const tipo = feature.get('tipo');
-        const nome = feature.get('nome');
-
-        document.getElementById('infoContent').innerHTML = `
-            <h2>${nome}</h2>
-            <button class="info-btn" onclick="avaliar('${nome}')">Avaliar</button>
-            <button class="info-btn" onclick="reportar('${nome}')">Reportar</button>
-        `;
-    });
-});
-
-// Funções para os botões
-function avaliar(nome) {
-    alert('Avaliar: ' + nome);
-}
-
-function reportar(nome) {
-    alert('Reportar: ' + nome);
-}
-
 </script>
+
