@@ -3,6 +3,7 @@ wwwroot\css\crud-styles.css
 wwwroot\css\login-styles.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\MapScript.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

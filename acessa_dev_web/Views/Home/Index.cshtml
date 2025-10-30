@@ -1,13 +1,12 @@
-﻿﻿
-    @{
-        ViewData["Title"] = "Mapeamento de Acessibilidade";
-        Layout = "_Layout";
-    }
+﻿
+@{
+    ViewData["Title"] = "Mapeamento de Acessibilidade";
+    Layout = "_Layout";
+}
 
-    @section Styles {
-        <link rel="stylesheet" href="~/css/styles.css" />
-    }
-
+@section Styles {
+    <link rel="stylesheet" href="~/css/styles.css" />
+}
 
 <section id="inicio" class="hero">
     <div class="container">
@@ -54,115 +53,41 @@
         </div>
     </div>
 </section>
-    <section id="mapa" class="map-section">
-        <div class="container">
-            <div class="map-content">
-                <div class="map-info">
-                    <h2 class="section-title">Explore o Mapa Interativo</h2>
-                    <p class="map-description">
-                        Visualize ocorrências reportadas, avaliações de locais e identifique áreas com maior necessidade de intervenção.
-                    </p>
 
-                    <button class="btn btn-primary" id="abrirMapa" onclick="abrirMapaCompleto()">
-                        Acessar Mapa Completo
-                    </button>
+<section id="mapa" class="map-section">
+    <div class="container">
 
-                    <script>
-                        function abrirMapaCompleto() {
-                            window.location.href = '/Home/Maps';
-                        }
-                    </script>
-                </div>
+        <div class="map-content">
+            <div class="map-info">
+                <h2 class="section-title">Explore o Mapa Interativo</h2>
+                <p class="map-description">
+                    Visualize ocorrências reportadas, avaliações de locais e identifique áreas com maior necessidade de intervenção.
+                </p>
 
-                <div class="map-preview" style="margin-top:20px;">
-                    <div class="map-placeholder" id="mapPlaceholder" style="height:300px; border-radius:12px; overflow:hidden;">
-                        <div id="mapMini" style="width:100%; height:100%;"></div>
-                    </div>
+                <button class="btn btn-primary" id="abrirMapa">
+                    Acessar Mapa Completo
+                </button>
+            </div>
+
+            <div class="map-preview" style="margin-top:20px;">
+                <div class="map-placeholder" id="mapPlaceholder" style="height:300px; border-radius:12px; overflow:hidden;">
+                    <div id="mapMini" style="width:100%; height:100%;"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="mapa-container">
+        <div id="mapMini"></div>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
-    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
-    <script>
-        // Inicializa o mini mapa
-        const mapMini = new ol.Map({
-            target: 'mapMini',
-            layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
-            view: new ol.View({
-                center: ol.proj.fromLonLat([-46.6333, -23.5505]),
-                zoom: 13
-            })
-        });
+        <div class="filtros-mini">
+            <h4>Filtros</h4>
+            <label><input type="checkbox" id="chkBar" checked> Bares / Restaurantes</label>
+            <label><input type="checkbox" id="chkSchool" checked> Escolas / Universidades</label>
+            <label><input type="checkbox" id="chkHospital" checked> Hospitais / Clínicas</label>
+        </div>
+    </div>
 
-        // Categorias a exibir
-        const categoriasMini = {
-            bar: { icon: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png", filtro: '["amenity"~"bar|cafe|restaurant"]' },
-            school: { icon: "https://cdn-icons-png.flaticon.com/512/167/167707.png", filtro: '["amenity"~"school|university|library"]' },
-            hospital: { icon: "https://cdn-icons-png.flaticon.com/512/2965/2965567.png", filtro: '["amenity"~"hospital|clinic|pharmacy"]' }
-        };
-
-        const layersMini = {};
-        for (const key in categoriasMini) {
-            const src = new ol.source.Vector();
-            const layer = new ol.layer.Vector({ source: src });
-            mapMini.addLayer(layer);
-            layersMini[key] = { source: src, layer };
-        }
-
-        function criarMarcador(lon, lat, iconUrl) {
-            const f = new ol.Feature({
-                geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat]))
-            });
-            f.setStyle(new ol.style.Style({
-                image: new ol.style.Icon({ src: iconUrl, scale: 0.05 })
-            }));
-            return f;
-        }
-
-        async function carregarPOIsMini() {
-            const extent = mapMini.getView().calculateExtent(mapMini.getSize());
-            const bottomLeft = ol.proj.toLonLat(ol.extent.getBottomLeft(extent));
-            const topRight = ol.proj.toLonLat(ol.extent.getTopRight(extent));
-            const bbox = `${bottomLeft[1]},${bottomLeft[0]},${topRight[1]},${topRight[0]}`;
-
-            if (mapMini.getView().getZoom() < 12) return; // Zoom distante, não carrega
-
-            for (const key in categoriasMini) {
-                const cat = categoriasMini[key];
-                const query = `[out:json][timeout:25];(node${cat.filtro}(${bbox}););out body;`;
-                const url = "https://overpass.kumi.systems/api/interpreter?data=" + encodeURIComponent(query);
-
-                try {
-                    const res = await fetch(url);
-                    const data = await res.json();
-                    layersMini[key].source.clear();
-
-                    data.elements.forEach(el => {
-                        if (el.type === "node" && el.lon && el.lat) {
-                            const feat = criarMarcador(el.lon, el.lat, cat.icon);
-                            layersMini[key].source.addFeature(feat);
-                        }
-                    });
-                } catch (err) {
-                    console.error("Erro ao carregar POIs miniatura", key, err);
-                }
-            }
-        }
-
-        // Inicial
-        carregarPOIsMini();
-        mapMini.on('moveend', carregarPOIsMini);
-
-        // Popup simples
-        mapMini.on('singleclick', evt => {
-            mapMini.forEachFeatureAtPixel(evt.pixel, f => {
-                alert("📍 Ponto de Interesse");
-            });
-        });
-    </script>
-
+</section>
 
 <section class="categories">
     <div class="container">
@@ -170,41 +95,12 @@
         <p class="section-subtitle">Reporte diferentes tipos de barreiras e pontos acessíveis</p>
 
         <div class="category-grid">
-            <div class="category-card">
-                <div class="category-icon">🚶</div>
-                <h3 class="category-title">Calçadas</h3>
-                <p class="category-description">Buracos, desníveis, obstruções</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">♿</div>
-                <h3 class="category-title">Rampas</h3>
-                <p class="category-description">Ausência ou inadequação de rampas</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🚻</div>
-                <h3 class="category-title">Banheiros</h3>
-                <p class="category-description">Sanitários não adaptados</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🅿️</div>
-                <h3 class="category-title">Estacionamento</h3>
-                <p class="category-description">Vagas para pessoas com deficiência</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🏢</div>
-                <h3 class="category-title">Edifícios</h3>
-                <p class="category-description">Acesso a prédios públicos e privados</p>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">🚌</div>
-                <h3 class="category-title">Transporte</h3>
-                <p class="category-description">Ônibus, metrô e pontos de parada</p>
-            </div>
+            <div class="category-card"><div class="category-icon">🚶</div><h3 class="category-title">Calçadas</h3><p class="category-description">Buracos, desníveis, obstruções</p></div>
+            <div class="category-card"><div class="category-icon">♿</div><h3 class="category-title">Rampas</h3><p class="category-description">Ausência ou inadequação de rampas</p></div>
+            <div class="category-card"><div class="category-icon">🚻</div><h3 class="category-title">Banheiros</h3><p class="category-description">Sanitários não adaptados</p></div>
+            <div class="category-card"><div class="category-icon">🅿️</div><h3 class="category-title">Estacionamento</h3><p class="category-description">Vagas para pessoas com deficiência</p></div>
+            <div class="category-card"><div class="category-icon">🏢</div><h3 class="category-title">Edifícios</h3><p class="category-description">Acesso a prédios públicos e privados</p></div>
+            <div class="category-card"><div class="category-icon">🚌</div><h3 class="category-title">Transporte</h3><p class="category-description">Ônibus, metrô e pontos de parada</p></div>
         </div>
     </div>
 </section>
@@ -216,16 +112,7 @@
                 <h2 class="section-title">Sobre o Acessa+</h2>
                 <p class="about-description">
                     O Acessa+ é uma plataforma colaborativa que visa mapear e reportar barreiras de acessibilidade
-                    em espaços públicos e privados das cidades brasileiras. Nosso objetivo é promover maior
-                    transparência, facilitar o planejamento urbano inclusivo e garantir o direito de ir e vir
-                    de todas as pessoas.
-                </p>
-                <p class="about-description">
-                    Segundo dados do IBGE, <strong>
-                        68,8% da população urbana vive em áreas sem rampas de acesso
-                        para cadeirantes
-                    </strong>. Com o Acessa+, cidadãos e gestores públicos têm acesso a dados
-                    confiáveis para embasar decisões e priorizar intervenções que realmente fazem a diferença.
+                    em espaços públicos e privados das cidades brasileiras.
                 </p>
 
                 <div class="about-impact">
@@ -238,7 +125,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="about-image">
                 <img src="/placeholder.svg?height=400&width=500" alt="Grupo diverso de pessoas em ambiente urbano acessível">
             </div>
@@ -259,5 +145,7 @@
 </section>
 
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
+    <script src="~/js/IndexMapScript.js"></script>
     <script src="~/js/script.js"></script>
 }
