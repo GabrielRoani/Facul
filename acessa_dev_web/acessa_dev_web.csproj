@@ -13,6 +13,16 @@
   <ItemGroup>
     <Content Remove="Views\Home\cadastro.cshtml" />
     <Content Remove="wwwroot\css\crud-styles.cs" />
+    <Content Remove="wwwroot\js\IndexMapScript.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Home\IndexMapScript.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\IndexMapScript.js" />
+    <None Include="wwwroot\js\MapScript.js" />
   </ItemGroup>
 
   <ItemGroup>

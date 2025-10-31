@@ -1,36 +1,40 @@
-# Programação de Funcionalidades (INCLUIR A PROGRAMAÇÃO DE FUNCIONALIDADE EM PROFUNDIDADE)
+# Programação de Funcionalidades 
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
 
-Nesta seção, a implementação do sistema descrita por meio dos requisitos funcionais e/ou não funcionais. Nesta seção, é essencial relacionar os requisitos atendidos com os artefatos criados (código fonte) e com o(s) responsável(is) pelo desenvolvimento de cada artefato a cada etapa. Nesta seção também deverão ser apresentadas, se necessário, as instruções para acesso e verificação da **implementação que deve estar funcional no ambiente de hospedagem, OBRIGATORIAMENTE, a partir da Etapa 03**.
 
-**O que DEVE ser utilizado para o desenvolvimento da aplicação:**
-- Microsoft Visual Studio (IDE de Codificação)
-- HTML e CSS (frontend)
-- Javascript (frontend)
-- C# (backend)
-- MySQL ou SQLServer(Base de Dados)
-- Bootstrap (template responsivo para frontend)
-- Github (documentação e controle de versão)
-
-**O que NÃO PODE ser utilizado:**
-- Template React (e qualquer outro template - exceto o Bootstrap)
-- Qualquer outra liguagem de programação diferente de C#
-
-A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando os artefatos desenvolvidos.
+# Requisito atendido
+RF-009: O site deve permitir ao usuário cadastrar uma conta.
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
-|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.| Página de login/Página de cadastro de usuários/Tabela de usuários no banco de dados SQL|Marcos/Maria Eduarda/Djulio|
+|RF-009| Gerenciar cadastros de conta, login e recperação de senhas.| Página de login/Página de cadastro de usuários/Tabela de usuários no banco de dados SQL|Marcos/Maria Eduarda/Djulio/Juliana|
 
+# Tela de Cadastro (RF-009)
+
+Responsável: Maria Eduarda / Marcos Rodrigo / Djulio / Juliana
+
+<img src= "/docs/img/Cadastro.png">
+
+Artefatos da funcionalidade
+●Create.cshtml
+●Login.cshtml
+●site.css
+●cadastro-styles.css
+●cadastro-styles.css
+●crud-styles.css
 
 # Instruções de acesso
 
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
+Abra o visual studio execute o programa em mode http, ao acessar o sistema vá até o botão "Cadastrar", ao clicar no notão será direcionado para a tela de cadastro de usuário e logo depois do cadastro efetuado, será redicionado para a página de CRUD de usuário.
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+# Tela Crud Usuários
+<img src= "/docs/img/Crud_usuarios.png">
 
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+Depois de cadastrar o usuário volte a página inicial e vá até o botão de "Entrar", onde serão solicitados o nome e senha para acesso ao sistema, fazendo assim a validação e autenticação do usuário.
+
+# Tela de Login
+<img src= "/docs/img/Login.png">
 
 > **Links Úteis**:
 >
