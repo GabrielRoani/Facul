@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using acessa_dev_web.Models;
 
@@ -11,9 +12,11 @@ using acessa_dev_web.Models;
 namespace acessa_dev_web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251031230707_M02-AddTableOcorrencias")]
+    partial class M02AddTableOcorrencias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,62 +24,6 @@ namespace acessa_dev_web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("acessa_dev_web.Models.Avaliacao", b =>
-                {
-                    b.Property<int>("idAvaliacao")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idAvaliacao"));
-
-                    b.Property<DateTime>("Data")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DescricaoAvaliacao")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ValorAvaliacao")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idLocal")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idUsuario")
-                        .HasColumnType("int");
-
-                    b.HasKey("idAvaliacao");
-
-                    b.ToTable("Avaliacoes");
-                });
-
-            modelBuilder.Entity("acessa_dev_web.Models.Local", b =>
-                {
-                    b.Property<int>("idLocal")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idLocal"));
-
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("Latitude")
-                        .HasColumnType("real");
-
-                    b.Property<float>("Longitude")
-                        .HasColumnType("real");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("idLocal");
-
-                    b.ToTable("Locais");
-                });
 
             modelBuilder.Entity("acessa_dev_web.Models.Ocorrencia", b =>
                 {
