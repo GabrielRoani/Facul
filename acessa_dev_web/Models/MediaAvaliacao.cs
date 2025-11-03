@@ -9,13 +9,17 @@ namespace acessa_dev_web.Models
         [Key]
         public int idMediaAvaliacao { get; set; }
 
-        [ForeignKey("idLocal")]
         public int idLocal { get; set; }
-        
+
+        [ForeignKey("idLocal")]
+        public Local Local { get; set; }
+
         public int QtdAvaliacoes { get; set; }
 
         public float VlUltimaAvaliacao { get; set; }
-        
+
+        public float VlUltimaAvaliacaoMedia { get; set; }
+
         public float AvaliacaoMedia { get; set; }
     }
 }
