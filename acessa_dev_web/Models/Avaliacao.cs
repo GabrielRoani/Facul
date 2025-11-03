@@ -20,10 +20,14 @@ namespace acessa_dev_web.Models
         [Required(ErrorMessage = "O campo Data é obrigatório!")]
         public DateTime Data { get; set; }
 
-        [ForeignKey("idUsuario")]
         public int idUsuario { get; set; }
 
-        [ForeignKey("idlocal")]
+        [ForeignKey("idUsuario")]
+        public Usuario Usuario { get; set; }
+
         public int idLocal { get; set; }
+
+        [ForeignKey("idLocal")]
+        public Local Local { get; set; }
     }
 }

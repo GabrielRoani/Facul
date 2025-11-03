@@ -12,8 +12,8 @@ using acessa_dev_web.Models;
 namespace acessa_dev_web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251031233701_M04-AddTableLocais")]
-    partial class M04AddTableLocais
+    [Migration("20251103191409_M02-AddTabelasOcor_Aval_Locais_MediaAval")]
+    partial class M02AddTabelasOcor_Aval_Locais_MediaAval
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,10 @@ namespace acessa_dev_web.Migrations
 
                     b.HasKey("idAvaliacao");
 
+                    b.HasIndex("idLocal");
+
+                    b.HasIndex("idUsuario");
+
                     b.ToTable("Avaliacoes");
                 });
 
@@ -79,6 +83,31 @@ namespace acessa_dev_web.Migrations
                     b.HasKey("idLocal");
 
                     b.ToTable("Locais");
+                });
+
+            modelBuilder.Entity("acessa_dev_web.Models.MediaAvaliacao", b =>
+                {
+                    b.Property<int>("idMediaAvaliacao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idMediaAvaliacao"));
+
+                    b.Property<float>("AvaliacaoMedia")
+                        .HasColumnType("real");
+
+                    b.Property<int>("QtdAvaliacoes")
+                        .HasColumnType("int");
+
+                    b.Property<float>("VlUltimaAvaliacao")
+                        .HasColumnType("real");
+
+                    b.Property<int>("idLocal")
+                        .HasColumnType("int");
+
+                    b.HasKey("idMediaAvaliacao");
+
+                    b.ToTable("MediaAvaliacoes");
                 });
 
             modelBuilder.Entity("acessa_dev_web.Models.Ocorrencia", b =>
@@ -113,6 +142,10 @@ namespace acessa_dev_web.Migrations
 
                     b.HasKey("idOcorrencia");
 
+                    b.HasIndex("idLocal");
+
+                    b.HasIndex("idUsuario");
+
                     b.ToTable("Ocorrencias");
                 });
 
@@ -138,6 +171,51 @@ namespace acessa_dev_web.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("acessa_dev_web.Models.Avaliacao", b =>
+                {
+                    b.HasOne("acessa_dev_web.Models.Local", "Local")
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("idLocal")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("acessa_dev_web.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("idUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Local");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("acessa_dev_web.Models.Ocorrencia", b =>
+                {
+                    b.HasOne("acessa_dev_web.Models.Local", "Local")
+                        .WithMany("Ocorrencias")
+                        .HasForeignKey("idLocal")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("acessa_dev_web.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("idUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Local");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("acessa_dev_web.Models.Local", b =>
+                {
+                    b.Navigation("Avaliacoes");
+
+                    b.Navigation("Ocorrencias");
                 });
 #pragma warning restore 612, 618
         }

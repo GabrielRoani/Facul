@@ -23,5 +23,8 @@ namespace acessa_dev_web.Models
         [Required(ErrorMessage = "O campo Longitude é obrigatório!")]
         public float Longitude { get; set; }
 
+        public ICollection<Ocorrencia> Ocorrencias { get; set; }
+        public ICollection<Avaliacao> Avaliacoes { get; set; }
+
     }
 }

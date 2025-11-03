@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\MapScript.js",
+      "PackagePath": "staticwebassets\\js\\MapScript.js"
+    },
+    {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

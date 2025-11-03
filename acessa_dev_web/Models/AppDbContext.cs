@@ -10,6 +10,6 @@ namespace acessa_dev_web.Models
         public DbSet<Ocorrencia> Ocorrencias { get; set; }
         public DbSet<Local> Locais { get; set; }
         public DbSet<Avaliacao> Avaliacoes { get; set; }
+        public DbSet<MediaAvaliacao> MediaAvaliacoes { get; set; }
     }
  }
-
