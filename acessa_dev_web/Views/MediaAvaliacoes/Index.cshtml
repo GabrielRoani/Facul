@@ -1,0 +1,59 @@
+﻿@model IEnumerable<acessa_dev_web.Models.MediaAvaliacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdAvaliacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VlUltimaAvaliacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VlUltimaAvaliacaoMedia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvaliacaoMedia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdAvaliacoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlUltimaAvaliacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlUltimaAvaliacaoMedia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvaliacaoMedia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idMediaAvaliacao">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idMediaAvaliacao">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idMediaAvaliacao">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
