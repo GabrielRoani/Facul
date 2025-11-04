@@ -1,0 +1,58 @@
+﻿@model acessa_dev_web.Models.Ocorrencia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ocorrencia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DescricaoOcorrencia" class="control-label"></label>
+                <input asp-for="DescricaoOcorrencia" class="form-control" />
+                <span asp-validation-for="DescricaoOcorrencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <select asp-for="Categoria" class="form-control"></select>
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Severidade" class="control-label"></label>
+                <select asp-for="Severidade" class="form-control"></select>
+                <span asp-validation-for="Severidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idUsuario" class="control-label"></label>
+                <select asp-for="idUsuario" class ="form-control" asp-items="ViewBag.idUsuario"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="idLocal" class="control-label"></label>
+                <select asp-for="idLocal" class ="form-control" asp-items="ViewBag.idLocal"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
