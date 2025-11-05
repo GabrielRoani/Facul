@@ -38,27 +38,27 @@ namespace acessa_dev_web.Models
     }
 
     public enum Categoria
-        {
-            [Display(Name = "Iluminação")]
-            Iluminacao,
+    {
+        [Display(Name = "Iluminação")]
+        Iluminacao,
 
-            [Display(Name = "Pavimentação Tátil")]
-            Pavimentacao,
+        [Display(Name = "Pavimentação Tátil")]
+        Pavimentacao,
 
-            [Display(Name = "Sanitários como Acessibilidade")]
-            Sanitarios,
+        [Display(Name = "Sanitários como Acessibilidade")]
+        Sanitarios,
 
-            [Display(Name = "Rampas de Acesso")]
-            Transporte,
+        [Display(Name = "Rampas de Acesso")]
+        Transporte,
 
-            [Display(Name = "Calçadas rebaixadas")]
-            Calcada,
+        [Display(Name = "Calçadas rebaixadas")]
+        Calcada,
 
-            [Display(Name = "Calçadas rebaixadas")]    
-            Elevadores
+        [Display(Name = "Calçadas rebaixadas")]    
+        Elevadores
     }
 
-public enum Severidade
+    public enum Severidade
     {
         Alta,
         Média,
