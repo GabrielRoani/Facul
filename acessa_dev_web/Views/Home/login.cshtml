@@ -6,10 +6,8 @@
     <meta name="description" content="Faça login no Acessa+ para reportar e acompanhar problemas de acessibilidade">
     <title>Login - Acessa+</title>
     <link rel="stylesheet" href="~/css/login-styles.css" asp-append-version="true" />
-
 </head>
 <body>
-
     <div class="login-container">
         <div class="login-card">
             <div class="login-header">
@@ -17,7 +15,7 @@
                 <p class="subtitle">Bem-vindo de volta!</p>
             </div>
 
-            <form class="login-form" action="Login" method="POST">
+            <form class="login-form" action="@Url.Action("Login", "Usuarios")" method="POST">
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email"
@@ -44,7 +42,7 @@
                         <input type="checkbox" name="lembrar" id="lembrar">
                         <span class="checkbox-label">Lembrar-me</span>
                     </label>
-                    <a href="recuperar-senha.html" class="link-secundario">Esqueceu a senha?</a>
+                    <a href="#" class="link-secundario">Esqueceu a senha?</a>
                 </div>
 
                 <button type="submit" class="btn-primary">Entrar</button>
@@ -53,11 +51,10 @@
                     <span>ou</span>
                 </div>
 
-                <!--<a href="cadastro.html" class="btn-secondary">Criar nova conta</a>-->
-               <a href="../Usuarios" class="btn-secondary">Criar nova conta</a>
+                <a href="@Url.Action("Create", "Usuarios")" class="btn-secondary">Criar nova conta</a>
 
                 <p class="back-home">
-                    <a href="index.html" class="link-secundario">← Voltar para a página inicial</a>
+                    <a href="@Url.Action("Index", "Home")" class="link-secundario">← Voltar para a página inicial</a>
                 </p>
             </form>
         </div>
@@ -90,6 +87,5 @@
     </div>
 
     <script src="~/js/login-script.js"></script>
-
 </body>
 </html>

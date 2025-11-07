@@ -21,7 +21,9 @@ namespace acessa_dev_web.Controllers
         // GET: Ocorrencias
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Ocorrencias.Include(o => o.Local).Include(o => o.Usuario);
+            var appDbContext = _context.Ocorrencias
+                .Include(o => o.Local)
+                .Include(o => o.Usuario);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -48,14 +50,13 @@ namespace acessa_dev_web.Controllers
         // GET: Ocorrencias/Create
         public IActionResult Create()
         {
+            // Garantir que os dados estão sendo carregados
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco");
             ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome");
             return View();
         }
 
         // POST: Ocorrencias/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idUsuario,idLocal")] Ocorrencia ocorrencia)
@@ -66,6 +67,8 @@ namespace acessa_dev_web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            // Recarregar os dados se houver erro
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", ocorrencia.idLocal);
             ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
             return View(ocorrencia);
@@ -90,8 +93,6 @@ namespace acessa_dev_web.Controllers
         }
 
         // POST: Ocorrencias/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idUsuario,idLocal")] Ocorrencia ocorrencia)

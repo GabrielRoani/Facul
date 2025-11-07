@@ -1,59 +1,120 @@
 ﻿@model IEnumerable<acessa_dev_web.Models.Avaliacao>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Avaliações - Acessa+";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoAvaliacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorAvaliacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Data)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Local)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoAvaliacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorAvaliacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Local.Endereco)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.idAvaliacao">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idAvaliacao">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idAvaliacao">Delete</a>
-            </td>
-        </tr>
+@section Styles {
+    <link rel="stylesheet" href="~/css/avaliacoes.css" />
 }
-    </tbody>
-</table>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Avaliações</h1>
+        <p class="page-subtitle">Gerencie as avaliações de acessibilidade dos locais</p>
+    </div>
+
+    <div class="crud-container">
+        <!-- Card de Estatísticas -->
+        <div class="stats-card">
+            <div class="stat-item">
+                <span class="stat-number">@Model.Count()</span>
+                <span class="stat-label">Total de Avaliações</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">@(Model.Any() ? Model.Average(a => a.ValorAvaliacao).ToString("F1") : "0.0")</span>
+                <span class="stat-label">Média de Notas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">@Model.Count()</span>
+                <span class="stat-label">Avaliações</span>
+            </div>
+        </div>
+
+        <!-- Barra de Ações -->
+        <div class="action-bar">
+            <a href="@Url.Action("Create")" class="btn btn-primary">
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 5v14M5 12h14" />
+                </svg>
+                Nova Avaliação
+            </a>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar avaliações..." class="form-input">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tabela de Avaliações -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                        <th>Nota</th>
+                        <th>Usuário</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="avaliacao-title">
+                                    <strong>@(item.DescricaoAvaliacao.Length > 50 ? item.DescricaoAvaliacao.Substring(0, 50) + "..." : item.DescricaoAvaliacao)</strong>
+                                </div>
+                            </td>
+                            <td>@item.Local?.Endereco</td>
+                            <td>
+                                <span class="rating-display">
+                                    @for (int i = 0; i < item.ValorAvaliacao; i++)
+                                    {
+                                        <text>★</text>
+                                    }
+                                    @for (int i = item.ValorAvaliacao; i < 5; i++)
+                                    {
+                                        <text>☆</text>
+                                    }
+                                </span>
+                            </td>
+                            <td>@item.Usuario?.Nome</td>
+                            <td>@item.Data.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="@Url.Action("Edit", new { id = item.idAvaliacao })" class="btn btn-sm btn-secondary" title="Editar">
+                                        ✏️ Editar
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.idAvaliacao })" class="btn btn-sm btn-outline" title="Detalhes">
+                                        👁️ Detalhes
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.idAvaliacao })" class="btn btn-sm btn-danger" title="Excluir">
+                                        🗑️ Excluir
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                📝 Nenhuma avaliação encontrada
+                                <br><small>Clique em "Nova Avaliação" para começar</small>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/avaliacoes.js"></script>
+}

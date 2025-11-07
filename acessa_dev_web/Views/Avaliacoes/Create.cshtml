@@ -1,48 +1,75 @@
 ﻿@model acessa_dev_web.Models.Avaliacao
-
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nova Avaliação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/avaliacoes.css" />
+}
 
-<h4>Avaliacao</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Nova Avaliação</h1>
+        <p class="page-subtitle">Adicione uma nova avaliação de acessibilidade</p>
+    </div>
+
+    <div class="crud-container">
+        <form asp-action="Create" class="modal-form">
+            @Html.AntiForgeryToken()
+
             <div class="form-group">
-                <label asp-for="DescricaoAvaliacao" class="control-label"></label>
-                <input asp-for="DescricaoAvaliacao" class="form-control" />
-                <span asp-validation-for="DescricaoAvaliacao" class="text-danger"></span>
+                <label asp-for="DescricaoAvaliacao" class="form-label">Descrição *</label>
+                <textarea asp-for="DescricaoAvaliacao" class="form-input" rows="4" required maxlength="500" placeholder="Descreva detalhes sobre a acessibilidade do local..."></textarea>
+                <span asp-validation-for="DescricaoAvaliacao" class="validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ValorAvaliacao" class="control-label"></label>
-                <input asp-for="ValorAvaliacao" class="form-control" />
-                <span asp-validation-for="ValorAvaliacao" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="ValorAvaliacao" class="form-label">Nota *</label>
+                    <div class="rating-stars" id="ratingStars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" asp-for="ValorAvaliacao" id="valorAvaliacao" required>
+                    <span asp-validation-for="ValorAvaliacao" class="validation-error"></span>
+                    <small class="form-hint">Clique nas estrelas para dar a nota</small>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Data" class="form-label">Data *</label>
+                    <input type="datetime-local" asp-for="Data" class="form-input" required>
+                    <span asp-validation-for="Data" class="validation-error"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-                <span asp-validation-for="Data" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="idLocal" class="form-label">Local *</label>
+                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-input" required>
+                        <option value="">Selecione um local...</option>
+                    </select>
+                    <span asp-validation-for="idLocal" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="idUsuario" class="form-label">Usuário *</label>
+                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-input" required>
+                        <option value="">Selecione um usuário...</option>
+                    </select>
+                    <span asp-validation-for="idUsuario" class="validation-error"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="idUsuario" class="control-label"></label>
-                <select asp-for="idUsuario" class ="form-control" asp-items="ViewBag.idUsuario"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="idLocal" class="control-label"></label>
-                <select asp-for="idLocal" class ="form-control" asp-items="ViewBag.idLocal"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="modal-actions">
+                <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Salvar Avaliação</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+@section Scripts {
+    <script src="~/js/avaliacoes.js"></script>
+}

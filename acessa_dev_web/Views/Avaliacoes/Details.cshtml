@@ -1,48 +1,108 @@
 ﻿@model acessa_dev_web.Models.Avaliacao
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Avaliação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/avaliacoes.css" />
+}
 
-<div>
-    <h4>Avaliacao</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DescricaoAvaliacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DescricaoAvaliacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorAvaliacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorAvaliacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Data)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Local)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Local.Endereco)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Detalhes da Avaliação</h1>
+        <p class="page-subtitle">Visualize os detalhes completos da avaliação</p>
+    </div>
+
+    <div class="crud-container">
+        <div class="details-card">
+            <div class="details-section">
+                <h3 class="details-title">Informações da Avaliação</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <label class="detail-label">Descrição:</label>
+                        <span class="detail-value">@Model.DescricaoAvaliacao</span>
+                    </div>
+                    <div class="detail-item">
+                        <label class="detail-label">Nota:</label>
+                        <span class="detail-value rating-display">
+                            @for (int i = 0; i < Model.ValorAvaliacao; i++)
+                            {
+                                <text>★</text>
+                            }
+                            @for (int i = Model.ValorAvaliacao; i < 5; i++)
+                            {
+                                <text>☆</text>
+                            }
+                            (@Model.ValorAvaliacao/5)
+                        </span>
+                    </div>
+                    <div class="detail-item">
+                        <label class="detail-label">Data:</label>
+                        <span class="detail-value">@Model.Data.ToString("dd/MM/yyyy HH:mm")</span>
+                    </div>
+                    <div class="detail-item">
+                        <label class="detail-label">Local:</label>
+                        <span class="detail-value">@Model.Local?.Endereco</span>
+                    </div>
+                    <div class="detail-item">
+                        <label class="detail-label">Usuário:</label>
+                        <span class="detail-value">@Model.Usuario?.Nome</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <a href="@Url.Action("Edit", new { id = Model.idAvaliacao })" class="btn btn-secondary">Editar</a>
+            <a href="@Url.Action("Index")" class="btn btn-outline">Voltar para a Lista</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.idAvaliacao">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<style>
+    .details-card {
+        background: var(--fundo-principal);
+        border-radius: var(--borda-radius);
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .details-section {
+        margin-bottom: 2rem;
+    }
+
+    .details-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--texto-principal);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--fundo-secundario);
+    }
+
+    .details-grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem;
+        background: var(--fundo-secundario);
+        border-radius: var(--borda-radius);
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: var(--texto-principal);
+        min-width: 120px;
+        margin-right: 1rem;
+    }
+
+    .detail-value {
+        color: var(--texto-secundario);
+        flex: 1;
+    }
+</style>

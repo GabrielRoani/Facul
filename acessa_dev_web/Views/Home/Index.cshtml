@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Mapeamento de Acessibilidade";
     Layout = "_Layout";
 }
@@ -18,19 +17,19 @@
                     Juntos, podemos transformar o espaço urbano para todos.
                 </p>
                 <div class="hero-actions">
-                    <button class="btn btn-primary btn-large" id="reportarBtn">
+                    <a href="@Url.Action("Create", "Ocorrencias")" class="btn btn-primary btn-large" id="reportarBtn">
                         <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 5v14M5 12h14" />
                         </svg>
                         Reportar Ocorrência
-                    </button>
-                    <button class="btn btn-outline btn-large">
+                    </a>
+                    <a href="@Url.Action("Maps", "Home")" class="btn btn-outline btn-large">
                         <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                         </svg>
                         Ver Mapa
-                    </button>
+                    </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -56,19 +55,16 @@
 
 <section id="mapa" class="map-section">
     <div class="container">
-
         <div class="map-content">
             <div class="map-info">
                 <h2 class="section-title">Explore o Mapa Interativo</h2>
                 <p class="map-description">
                     Visualize ocorrências reportadas, avaliações de locais e identifique áreas com maior necessidade de intervenção.
                 </p>
-
-                <button class="btn btn-primary" id="abrirMapa">
+                <a href="@Url.Action("Maps", "Home")" class="btn btn-primary" id="abrirMapa">
                     Acessar Mapa Completo
-                </button>
+                </a>
             </div>
-
             <div class="map-preview" style="margin-top:20px;">
                 <div class="map-placeholder" id="mapPlaceholder" style="height:300px; border-radius:12px; overflow:hidden;">
                     <div id="mapMini" style="width:100%; height:100%;"></div>
@@ -76,17 +72,6 @@
             </div>
         </div>
     </div>
-    <div class="mapa-container">
-        <div id="mapMini"></div>
-
-        <div class="filtros-mini">
-            <h4>Filtros</h4>
-            <label><input type="checkbox" id="chkBar" checked> Bares / Restaurantes</label>
-            <label><input type="checkbox" id="chkSchool" checked> Escolas / Universidades</label>
-            <label><input type="checkbox" id="chkHospital" checked> Hospitais / Clínicas</label>
-        </div>
-    </div>
-
 </section>
 
 <section class="categories">
@@ -95,12 +80,36 @@
         <p class="section-subtitle">Reporte diferentes tipos de barreiras e pontos acessíveis</p>
 
         <div class="category-grid">
-            <div class="category-card"><div class="category-icon">🚶</div><h3 class="category-title">Calçadas</h3><p class="category-description">Buracos, desníveis, obstruções</p></div>
-            <div class="category-card"><div class="category-icon">♿</div><h3 class="category-title">Rampas</h3><p class="category-description">Ausência ou inadequação de rampas</p></div>
-            <div class="category-card"><div class="category-icon">🚻</div><h3 class="category-title">Banheiros</h3><p class="category-description">Sanitários não adaptados</p></div>
-            <div class="category-card"><div class="category-icon">🅿️</div><h3 class="category-title">Estacionamento</h3><p class="category-description">Vagas para pessoas com deficiência</p></div>
-            <div class="category-card"><div class="category-icon">🏢</div><h3 class="category-title">Edifícios</h3><p class="category-description">Acesso a prédios públicos e privados</p></div>
-            <div class="category-card"><div class="category-icon">🚌</div><h3 class="category-title">Transporte</h3><p class="category-description">Ônibus, metrô e pontos de parada</p></div>
+            <div class="category-card">
+                <div class="category-icon">🚶</div>
+                <h3 class="category-title">Calçadas</h3>
+                <p class="category-description">Buracos, desníveis, obstruções</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">♿</div>
+                <h3 class="category-title">Rampas</h3>
+                <p class="category-description">Ausência ou inadequação de rampas</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🚻</div>
+                <h3 class="category-title">Banheiros</h3>
+                <p class="category-description">Sanitários não adaptados</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🅿️</div>
+                <h3 class="category-title">Estacionamento</h3>
+                <p class="category-description">Vagas para pessoas com deficiência</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🏢</div>
+                <h3 class="category-title">Edifícios</h3>
+                <p class="category-description">Acesso a prédios públicos e privados</p>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">🚌</div>
+                <h3 class="category-title">Transporte</h3>
+                <p class="category-description">Ônibus, metrô e pontos de parada</p>
+            </div>
         </div>
     </div>
 </section>
@@ -139,7 +148,7 @@
             <p class="cta-description">
                 Cadastre-se agora e comece a contribuir para cidades mais acessíveis e inclusivas
             </p>
-            <button class="btn btn-primary btn-large">Criar Conta Gratuita</button>
+            <a href="@Url.Action("Create", "Usuarios")" class="btn btn-primary btn-large">Criar Conta Gratuita</a>
         </div>
     </div>
 </section>

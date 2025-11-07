@@ -86,14 +86,6 @@ if (heroStats) {
     statsObserver.observe(heroStats);
 }
 
-// ===== Modal de Reportar Ocorrência (Simulação) =====
-const reportarBtn = document.getElementById('reportarBtn');
-
-if (reportarBtn) {
-    reportarBtn.addEventListener('click', () => {
-        alert('Funcionalidade de reportar ocorrência será implementada na versão completa da aplicação.\n\nVocê será direcionado para um formulário onde poderá:\n• Adicionar fotos/vídeos\n• Informar localização\n• Descrever a ocorrência\n• Categorizar o problema');
-    });
-}
 
 // ===== Interação com Mapa (Simulação) =====
 const mapPlaceholder = document.getElementById('mapPlaceholder');

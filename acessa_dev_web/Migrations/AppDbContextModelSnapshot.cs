@@ -80,6 +80,48 @@ namespace acessa_dev_web.Migrations
                     b.HasKey("idLocal");
 
                     b.ToTable("Locais");
+
+                    b.HasData(
+                        new
+                        {
+                            idLocal = 1,
+                            Endereco = "Praça da Sé, Centro, São Paulo - SP",
+                            Latitude = -23.5505f,
+                            Longitude = -46.6333f,
+                            Nome = "Praça da Sé"
+                        },
+                        new
+                        {
+                            idLocal = 2,
+                            Endereco = "Avenida Paulista, 1000, São Paulo - SP",
+                            Latitude = -23.5631f,
+                            Longitude = -46.654f,
+                            Nome = "Avenida Paulista"
+                        },
+                        new
+                        {
+                            idLocal = 3,
+                            Endereco = "Shopping Center Norte, Tucuruvi, São Paulo - SP",
+                            Latitude = -23.4896f,
+                            Longitude = -46.6104f,
+                            Nome = "Shopping Center Norte"
+                        },
+                        new
+                        {
+                            idLocal = 4,
+                            Endereco = "Parque Ibirapuera, Moema, São Paulo - SP",
+                            Latitude = -23.5875f,
+                            Longitude = -46.6576f,
+                            Nome = "Parque Ibirapuera"
+                        },
+                        new
+                        {
+                            idLocal = 5,
+                            Endereco = "Estação da Luz, Centro, São Paulo - SP",
+                            Latitude = -23.535f,
+                            Longitude = -46.634f,
+                            Nome = "Estação da Luz"
+                        });
                 });
 
             modelBuilder.Entity("acessa_dev_web.Models.MediaAvaliacao", b =>
@@ -173,6 +215,22 @@ namespace acessa_dev_web.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            Nome = "Usuário Demo",
+                            Perfil = 0,
+                            Senha = "123456"
+                        },
+                        new
+                        {
+                            id = 2,
+                            Nome = "Administrador",
+                            Perfil = 2,
+                            Senha = "admin123"
+                        });
                 });
 
             modelBuilder.Entity("acessa_dev_web.Models.Avaliacao", b =>

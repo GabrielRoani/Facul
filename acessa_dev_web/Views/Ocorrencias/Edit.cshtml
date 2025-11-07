@@ -1,61 +1,99 @@
 ﻿@model acessa_dev_web.Models.Ocorrencia
-
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Ocorrência";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/ocorrencias.css" />
+}
 
-<h4>Ocorrencia</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Editar Ocorrência</h1>
+        <p class="page-subtitle">Atualize os dados da ocorrência</p>
+    </div>
+
+    <div class="crud-container">
+        <form asp-action="Edit" class="modal-form" id="ocorrenciaForm">
+            @Html.AntiForgeryToken()
             <input type="hidden" asp-for="idOcorrencia" />
+
             <div class="form-group">
-                <label asp-for="DescricaoOcorrencia" class="control-label"></label>
-                <input asp-for="DescricaoOcorrencia" class="form-control" />
-                <span asp-validation-for="DescricaoOcorrencia" class="text-danger"></span>
+                <label asp-for="DescricaoOcorrencia" class="form-label">Descrição *</label>
+                <textarea asp-for="DescricaoOcorrencia" class="form-input" rows="4" required maxlength="500" placeholder="Descreva detalhes sobre a ocorrência..."></textarea>
+                <span asp-validation-for="DescricaoOcorrencia" class="validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Categoria" class="control-label"></label>
-                <select asp-for="Categoria" class="form-control" asp-items="Html.GetEnumSelectList<Categoria>()"></select>
-                <span asp-validation-for="Categoria" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Categoria" class="form-label">Categoria *</label>
+                    <select asp-for="Categoria" class="form-input" required>
+                        <option value="">Selecione...</option>
+                        <option value="0">Iluminação</option>
+                        <option value="1">Pavimentação Tátil</option>
+                        <option value="2">Sanitários com Acessibilidade</option>
+                        <option value="3">Rampas de Acesso</option>
+                        <option value="4">Calçadas rebaixadas</option>
+                        <option value="5">Elevadores</option>
+                    </select>
+                    <span asp-validation-for="Categoria" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Severidade" class="form-label">Severidade *</label>
+                    <select asp-for="Severidade" class="form-input" required>
+                        <option value="">Selecione...</option>
+                        <option value="0">Alta</option>
+                        <option value="1">Média</option>
+                        <option value="2">Baixa</option>
+                    </select>
+                    <span asp-validation-for="Severidade" class="validation-error"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Severidade" class="control-label"></label>
-                <select asp-for="Severidade" class="form-control" asp-items="Html.GetEnumSelectList<Severidade>()"></select>
-                <span asp-validation-for="Severidade" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="Status" class="form-label">Status *</label>
+                    <select asp-for="Status" class="form-input" required>
+                        <option value="">Selecione...</option>
+                        <option value="0">Funcional</option>
+                        <option value="1">Não Funcional</option>
+                        <option value="2">Inexistente</option>
+                    </select>
+                    <span asp-validation-for="Status" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Data" class="form-label">Data *</label>
+                    <input type="datetime-local" asp-for="Data" class="form-input" required>
+                    <span asp-validation-for="Data" class="validation-error"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<Status>()"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="idLocal" class="form-label">Local *</label>
+                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-input" required>
+                        <option value="">Selecione um local...</option>
+                    </select>
+                    <span asp-validation-for="idLocal" class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="idUsuario" class="form-label">Usuário *</label>
+                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-input" required>
+                        <option value="">Selecione um usuário...</option>
+                    </select>
+                    <span asp-validation-for="idUsuario" class="validation-error"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Data" class="control-label"></label>
-                <input asp-for="Data" class="form-control" />
-                <span asp-validation-for="Data" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="idUsuario" class="control-label"></label>
-                <select asp-for="idUsuario" class="form-control" asp-items="ViewBag.idUsuario"></select>
-                <span asp-validation-for="idUsuario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="idLocal" class="control-label"></label>
-                <select asp-for="idLocal" class="form-control" asp-items="ViewBag.idLocal"></select>
-                <span asp-validation-for="idLocal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="modal-actions">
+                <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Salvar Alterações</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+@section Scripts {
+    <script src="~/js/ocorrencias.js"></script>
+}
