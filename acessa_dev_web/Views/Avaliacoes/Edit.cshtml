@@ -54,14 +54,11 @@
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="idUsuario" class="form-label">Usuário *</label>
-                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-input" required>
-                        <option value="">Selecione um usuário...</option>
-                    </select>
-                    <span asp-validation-for="idUsuario" class="validation-error"></span>
-                </div>
+
+                <!-- Campo oculto do usuário (não editável) -->
+                <input type="hidden" asp-for="idUsuario" />
             </div>
+
 
             <div class="modal-actions">
                 <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>

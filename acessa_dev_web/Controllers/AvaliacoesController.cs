@@ -21,11 +21,34 @@ namespace acessa_dev_web.Controllers
         // GET: Avaliacoes
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Avaliacoes
+            var avaliacoes = await _context.Avaliacoes
                 .Include(a => a.Local)
-                .Include(a => a.Usuario);
-            return View(await appDbContext.ToListAsync());
+                .Include(a => a.Usuario)
+                .ToListAsync();
+
+            // Cálculo da média de notas por local
+            var mediasPorLocal = avaliacoes
+                .GroupBy(a => a.Local.Endereco)
+                .Select(g => new
+                {
+                    Local = g.Key,
+                    Media = g.Average(a => a.ValorAvaliacao)
+                })
+                .ToList();
+
+            // Envia as médias para a View
+            ViewBag.MediasPorLocal = mediasPorLocal
+    .Select(m => new Dictionary<string, object>
+    {
+        { "Local", m.Local },
+        { "Media", m.Media }
+    })
+    .ToList();
+
+
+            return View(avaliacoes);
         }
+
 
         // GET: Avaliacoes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -51,25 +74,36 @@ namespace acessa_dev_web.Controllers
         public IActionResult Create()
         {
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco");
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome");
             return View();
         }
 
         // POST: Avaliacoes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idUsuario,idLocal")] Avaliacao avaliacao)
+        public async Task<IActionResult> Create([Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idLocal")] Avaliacao avaliacao)
         {
             if (ModelState.IsValid)
             {
+                // Pegando ID do usuário logado
+                var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                {
+                    // se não tiver login ativo, retorna erro ou redireciona
+                    return RedirectToAction("Login", "Account");
+                }
+
+                int idUsuario = int.Parse(userIdClaim.Value);
+                avaliacao.idUsuario = idUsuario;
+
                 _context.Add(avaliacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Dashboard", "Homepage");
             }
+
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", avaliacao.idUsuario);
             return View(avaliacao);
         }
+
 
         // GET: Avaliacoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -84,20 +118,50 @@ namespace acessa_dev_web.Controllers
             {
                 return NotFound();
             }
+
+            // Verifica se o usuário logado é o dono da avaliação
+            var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null || avaliacao.idUsuario != int.Parse(userIdClaim.Value))
+            {
+                TempData["MensagemErro"] = "Você não tem permissão para editar esta avaliação.";
+                return RedirectToAction("Index");
+            }
+
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", avaliacao.idUsuario);
             return View(avaliacao);
         }
 
-        // POST: Avaliacoes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idUsuario,idLocal")] Avaliacao avaliacao)
+        public async Task<IActionResult> Edit(int id, [Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idLocal")] Avaliacao avaliacao)
         {
             if (id != avaliacao.idAvaliacao)
             {
                 return NotFound();
             }
+
+            var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            int idUsuarioLogado = int.Parse(userIdClaim.Value);
+
+            var avaliacaoExistente = await _context.Avaliacoes.AsNoTracking().FirstOrDefaultAsync(a => a.idAvaliacao == id);
+            if (avaliacaoExistente == null)
+            {
+                return NotFound();
+            }
+
+            // Verifica se pertence ao usuário logado
+            if (avaliacaoExistente.idUsuario != idUsuarioLogado)
+            {
+                TempData["MensagemErro"] = "Você não tem permissão para editar esta avaliação.";
+                return RedirectToAction("Index");
+            }
+
+            avaliacao.idUsuario = idUsuarioLogado;
 
             if (ModelState.IsValid)
             {
@@ -119,8 +183,8 @@ namespace acessa_dev_web.Controllers
                 }
                 return RedirectToAction("Dashboard", "Homepage");
             }
+
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", avaliacao.idUsuario);
             return View(avaliacao);
         }
 
@@ -136,9 +200,18 @@ namespace acessa_dev_web.Controllers
                 .Include(a => a.Local)
                 .Include(a => a.Usuario)
                 .FirstOrDefaultAsync(m => m.idAvaliacao == id);
+
             if (avaliacao == null)
             {
                 return NotFound();
+            }
+
+            // Verifica se o usuário logado é o dono da avaliação
+            var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null || avaliacao.idUsuario != int.Parse(userIdClaim.Value))
+            {
+                TempData["MensagemErro"] = "Você não tem permissão para excluir esta avaliação.";
+                return RedirectToAction("Index");
             }
 
             return View(avaliacao);
@@ -150,18 +223,35 @@ namespace acessa_dev_web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var avaliacao = await _context.Avaliacoes.FindAsync(id);
-            if (avaliacao != null)
+            if (avaliacao == null)
             {
-                _context.Avaliacoes.Remove(avaliacao);
+                return NotFound();
             }
 
+            var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            int idUsuarioLogado = int.Parse(userIdClaim.Value);
+
+            // Garante que só o dono possa excluir
+            if (avaliacao.idUsuario != idUsuarioLogado)
+            {
+                TempData["MensagemErro"] = "Você não tem permissão para excluir esta avaliação.";
+                return RedirectToAction("Index");
+            }
+
+            _context.Avaliacoes.Remove(avaliacao);
             await _context.SaveChangesAsync();
+
             return RedirectToAction("Dashboard", "Homepage");
         }
-
         private bool AvaliacaoExists(int id)
         {
             return _context.Avaliacoes.Any(e => e.idAvaliacao == id);
         }
+
     }
 }

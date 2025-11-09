@@ -7,6 +7,12 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/avaliacoes.css" />
 }
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MensagemErro"]
+    </div>
+}
 
 <div class="container">
     <div class="page-header">
@@ -15,21 +21,31 @@
     </div>
 
     <div class="crud-container">
-        <!-- Card de Estatísticas -->
+
+        <!-- CARD PRINCIPAL DE ESTATÍSTICAS -->
         <div class="stats-card">
             <div class="stat-item">
                 <span class="stat-number">@Model.Count()</span>
                 <span class="stat-label">Total de Avaliações</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">@(Model.Any() ? Model.Average(a => a.ValorAvaliacao).ToString("F1") : "0.0")</span>
-                <span class="stat-label">Média de Notas</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">@Model.Count()</span>
-                <span class="stat-label">Avaliações</span>
-            </div>
+
+            @if (ViewBag.MediasPorLocal != null)
+            {
+                @foreach (var item in ViewBag.MediasPorLocal)
+                {
+                    <div class="stat-item">
+                        <span class="stat-number">
+                            @(((double)item["Media"]).ToString("F1"))
+                        </span>
+                        <span class="stat-label">@item["Local"]</span>
+                    </div>
+                }
+            }
         </div>
+
+    </div>
+</div>
+
 
         <!-- Barra de Ações -->
         <div class="action-bar">

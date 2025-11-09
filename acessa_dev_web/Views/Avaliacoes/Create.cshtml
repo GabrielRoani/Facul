@@ -6,7 +6,7 @@
 
 @section Styles {
     <link rel="stylesheet" href="~/css/avaliacoes.css" />
-    <link rel="stylesheet" href="~/css/crud-styles.css" /> 
+    <link rel="stylesheet" href="~/css/crud-styles.css" />
 }
 
 <div class="container">
@@ -54,12 +54,11 @@
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
+
+                <!-- Mostra o usuário logado (somente leitura, não enviado no form) -->
                 <div class="form-group">
-                    <label asp-for="idUsuario" class="form-label">Usuário *</label>
-                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-control" required>
-                        <option value="">Selecione um usuário...</option>
-                    </select>
-                    <span asp-validation-for="idUsuario" class="validation-error"></span>
+                    <label class="form-label">Usuário</label>
+                    <input type="text" class="form-control" value="@User.Identity.Name" readonly />
                 </div>
             </div>
 

@@ -159,5 +159,7 @@ namespace acessa_dev_web.Controllers
         {
             return _context.MediaAvaliacoes.Any(e => e.idMediaAvaliacao == id);
         }
+
     }
+
 }
