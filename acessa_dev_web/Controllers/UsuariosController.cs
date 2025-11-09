@@ -77,7 +77,7 @@ namespace acessa_dev_web.Controllers
                 };
 
                 await HttpContext.SignInAsync(principal, props);
-                return Redirect("/");
+                return RedirectToAction("Dashboard", "Homepage");
             }
             else
             {

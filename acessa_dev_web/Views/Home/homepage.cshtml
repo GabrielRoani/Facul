@@ -1,0 +1,283 @@
+﻿@model acessa_dev_web.ViewModels.HomeDashboardViewModel
+@using acessa_dev_web.Models
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Dashboard - Acessa+";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/home-dashboard.css" asp-append-version="true">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a asp-controller="Home" asp-action="Index" class="logo">
+                    Acessa<span>+</span>
+                </a>
+                <nav class="main-nav">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link active">Início</a>
+                    <a asp-controller="Maps" asp-action="Maps" class="nav-link">Mapa</a>
+                    <a href="#" class="nav-link">Sobre</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn" title="Notificações">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-menu">
+                    <button class="user-btn" id="userMenuBtn">
+                        <div class="user-avatar">👤</div>
+                        <span class="user-name">Olá, @User.Identity.Name</span>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a asp-controller="Usuarios" asp-action="Details" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)" class="dropdown-item">Perfil</a>
+                        <a href="#" class="dropdown-item">Minhas Ocorrências</a>
+                        <a href="#" class="dropdown-item">Configurações</a>
+                        <a asp-controller="Usuarios" asp-action="Logout" class="dropdown-item">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <aside class="sidebar">
+            <section class="sidebar-section">
+                <h3 class="sidebar-title">Suas Contribuições</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">@Model.Stats.TotalOcorrencias</div>
+                        <div class="stat-label">Ocorrências</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">@Model.Stats.TotalAvaliacoes</div>
+                        <div class="stat-label">Avaliações</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">@Model.Stats.OcorrenciasResolvidas</div>
+                        <div class="stat-label">Resolvidas</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3 class="sidebar-title">Filtros</h3>
+
+                <div class="filter-group">
+                    <label class="filter-label">Tipo</label>
+                    <select class="filter-select">
+                        <option>Todos</option>
+                        <option>Ocorrências</option>
+                        <option>Avaliações</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Severidade</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Crítica</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Alta</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Média</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Baixa</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Categoria</label>
+                    <div class="category-filters">
+                        <label class="category-chip active" data-category="acessibilidade">
+                            <span class="chip-icon">♿</span>
+                            <span>Acessibilidade</span>
+                        </label>
+                        <label class="category-chip" data-category="seguranca">
+                            <span class="chip-icon">🔒</span>
+                            <span>Segurança</span>
+                        </label>
+                        <label class="category-chip" data-category="infraestrutura">
+                            <span class="chip-icon">🏗️</span>
+                            <span>Infraestrutura</span>
+                        </label>
+                        <label class="category-chip" data-category="servicos">
+                            <span class="chip-icon">🏛️</span>
+                            <span>Serviços</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn-secondary btn-block">Limpar Filtros</button>
+            </section>
+        </aside>
+
+        <div class="content-area">
+            <section class="map-section">
+                <div class="section-header">
+                    <h2 class="section-title">Mapa Interativo</h2>
+                    <a href="@Url.Action("Maps", "Maps")" class="btn btn-primary" style="margin: 0;">
+                        Ver Mapa Completo
+                    </a>
+                </div>
+                <div class="map-container">
+                    <iframe src="@Url.Action("Maps", "Maps")"
+                            class="map-iframe"
+                            title="Mapa de Ocorrências">
+                    </iframe>
+                </div>
+            </section>
+
+            <div class="forms-grid">
+                <section class="form-section">
+                    <h2 class="section-title">Nova Ocorrência</h2>
+                    <p class="section-subtitle">Registre uma nova ocorrência de acessibilidade</p>
+
+                    <form class="form" asp-controller="Ocorrencias" asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaOcorrencia.DescricaoOcorrencia" class="form-label">Descrição *</label>
+                            <textarea asp-for="NovaOcorrencia.DescricaoOcorrencia" class="form-input" placeholder="Descreva detalhes..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaOcorrencia.Categoria" class="form-label">Categoria *</label>
+                            <select asp-for="NovaOcorrencia.Categoria" asp-items="@Html.GetEnumSelectList<Categoria>()" class="form-input" required>
+                                <option value="">Selecione uma categoria</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaOcorrencia.Severidade" class="form-label">Severidade *</label>
+                            <select asp-for="NovaOcorrencia.Severidade" asp-items="@Html.GetEnumSelectList<Severidade>()" class="form-input" required>
+                                <option value="">Selecione a severidade</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaOcorrencia.idLocal" class="form-label">Local *</label>
+                            <select asp-for="NovaOcorrencia.idLocal" asp-items="@(new SelectList(Model.TodosOsLocais, "idLocal", "Nome"))" class="form-input" required>
+                                <option value="">Selecione um local</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Reportar Ocorrência</button>
+                    </form>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="section-title">Avaliar Local</h2>
+                    <p class="section-subtitle">Deixe sua avaliação sobre acessibilidade</p>
+                    <form class="form" asp-controller="Avaliacoes" asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaAvaliacao.idLocal" class="form-label">Local *</label>
+                            <select asp-for="NovaAvaliacao.idLocal" asp-items="@(new SelectList(Model.TodosOsLocais, "idLocal", "Nome"))" class="form-input" required>
+                                <option value="">Selecione um local</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaAvaliacao.ValorAvaliacao" class="form-label">Avaliação *</label>
+                            <div class="rating-input">
+                                <input asp-for="NovaAvaliacao.ValorAvaliacao" type="radio" value="5" id="star5"><label for="star5">⭐⭐⭐⭐⭐</label>
+                                <input asp-for="NovaAvaliacao.ValorAvaliacao" type="radio" value="4" id="star4"><label for="star4">⭐⭐⭐⭐</label>
+                                <input asp-for="NovaAvaliacao.ValorAvaliacao" type="radio" value="3" id="star3"><label for="star3">⭐⭐⭐</label>
+                                <input asp-for="NovaAvaliacao.ValorAvaliacao" type="radio" value="2" id="star2"><label for="star2">⭐⭐</label>
+                                <input asp-for="NovaAvaliacao.ValorAvaliacao" type="radio" value="1" id="star1"><label for="star1">⭐</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NovaAvaliacao.DescricaoAvaliacao" class="form-label">Comentário</label>
+                            <textarea asp-for="NovaAvaliacao.DescricaoAvaliacao" class="form-input" placeholder="Compartilhe sua experiência..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Aspectos Avaliados</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="aspectos" value="rampas">
+                                    <span>Rampas de acesso</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="aspectos" value="elevador">
+                                    <span>Elevador/escada</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="aspectos" value="banheiro">
+                                    <span>Banheiro adaptado</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="aspectos" value="estacionamento">
+                                    <span>Estacionamento adaptado</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Enviar Avaliação</button>
+                    </form>
+                </section>
+            </div>
+
+            <section class="activity-section">
+                <h2 class="section-title">Atividade Recente</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">📍</div>
+                        <div class="activity-content">
+                            <p class="activity-title">Nova ocorrência reportada</p>
+                            <p class="activity-description">Falta de rampa em local público</p>
+                            <p class="activity-time">Há 2 horas</p>
+                        </div>
+                        <span class="activity-status critical">Crítica</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">⭐</div>
+                        <div class="activity-content">
+                            <p class="activity-title">Você avaliou um local</p>
+                            <p class="activity-description">Biblioteca Municipal - 5 estrelas</p>
+                            <p class="activity-time">Há 1 dia</p>
+                        </div>
+                        <span class="activity-status positive">Positivo</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <p class="activity-title">Ocorrência resolvida</p>
+                            <p class="activity-description">Problema de acessibilidade foi corrigido</p>
+                            <p class="activity-time">Há 3 dias</p>
+                        </div>
+                        <span class="activity-status resolved">Resolvido</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button class="fab" title="Nova ocorrência rápida">
+        ➕
+    </button>
+
+    <script src="~/js/home-dashboard.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -64,7 +64,7 @@ namespace acessa_dev_web.Controllers
             {
                 _context.Add(avaliacao);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Dashboard", "Homepage");
             }
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
             ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", avaliacao.idUsuario);
@@ -117,7 +117,7 @@ namespace acessa_dev_web.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Dashboard", "Homepage");
             }
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
             ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", avaliacao.idUsuario);
@@ -156,7 +156,7 @@ namespace acessa_dev_web.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Dashboard", "Homepage");
         }
 
         private bool AvaliacaoExists(int id)

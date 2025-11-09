@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jucmo\\OneDrive\\Área de Trabalho\\Nova pasta\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj": {}
+    "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jucmo\\OneDrive\\Área de Trabalho\\Nova pasta\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj": {
+    "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jucmo\\OneDrive\\Área de Trabalho\\Nova pasta\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj",
+        "projectUniqueName": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj",
         "projectName": "acessa_dev_web",
-        "projectPath": "C:\\Users\\jucmo\\OneDrive\\Área de Trabalho\\Nova pasta\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj",
-        "packagesPath": "C:\\Users\\jucmo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jucmo\\OneDrive\\Área de Trabalho\\Nova pasta\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\obj\\",
+        "projectPath": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\acessa_dev_web.csproj",
+        "packagesPath": "C:\\Users\\medua\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\medua\\OneDrive\\Documentos\\Faculdade\\ADS\\1Semestre\\projetos\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jucmo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\medua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

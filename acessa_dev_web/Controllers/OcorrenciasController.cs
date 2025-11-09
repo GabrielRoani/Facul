@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using acessa_dev_web.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization; 
+
 
 namespace acessa_dev_web.Controllers
 {
@@ -65,7 +68,7 @@ namespace acessa_dev_web.Controllers
             {
                 _context.Add(ocorrencia);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Dashboard", "Homepage");
             }
 
             // Recarregar os dados se houver erro
@@ -120,7 +123,7 @@ namespace acessa_dev_web.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Dashboard", "Homepage");
             }
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", ocorrencia.idLocal);
             ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
@@ -159,7 +162,7 @@ namespace acessa_dev_web.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Dashboard", "Homepage");
         }
 
         private bool OcorrenciaExists(int id)

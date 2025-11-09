@@ -7,7 +7,6 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/ocorrencias.css" />
     <style>
-        /* Reset completo do layout */
         body {
             margin: 0;
             padding: 0;
@@ -30,7 +29,6 @@
             margin: 0 auto;
         }
 
-        /* Garantir que não haja containers interferindo */
         .container, .container-fluid {
             max-width: none !important;
             padding: 0 !important;
@@ -48,7 +46,6 @@
         </div>
 
         <div class="crud-container">
-            <!-- Card de Estatísticas -->
             <div class="stats-card">
                 <div class="stat-item">
                     <span class="stat-number">@Model.Count()</span>
@@ -64,7 +61,6 @@
                 </div>
             </div>
 
-            <!-- Barra de Ações -->
             <div class="action-bar">
                 <a href="@Url.Action("Create")" class="btn btn-primary">
                     <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -81,7 +77,6 @@
                 </div>
             </div>
 
-            <!-- Tabela de Ocorrências -->
             <div class="table-container">
                 <table class="data-table">
                     <thead>

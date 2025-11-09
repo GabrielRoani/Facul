@@ -1,10 +1,12 @@
 wwwroot\css\avaliacoes.css
 wwwroot\css\cadastro-styles.css
 wwwroot\css\crud-styles.css
+wwwroot\css\homepage.css
 wwwroot\css\login-styles.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\avaliacoes.js
+wwwroot\js\home-dashboard.js
 wwwroot\js\MapScript.js
 wwwroot\js\ocorrencias.js
 wwwroot\js\site.js
