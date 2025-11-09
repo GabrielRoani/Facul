@@ -5,7 +5,8 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/ocorrencias.css" />
+    <link rel="stylesheet" href="~/css/avaliacoes.css" />
+    <link rel="stylesheet" href="~/css/crud-styles.css" /> 
 }
 
 <div class="container">
@@ -20,14 +21,14 @@
 
             <div class="form-group">
                 <label asp-for="DescricaoOcorrencia" class="form-label">Descrição *</label>
-                <textarea asp-for="DescricaoOcorrencia" class="form-input" rows="4" required maxlength="500" placeholder="Descreva detalhes sobre a ocorrência..."></textarea>
+                <textarea asp-for="DescricaoOcorrencia" class="form-control" rows="4" required maxlength="500" placeholder="Descreva detalhes sobre a ocorrência..."></textarea>
                 <span asp-validation-for="DescricaoOcorrencia" class="validation-error"></span>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label asp-for="Categoria" class="form-label">Categoria *</label>
-                    <select asp-for="Categoria" class="form-input" required>
+                    <select asp-for="Categoria" class="form-control" required>
                         <option value="">Selecione...</option>
                         <option value="0">Iluminação</option>
                         <option value="1">Pavimentação Tátil</option>
@@ -40,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Severidade" class="form-label">Severidade *</label>
-                    <select asp-for="Severidade" class="form-input" required>
+                    <select asp-for="Severidade" class="form-control" required>
                         <option value="">Selecione...</option>
                         <option value="0">Alta</option>
                         <option value="1">Média</option>
@@ -53,7 +54,7 @@
             <div class="form-row">
                 <div class="form-group">
                     <label asp-for="Status" class="form-label">Status *</label>
-                    <select asp-for="Status" class="form-input" required>
+                    <select asp-for="Status" class="form-control" required>
                         <option value="">Selecione...</option>
                         <option value="0">Funcional</option>
                         <option value="1">Não Funcional</option>
@@ -63,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Data" class="form-label">Data *</label>
-                    <input type="datetime-local" asp-for="Data" class="form-input" required>
+                    <input type="datetime-local" asp-for="Data" class="form-control" required>
                     <span asp-validation-for="Data" class="validation-error"></span>
                 </div>
             </div>
@@ -71,14 +72,14 @@
             <div class="form-row">
                 <div class="form-group">
                     <label asp-for="idLocal" class="form-label">Local *</label>
-                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-input" required>
+                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-control" required>
                         <option value="">Selecione um local...</option>
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="idUsuario" class="form-label">Usuário *</label>
-                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-input" required>
+                    <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-control" required>
                         <option value="">Selecione um usuário...</option>
                     </select>
                     <span asp-validation-for="idUsuario" class="validation-error"></span>
