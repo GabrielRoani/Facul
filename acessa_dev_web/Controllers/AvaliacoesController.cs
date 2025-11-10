@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using acessa_dev_web.Models;
+using System.Security.Claims;
 
 namespace acessa_dev_web.Controllers
 {
@@ -73,37 +74,66 @@ namespace acessa_dev_web.Controllers
         // GET: Avaliacoes/Create
         public IActionResult Create()
         {
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco");
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome");
+            var locais = _context.Locais
+                .Select(l => new { l.idLocal, l.Nome, l.Endereco, l.Latitude, l.Longitude })
+                .ToList();
+            ViewBag.LocaisJson = System.Text.Json.JsonSerializer.Serialize(locais);
+
+            // Obtém o id e nome do usuário autenticado
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            var userId = userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.id == userId);
+
+            ViewBag.UsuarioId = userId;
+            ViewBag.UsuarioNome = usuario?.Nome ?? "Usuário";
+
             return View();
         }
 
         // POST: Avaliacoes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idLocal")] Avaliacao avaliacao)
+        public async Task<IActionResult> Create([Bind("idAvaliacao,DescricaoAvaliacao,ValorAvaliacao,Data,idUsuario,idLocal")] Avaliacao avaliacao, [Bind("Nome,Endereco,Latitude,Longitude")] Local local)
         {
             if (ModelState.IsValid)
             {
                 // Pegando ID do usuário logado
-                var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-                if (userIdClaim == null)
-                {
-                    // se não tiver login ativo, retorna erro ou redireciona
-                    return RedirectToAction("Login", "Account");
-                }
+                //var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+                //if (userIdClaim == null)
+                //{
+                // se não tiver login ativo, retorna erro ou redireciona
+                //return RedirectToAction("Login", "Account");
+                //}
 
-                int idUsuario = int.Parse(userIdClaim.Value);
-                avaliacao.idUsuario = idUsuario;
+                //int idUsuario = int.Parse(userIdClaim.Value);
+                //avaliacao.idUsuario = idUsuario;
+
+                // Verifica se já existe um local com o mesmo Nome e Endereco
+                var localExistente = await _context.Locais
+                        .FirstOrDefaultAsync(l => l.Nome == local.Nome && l.Endereco == local.Endereco);
+
+                if (localExistente == null)
+                {
+                    // Se não existe, adiciona o novo local
+                    _context.Locais.Add(local);
+                    await _context.SaveChangesAsync();
+                    avaliacao.idLocal = local.idLocal; // associa o novo local à avaliação
+                }
+                else
+                {
+                    // Se já existe, associa o local existente à avaliação
+                    avaliacao.idLocal = localExistente.idLocal;
+                }
 
                 _context.Add(avaliacao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Dashboard", "Homepage");
             }
 
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", avaliacao.idLocal);
             return View(avaliacao);
         }
-
 
         // GET: Avaliacoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -127,7 +157,7 @@ namespace acessa_dev_web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", avaliacao.idLocal);
             return View(avaliacao);
         }
 
@@ -184,7 +214,7 @@ namespace acessa_dev_web.Controllers
                 return RedirectToAction("Dashboard", "Homepage");
             }
 
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", avaliacao.idLocal);
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", avaliacao.idLocal);
             return View(avaliacao);
         }
 

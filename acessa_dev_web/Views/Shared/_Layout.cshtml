@@ -24,6 +24,10 @@
                         <li><a href="/" class="nav-link">Início</a></li>
                         <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
                         <li><a href="#mapa" class="nav-link">Mapa</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="/Homepage/Dashboard" class="nav-link">DashBoard</a></li>
+                        }
                         @if (User.IsInRole("Admin"))
                         {
                             <li><a href="/Usuarios" class="nav-link">Usuários</a></li>

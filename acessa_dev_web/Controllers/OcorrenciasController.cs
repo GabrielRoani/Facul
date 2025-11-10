@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace acessa_dev_web.Controllers
 {
+    [Authorize]
     public class OcorrenciasController : Controller
     {
         private readonly AppDbContext _context;

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\acessa_dev_web.ve1l3mhihj.bundle.scp.css"
     },
     {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\avaliacoes.css",
+      "PackagePath": "staticwebassets\\css\\avaliacoes.css"
+    },
+    {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\cadastro-styles.css",
       "PackagePath": "staticwebassets\\css\\cadastro-styles.css"
     },
@@ -13,8 +17,16 @@
       "PackagePath": "staticwebassets\\css\\crud-styles.css"
     },
     {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\homepage.css",
+      "PackagePath": "staticwebassets\\css\\homepage.css"
+    },
+    {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\login-styles.css",
       "PackagePath": "staticwebassets\\css\\login-styles.css"
+    },
+    {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\ocorrencias.css",
+      "PackagePath": "staticwebassets\\css\\ocorrencias.css"
     },
     {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\site.css",
@@ -27,6 +39,18 @@
     {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\MapScript.js",
       "PackagePath": "staticwebassets\\js\\MapScript.js"
+    },
+    {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\avaliacoes.js",
+      "PackagePath": "staticwebassets\\js\\avaliacoes.js"
+    },
+    {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\home-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\home-dashboard.js"
+    },
+    {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\ocorrencias.js",
+      "PackagePath": "staticwebassets\\js\\ocorrencias.js"
     },
     {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\site.js",
