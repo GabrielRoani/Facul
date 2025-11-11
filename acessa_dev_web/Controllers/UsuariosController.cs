@@ -45,13 +45,13 @@ namespace acessa_dev_web.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(Usuario usuario)
         {
-            // Busca pelo nome do usuário
+            // Busca pelo EMAIL do usuário
             var dados = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Nome == usuario.Nome);
+                .FirstOrDefaultAsync(u => u.Email == usuario.Email); // <-- MUDANÇA AQUI
 
             if (dados == null || !BCrypt.Net.BCrypt.Verify(usuario.Senha, dados.Senha))
             {
-                ViewBag.Message = "Usuário ou senha inválidos!";
+                ViewBag.Message = "Email ou senha inválidos!"; // <-- MUDANÇA AQUI
                 return View();
             }
 
@@ -63,7 +63,8 @@ namespace acessa_dev_web.Controllers
                 {
                     new Claim(ClaimTypes.Name, dados.Nome),
                     new Claim(ClaimTypes.NameIdentifier, dados.id.ToString()),
-                    new Claim(ClaimTypes.Role, dados.Perfil.ToString())
+                    new Claim(ClaimTypes.Role, dados.Perfil.ToString()),
+                    new Claim(ClaimTypes.Email, dados.Email) // Adicionando email aos claims
                 };
 
                 var usuarioIdentity = new ClaimsIdentity(claims, "Login");
@@ -81,7 +82,7 @@ namespace acessa_dev_web.Controllers
             }
             else
             {
-                ViewBag.Message = "Usuário ou senha inválidos!";
+                ViewBag.Message = "Email ou senha inválidos!"; // <-- MUDANÇA AQUI
             }
             return View();
 
@@ -119,11 +120,9 @@ namespace acessa_dev_web.Controllers
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,Nome,Senha,Perfil")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("id,Nome,Email,Senha,Perfil")] Usuario usuario) // <-- MUDANÇA AQUI
         {
             if (ModelState.IsValid)
             {
@@ -153,11 +152,9 @@ namespace acessa_dev_web.Controllers
         }
 
         // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Nome,Senha,Perfil")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Nome,Email,Senha,Perfil")] Usuario usuario) // <-- MUDANÇA AQUI
         {
             if (id != usuario.id)
             {

@@ -7,32 +7,6 @@
     ViewData["Title"] = "Login";
 }
 
-<!--<h1>Login</h1>
-
-<h4>Usuario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Acessar" class="btn btn-primary" />
-            </div>
-        </form>
-        <h3>@ViewBag.Message</h3>
-    </div>
-</div>-->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,33 +25,12 @@
             </div>
 
             <form class="login-form" action="Login" method="POST">
-                
-                <!--<div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           placeholder="seu@email.com"
-                           required
-                           autocomplete="email">
-                </div>-->
-
+           
                 <div class="form-group">
-                    <label asp-for="Nome" class="control-label"></label>
-                    <input asp-for="Nome" class="form-control" />
-                    <span asp-validation-for="Nome" class="text-danger"></span>
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="seu@email.com" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
-
-                <!--<div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password"
-                           id="senha"
-                           name="senha"
-                           placeholder="Digite sua senha"
-                           required
-                           minlength="6"
-                           autocomplete="current-password">
-                </div>-->
 
                 <div class="form-group">
                     <label asp-for="Senha" class="control-label"></label>
@@ -99,7 +52,6 @@
                     <span>ou</span>
                 </div>
 
-                <!--<a href="cadastro.html" class="btn-secondary">Criar nova conta</a>-->
                 <a href="../Usuarios/Create" class="btn-secondary">Criar nova conta</a>
 
                 <p class="back-home">
@@ -110,30 +62,7 @@
         </div>
 
         <div class="login-info">
-            <div class="info-content">
-                <h2>Faça parte da mudança</h2>
-                <p>Com o Acessa+, você pode reportar problemas de acessibilidade e ajudar a construir cidades mais inclusivas para todos.</p>
-
-                <div class="features-list">
-                    <div class="feature-item">
-                        <span class="feature-icon">📍</span>
-                        <span>Reporte ocorrências com localização precisa</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">⭐</span>
-                        <span>Avalie locais acessíveis</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">📊</span>
-                        <span>Acompanhe o progresso das melhorias</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🤝</span>
-                        <span>Conecte-se com a comunidade</span>
-                    </div>
-                </div>
             </div>
-        </div>
     </div>
 
     <script src="~/js/login-script.js"></script>

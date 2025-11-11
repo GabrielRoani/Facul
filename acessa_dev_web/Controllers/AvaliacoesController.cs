@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using acessa_dev_web.Models;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization; // IMPORTADO
 
 namespace acessa_dev_web.Controllers
 {
+    [Authorize] 
     public class AvaliacoesController : Controller
     {
         private readonly AppDbContext _context;

@@ -1,53 +1,65 @@
 ﻿@model IEnumerable<acessa_dev_web.Models.Local>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Locais";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Latitude)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Longitude)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Latitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Longitude)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.idLocal">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idLocal">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idLocal">Delete</a>
-            </td>
-        </tr>
+@section Styles {
+    <link rel="stylesheet" href="~/css/crud-styles.css" /> 
 }
-    </tbody>
-</table>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Gerenciar Locais</h1>
+        <p class="page-subtitle">Lista de locais cadastrados</p>
+    </div>
+
+    <div class="crud-container">
+        <p>
+            <a asp-action="Create" class="btn btn-primary" style="background-color: #3498db; margin-bottom: 20px;">Adicionar Novo Local</a>
+        </p>
+        
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Latitude)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Longitude)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Latitude)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Longitude)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.idLocal">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.idLocal">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.idLocal">Excluir</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+</div>

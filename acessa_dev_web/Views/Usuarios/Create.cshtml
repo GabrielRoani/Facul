@@ -1,130 +1,60 @@
 ﻿@model acessa_dev_web.Models.Usuario
 
 @{
-    ViewData["Title"] = "Cadastro - Acessa+";
+    ViewData["Title"] = "Criar Usuário";
 }
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cadastre-se no Acessa+ e ajude a mapear a acessibilidade da sua cidade">
-    <title>@ViewData["Title"]</title>
+@section Styles {
+    <link rel="stylesheet" href="~/css/crud-styles.css" /> 
+}
 
-    <link rel="stylesheet" href="~/css/cadastro-styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Criar Novo Usuário</h1>
+        <p class="page-subtitle">Insira os dados para cadastro</p>
+    </div>
 
-</head>
-<body>
-
-    <main class="main-content">
-        <div class="container">
-            <div class="cadastro-wrapper">
-                <div class="cadastro-info">
-                    <h1>Junte-se ao Acessa+</h1>
-                    <p class="subtitle">Faça parte da comunidade que está transformando a acessibilidade nas cidades brasileiras.</p>
-
-                    <div class="beneficios">
-                        <div class="beneficio-item">
-                            <div class="beneficio-icon">✓</div>
-                            <div>
-                                <h3>Reporte Ocorrências</h3>
-                                <p>Registre barreiras e pontos acessíveis na sua cidade</p>
-                            </div>
-                        </div>
-                        <div class="beneficio-item">
-                            <div class="beneficio-icon">✓</div>
-                            <div>
-                                <h3>Avalie Locais</h3>
-                                <p>Compartilhe sua experiência e ajude outros usuários</p>
-                            </div>
-                        </div>
-                        <div class="beneficio-item">
-                            <div class="beneficio-icon">✓</div>
-                            <div>
-                                <h3>Acompanhe Mudanças</h3>
-                                <p>Veja o impacto das suas contribuições em tempo real</p>
-                            </div>
-                        </div>
+    <div class="crud-container">
+        <div class="row">
+            <div class="col-md-8"> <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
+                    <div class="form-group">
+                        <label asp-for="Nome" class="form-label"></label>
+                        <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
                     </div>
-                </div>
 
-                <div class="cadastro-form-container">
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
 
-                    <form asp-action="Create" class="cadastro-form">
+                    <div class="form-group">
+                        <label asp-for="Senha" class="form-label"></label>
+                        <input asp-for="Senha" class="form-control" type="password" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label asp-for="Perfil" class="form-label"></label>
+                        <select asp-for="Perfil" class="form-control" asp-items="Html.GetEnumSelectList<acessa_dev_web.Models.Perfil>()">
+                            <option value="">Selecione...</option>
+                        </select>
+                        <span asp-validation-for="Perfil" class="text-danger"></span>
+                    </div>
 
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                        <h2>Criar Conta</h2>
-                        <p class="form-subtitle">Preencha os dados abaixo para começar</p>
-
-                        <div class="form-group">
-                            <label asp-for="Nome" class="form-label">Nome Completo</label>
-                            <input asp-for="Nome" class="form-input" placeholder="Digite seu nome completo" required minlength="3" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite seu nome completo (apenas letras)">
-                            <span asp-validation-for="Nome" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Senha" class="form-label"></label>
-                            <input asp-for="Senha" class="form-input" >
-                            <small class="form-hint"></small>
-                            <span asp-validation-for="Senha" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Perfil" class="form-label">Tipo de Usuário</label>
-                            <div class="radio-group">
-                                <label class="radio-label">
-                                    <input type="radio" asp-for="Perfil" value="Cidadao" checked>
-                                    <span class="radio-custom"></span>
-                                    <div class="radio-content">
-                                        <strong>Cidadão</strong>
-                                        <small>Quero reportar e avaliar locais</small>
-                                    </div>
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" asp-for="Perfil" value="Gestor">
-                                    <span class="radio-custom"></span>
-                                    <div class="radio-content">
-                                        <strong>Gestor Público</strong>
-                                        <small>Represento órgão público</small>
-                                    </div>
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" asp-for="Perfil" value="Admin">
-                                    <span class="radio-custom"></span>
-                                    <div class="radio-content">
-                                        <strong>Administrador Sistema</strong>
-                                        <small>Administrador Sistema</small>
-                                    </div>
-                                </label>
-                            </div>
-                            <span asp-validation-for="Perfil" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="termos" required>
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-text">
-                                    Li e aceito os <a href="#" class="link">Termos de Uso</a> e a <a href="#" class="link">Política de Privacidade</a>
-                                </span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn-submit">Criar Conta</button>
-
-                        <p class="form-footer">
-                            Já tem uma conta? <a asp-action="Login" class="link">Faça login</a>
-                        </p>
-                    </form>
-                </div>
+                    <div class="modal-actions">
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                        <input type="submit" value="Criar" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         </div>
-    </main>
-</body>
-</html>
+    </div>
+</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

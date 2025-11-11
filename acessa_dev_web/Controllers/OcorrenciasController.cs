@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using acessa_dev_web.Models;
-using System.Security.Claims;
+using System.Security.Claims; // NECESSÁRIO
 using Microsoft.AspNetCore.Authorization; 
 
 
@@ -56,15 +56,27 @@ namespace acessa_dev_web.Controllers
         {
             // Garantir que os dados estão sendo carregados
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco");
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome");
+            // ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome"); // <-- LINHA REMOVIDA
             return View();
         }
 
         // POST: Ocorrencias/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idUsuario,idLocal")] Ocorrencia ocorrencia)
+        // "idUsuario" REMOVIDO DO BIND
+        public async Task<IActionResult> Create([Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idLocal")] Ocorrencia ocorrencia)
         {
+            // --- INÍCIO DA MUDANÇA ---
+            // Pega o ID do usuário logado
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                // Se por algum motivo o usuário não for encontrado (não deve acontecer com [Authorize])
+                return RedirectToAction("Login", "Usuarios");
+            }
+            ocorrencia.idUsuario = int.Parse(userIdClaim.Value);
+            // --- FIM DA MUDANÇA ---
+
             if (ModelState.IsValid)
             {
                 _context.Add(ocorrencia);
@@ -74,7 +86,7 @@ namespace acessa_dev_web.Controllers
 
             // Recarregar os dados se houver erro
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", ocorrencia.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
+            // "idUsuario" não precisa mais ser recarregado
             return View(ocorrencia);
         }
 
