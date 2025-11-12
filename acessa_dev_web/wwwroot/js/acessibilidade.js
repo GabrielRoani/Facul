@@ -4,16 +4,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const opcoes = document.getElementById("acessibilidade-opcoes");
 
     if (toggleBtn && opcoes) {
-        toggleBtn.addEventListener("click", () => {
+        // 👉 Alterna o menu ao clicar no botão
+        toggleBtn.addEventListener("click", (e) => {
+            e.stopPropagation(); // impede que o clique feche imediatamente
             const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
             toggleBtn.setAttribute("aria-expanded", !expanded);
             opcoes.hidden = expanded;
         });
+
+        // 👉 Fecha o menu ao clicar fora dele
+        document.addEventListener("click", (e) => {
+            if (
+                !opcoes.hidden && // só tenta fechar se estiver aberto
+                !opcoes.contains(e.target) &&
+                !toggleBtn.contains(e.target)
+            ) {
+                opcoes.hidden = true;
+                toggleBtn.setAttribute("aria-expanded", "false");
+            }
+        });
     }
 
+    // 🔄 Restaura preferências e atualiza botões
     restaurarPreferencias();
     atualizarBotaoSom();
 });
+
 
 // ======== VARIÁVEIS GLOBAIS ========
 let somAtivo = false;
@@ -176,70 +192,149 @@ function resetarAcessibilidade() {
     localStorage.removeItem("acessibilidade");
     atualizarBotaoSom();
 }
-// 🎙️ Controle por Voz com Web Speech API
-let reconhecimentoVoz = null;
+// Reconhecimento de voz consolidado, persistente e tolerante a erros
+let recognition = null;
 let vozAtiva = false;
 
+// Cria nova instância do SpeechRecognition
+function criarRecognition() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) return null;
+
+    const r = new SpeechRecognition();
+    r.lang = 'pt-BR';
+    r.continuous = true;
+    r.interimResults = false;
+
+    r.onresult = (event) => {
+        const comando = event.results[event.results.length - 1][0].transcript.toLowerCase().trim();
+        console.log('🗣️ comando:', comando);
+        interpretarComando(comando);
+    };
+
+    r.onerror = (e) => {
+        console.warn('Erro recognition:', e.error);
+        // se for erro de not-allowed (permissão), desativa e avisa visualmente
+        if (e.error === 'not-allowed' || e.error === 'service-not-allowed') {
+            atualizarIndicador(false);
+            localStorage.removeItem('vozAtiva');
+            vozAtiva = false;
+            // opcional: alert("Permissão de microfone negada.");
+        }
+    };
+
+    r.onend = () => {
+        // se a flag ainda estiver ativa, tentamos reiniciar (tolerância a timeouts)
+        if (vozAtiva) {
+            try {
+                r.start();
+                console.log('Reconhecimento reiniciado automaticamente...');
+            } catch (err) {
+                console.warn('Não foi possível reiniciar automaticamente:', err);
+            }
+        }
+    };
+
+    return r;
+}
+
+// Inicia reconhecimento (cria instância nova se necessário)
+async function iniciarReconhecimento() {
+    if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
+        alert('Seu navegador não suporta reconhecimento de voz (use Chrome/Edge).');
+        return false;
+    }
+
+    // se já existe, evita recriar (mas garante que está rodando)
+    if (!recognition) recognition = criarRecognition();
+    if (!recognition) return false;
+
+    try {
+        recognition.start();
+        vozAtiva = true;
+        localStorage.setItem('vozAtiva', 'true');
+        atualizarIndicador(true);
+        console.log('🎤 reconhecimento iniciado');
+        return true;
+    } catch (err) {
+        console.warn('Erro ao iniciar reconhecimento:', err);
+        // pode acontecer por falta de gesto do usuário - handle sem crash
+        vozAtiva = false;
+        atualizarIndicador(false);
+        return false;
+    }
+}
+
+function pararReconhecimento() {
+    if (recognition) {
+        try { recognition.stop(); } catch (e) { /* ignore */ }
+    }
+    vozAtiva = false;
+    localStorage.removeItem('vozAtiva');
+    atualizarIndicador(false);
+    console.log('🔇 reconhecimento parado');
+}
+
+// Toggle (botão)
 function alternarComandosVoz() {
-    if (!('webkitSpeechRecognition' in window)) {
-        alert("❌ O seu navegador não suporta reconhecimento de voz.");
-        return;
-    }
-
-    if (!reconhecimentoVoz) {
-        reconhecimentoVoz = new webkitSpeechRecognition();
-        reconhecimentoVoz.lang = "pt-BR";
-        reconhecimentoVoz.continuous = true;
-        reconhecimentoVoz.interimResults = false;
-
-        reconhecimentoVoz.onresult = function (event) {
-            const ultima = event.results[event.results.length - 1];
-            const comando = ultima[0].transcript.toLowerCase().trim();
-            console.log("🎧 Comando detectado:", comando);
-
-            // 🔊 Mapeamento dos comandos de voz
-            if (comando.includes("noturno")) modoNoturno();
-            else if (comando.includes("contraste")) alternarContraste();
-            else if (comando.includes("aumentar fonte")) alterarFonte(1.1);
-            else if (comando.includes("diminuir fonte")) alterarFonte(0.9);
-            else if (comando.includes("leitura")) ativarLeituraPorHover();
-            else if (comando.includes("resetar") || comando.includes("padrão")) resetarAcessibilidade();
-            else if (comando.includes("parar leitura")) window.speechSynthesis.cancel();
-            else if (comando.includes("daltonismo")) modoDaltonismo();
-            else if (comando.includes("abrir mapa")) {
-                window.location.href = "/Home/Maps";
-            }
-            else if (comando.includes("abrir ocorrência") || comando.includes("abrir ocorrências")) {
-                window.location.href = "/Ocorrencias/Index";
-            }
-            else if (comando.includes("abrir avaliação") || comando.includes("abrir avaliações")) {
-                window.location.href = "/Avaliacoes/Index";
-            }
-
-            else {
-                console.log("🗣️ Comando não reconhecido:", comando);
-            }
-        };
-
-        reconhecimentoVoz.onerror = function (event) {
-            console.warn("Erro de voz:", event.error);
-        };
-
-        reconhecimentoVoz.onend = function () {
-            if (vozAtiva) reconhecimentoVoz.start(); // reinicia automaticamente
-        };
-    }
-
-    // Ativa/desativa
-    vozAtiva = !vozAtiva;
-
     if (vozAtiva) {
-        reconhecimentoVoz.start();
-        alert("🎙️ Controle por voz ativado. Fale comandos como 'modo noturno', 'contraste', 'aumentar fonte'...");
+        pararReconhecimento();
     } else {
-        reconhecimentoVoz.stop();
-        alert("🛑 Controle por voz desativado.");
+        iniciarReconhecimento().then(ok => {
+            if (!ok) {
+                // caso o navegador bloqueie start() por falta de gesto, informe o usuário
+                alert('Não foi possível ativar o microfone automaticamente. Clique no botão novamente para permitir o uso do microfone (o navegador pode pedir permissão).');
+            }
+        });
     }
+}
+
+// Indicação visual simples (crie um elemento com id="voz-indicador" no layout ou ajusta conforme precisar)
+function atualizarIndicador(ativo) {
+    const el = document.getElementById('voz-indicador');
+    if (!el) return;
+    if (ativo) {
+        el.style.display = 'inline-block';
+        el.textContent = '🎤 Voz ativa';
+        el.classList.add('ativo');
+    } else {
+        el.style.display = 'none';
+        el.classList.remove('ativo');
+    }
+}
+
+// Ler estado salvo no load e tentar reativar
+document.addEventListener('DOMContentLoaded', () => {
+    const estavaAtivo = localStorage.getItem('vozAtiva') === 'true';
+    // Cria o indicador se quiser (insira no HTML para melhor controle)
+    atualizarIndicador(false);
+
+    if (estavaAtivo) {
+        // Tentar iniciar — observe: navegadores podem bloquear start() sem gesto.
+        // Chamamos, mas se falhar o usuário deve clicar no botão para permitir.
+        iniciarReconhecimento().then(ok => {
+            if (!ok) {
+                console.log('Reconhecimento não pôde ser iniciado automaticamente (possível bloqueio do navegador).');
+                // ainda mantemos a preferência no localStorage para tentar reiniciar nas próximas loads,
+                // mas pode ser bom avisar o usuário visualmente.
+            }
+        });
+    }
+});
+
+// ------ Exemplo de função que processa os comandos ------
+function interpretarComando(comando) {
+    if (comando.includes('abrir mapa')) window.location.href = '/Home/Maps';
+    else if (comando.includes('abrir ocorrência') || comando.includes('abrir ocorrências')) window.location.href = '/Ocorrencias/Index';
+    else if (comando.includes('abrir avaliação') || comando.includes('abrir avaliações')) window.location.href = '/Avaliacoes/Index';
+    else if (comando.includes('noturno')) document.body.classList.toggle('modo-noturno');
+    else if (comando.includes('contraste')) document.body.classList.toggle('alto-contraste');
+    else if (comando.includes('aumentar fonte')) alterarFonte(1.1);
+    else if (comando.includes('diminuir fonte')) alterarFonte(0.9);
+    else if (comando.includes('resetar') || comando.includes('padrão')) resetarAcessibilidade();
+    else if (comando.includes('parar leitura')) window.speechSynthesis.cancel();
+    else if (comando.includes('abrir home') || comando.includes('abrir home')) window.location.href = '/Home/Index';
+    else console.log('Comando não mapeado:', comando);
 }
 // 🎤 Abrir / Fechar manual de comandos de voz
 document.addEventListener("DOMContentLoaded", () => {
@@ -247,74 +342,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const fecharManual = document.getElementById("fecharManualVoz");
     const modal = document.getElementById("manualVozModal");
 
-    if (abrirManual && modal && fecharManual) {
-        abrirManual.addEventListener("click", () => {
-            modal.hidden = false;
-            abrirManual.setAttribute("aria-expanded", "true");
-        });
+    if (!abrirManual || !fecharManual || !modal) return;
 
-        fecharManual.addEventListener("click", () => {
+    // 👉 Abrir o modal
+    abrirManual.addEventListener("click", () => {
+        modal.hidden = false;
+        abrirManual.setAttribute("aria-expanded", "true");
+
+        // Animação de entrada
+        modal.querySelector(".manual-conteudo").classList.add("mostrar");
+    });
+
+    // 👉 Fechar o modal pelo botão interno
+    fecharManual.addEventListener("click", fecharModal);
+
+    // 👉 Fechar clicando fora do conteúdo
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) fecharModal();
+    });
+
+    // 👉 Função para fechar o modal (reutilizável)
+    function fecharModal() {
+        const conteudo = modal.querySelector(".manual-conteudo");
+        conteudo.classList.remove("mostrar");
+        setTimeout(() => {
             modal.hidden = true;
             abrirManual.setAttribute("aria-expanded", "false");
-        });
-
-        // Fechar clicando fora do modal
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.hidden = true;
-                abrirManual.setAttribute("aria-expanded", "false");
-            }
-        });
+        }, 200); // pequeno delay para animação
     }
 });
-// ----------------------
-// 🎙️ Reconhecimento de voz
-// ----------------------
-let reconhecimentoAtivo = false;
-let recognition;
 
-function iniciarReconhecimento() {
-    if (!('webkitSpeechRecognition' in window)) {
-        alert("Seu navegador não suporta reconhecimento de voz.");
-        return;
-    }
-
-    recognition = new webkitSpeechRecognition();
-    recognition.lang = 'pt-BR';
-    recognition.continuous = true;
-    recognition.interimResults = false;
-
-    recognition.onresult = function (event) {
-        const comando = event.results[event.results.length - 1][0].transcript.toLowerCase().trim();
-        console.log("🗣️ Comando:", comando);
-        interpretarComando(comando);
-    };
-
-    recognition.onend = function () {
-        if (reconhecimentoAtivo) {
-            recognition.start(); // reinicia automaticamente se ainda estiver ativo
-        }
-    };
-
-    recognition.start();
-    reconhecimentoAtivo = true;
-    localStorage.setItem('vozAtiva', 'true');
-    console.log("🎤 Voz ativada.");
-}
-
-function pararReconhecimento() {
-    if (recognition) recognition.stop();
-    reconhecimentoAtivo = false;
-    localStorage.removeItem('vozAtiva');
-    console.log("🔇 Voz desativada.");
-}
-
-// ----------------------
-// 🧠 Reativar após reload
-// ----------------------
-document.addEventListener('DOMContentLoaded', () => {
-    const estavaAtivo = localStorage.getItem('vozAtiva') === 'true';
-    if (estavaAtivo) {
-        iniciarReconhecimento();
-    }
-});

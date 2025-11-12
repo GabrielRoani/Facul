@@ -96,13 +96,71 @@ async function carregarPOIsMini() {
     }
 }
 
-// Inicializa e recarrega conforme o movimento
-carregarPOIsMini();
-mapMini.on("moveend", carregarPOIsMini);
+// --- Atualiza ao mover o mapa ---
+map.on('moveend', carregarPOIs);
 
-// Popup simples ao clicar em um ponto
-mapMini.on("singleclick", evt => {
-    mapMini.forEachFeatureAtPixel(evt.pixel, f => {
-        alert("📍 Ponto de Interesse");
+// Carrega automaticamente ao abrir
+carregarPOIs();
+
+// === POPUP MODERNO ===
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Criar popup HTML
+    const popup = document.createElement("div");
+    popup.id = "map-popup";
+    popup.innerHTML = `
+        <div class="popup-content">
+            <h3 id="popup-titulo"></h3>
+            <div class="popup-botoes">
+                <button id="btn-avaliar">💬 Avaliar</button>
+                <button id="btn-ocorrencia">🚨 Ocorrência</button>
+            </div>
+            <button id="popup-fechar">✖</button>
+        </div>
+    `;
+    document.body.appendChild(popup);
+
+    const popupTitulo = document.getElementById("popup-titulo");
+    const btnAvaliar = document.getElementById("btn-avaliar");
+    const btnOcorrencia = document.getElementById("btn-ocorrencia");
+    const popupFechar = document.getElementById("popup-fechar");
+
+    // Funções de abrir/fechar
+    function mostrarPopup(nome, tipo) {
+        popupTitulo.textContent = `${nome} (${categorias[tipo]?.label || tipo})`;
+        popup.classList.add("ativo");
+    }
+
+    function fecharPopup() {
+        popup.classList.remove("ativo");
+    }
+
+    popupFechar.addEventListener("click", fecharPopup);
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) fecharPopup();
     });
+
+    btnAvaliar.addEventListener("click", () => {
+        window.location.href = "/Avaliacoes/Index";
+    });
+
+    btnOcorrencia.addEventListener("click", () => {
+        window.location.href = "/Ocorrencias/Index";
+    });
+
+    // ✅ Clique no mapa (sem alert)
+    map.on("singleclick", (evt) => {
+        let achou = false;
+        map.forEachFeatureAtPixel(evt.pixel, (f) => {
+            const nome = f.get("nome");
+            const tipo = f.get("tipo");
+            mostrarPopup(nome, tipo);
+            achou = true;
+        });
+        if (!achou) fecharPopup();
+    });
+});
+
+
+
 });

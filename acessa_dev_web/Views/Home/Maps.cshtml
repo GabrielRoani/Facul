@@ -2,9 +2,11 @@
     ViewData["Title"] = "Mapa Completo";
     Layout = "_Layout";
 }
+
 @section Styles {
     <link rel="stylesheet" href="~/css/styles.css" />
     <link rel="stylesheet" href="~/css/acessibilidade.css" />
+    <link rel="stylesheet" href="~/css/maps.css" />
 }
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
@@ -87,6 +89,37 @@
         }
     }
 </style>
+<div id="map-popup" class="popup">
+    <div class="popup-content">
+        <button id="popup-fechar">×</button>
+        <div id="popup-titulo"></div>
+        <div id="popup-descricao"></div>
+        <div class="popup-botoes">
+            <button id="btn-avaliar">Avaliar</button>
+            <button id="btn-ocorrencia">Registrar Ocorrência</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const popup = document.getElementById("map-popup");
+    const fecharPopup = document.getElementById("popup-fechar");
+
+    if (popup && fecharPopup) {
+        fecharPopup.addEventListener("click", () => popup.classList.remove("ativo"));
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) popup.classList.remove("ativo");
+        });
+    }
+
+    document.getElementById("btn-avaliar").addEventListener("click", () => {
+        window.location.href = "/valiacoes/Index";
+    });
+
+    document.getElementById("btn-ocorrencia").addEventListener("click", () => {
+        window.location.href = "/Ocorrencias/Index";
+    });
+</script>
 
 <button class="btn-voltar" onclick="window.history.back()">← Voltar</button>
 <div id="mapFull"></div>
@@ -99,6 +132,6 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/MapScript.js"></script>
     <script src="~/js/acessibilidade.js"></script>
+    <script src="~/js/MapScript.js"></script>
 }

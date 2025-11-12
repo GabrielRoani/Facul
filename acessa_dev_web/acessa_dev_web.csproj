@@ -32,6 +32,7 @@
     <Content Remove="Views\Home\Dashboard.cshtml" />
     <Content Remove="Views\Home\homepage.cshtml" />
     <Content Remove="wwwroot\css\crud-styles.cs" />
+    <Content Remove="wwwroot\css\Map.css" />
     <Content Remove="wwwroot\js\IndexMapScript.js" />
   </ItemGroup>
 
