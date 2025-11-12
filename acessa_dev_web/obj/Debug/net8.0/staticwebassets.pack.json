@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\acessa_dev_web.ve1l3mhihj.bundle.scp.css"
     },
     {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\acessibilidade.css",
+      "PackagePath": "staticwebassets\\css\\acessibilidade.css"
+    },
+    {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\css\\avaliacoes.css",
       "PackagePath": "staticwebassets\\css\\avaliacoes.css"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\MapScript.js",
       "PackagePath": "staticwebassets\\js\\MapScript.js"
+    },
+    {
+      "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\acessibilidade.js",
+      "PackagePath": "staticwebassets\\js\\acessibilidade.js"
     },
     {
       "Id": "C:\\MARCOS\\PUC\\Eixo2\\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\\acessa_dev_web\\wwwroot\\js\\avaliacoes.js",

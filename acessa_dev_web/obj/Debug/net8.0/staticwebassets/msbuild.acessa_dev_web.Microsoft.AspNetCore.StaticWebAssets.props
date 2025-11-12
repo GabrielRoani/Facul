@@ -18,6 +18,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\acessa_dev_web.ve1l3mhihj.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\acessibilidade.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>acessa_dev_web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/acessa_dev_web</BasePath>
+      <RelativePath>css/acessibilidade.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>obfr9shfid</Fingerprint>
+      <Integrity>rBDgemXLENzBCv2JPsDne/I+a46Ljmnz8KI+O16PSNQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\acessibilidade.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\avaliacoes.css'))">
       <SourceType>Package</SourceType>
       <SourceId>acessa_dev_web</SourceId>
@@ -30,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>482ycu336s</Fingerprint>
-      <Integrity>PAwnkEKu2uy2jT4e8Os6D2uiVKfZyJfdmmskbJ7UaaI=</Integrity>
+      <Fingerprint>672kh7wz33</Fingerprint>
+      <Integrity>3sov51EpiaqCk08F+i1xeY+kXggFp4uCZsxyd/jEvG0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\avaliacoes.css'))</OriginalItemSpec>
@@ -120,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zl6wnb56ub</Fingerprint>
-      <Integrity>dzxUgFjWGqt+0DkJ2wa9bQw+4iMbpEvZBOgGyJ37mA0=</Integrity>
+      <Fingerprint>6cmog77txm</Fingerprint>
+      <Integrity>FsOlAoCp4nULKvWGVraUbLFnPHAWEFbnJ6BK7HIsXfE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\ocorrencias.css'))</OriginalItemSpec>
@@ -138,8 +156,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zp6xk9q65s</Fingerprint>
-      <Integrity>RxjK26IYCwYMJNo0KshHqpnmP+t8V/CIFg9rWXM1JlE=</Integrity>
+      <Fingerprint>b1h8r5e74a</Fingerprint>
+      <Integrity>P9fxQv2Lo7ZUNCYVhKkBvLSkwRatAFVnsgi7nl7L0Ic=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -162,6 +180,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\acessibilidade.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>acessa_dev_web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/acessa_dev_web</BasePath>
+      <RelativePath>js/acessibilidade.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>f3vcpuddp4</Fingerprint>
+      <Integrity>aynPkQ8mBQgNqF05P1GRIR8nkXjdHjA3uLfHjMWwHLw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\acessibilidade.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\avaliacoes.js'))">
       <SourceType>Package</SourceType>
       <SourceId>acessa_dev_web</SourceId>
@@ -174,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>osy08q24wq</Fingerprint>
-      <Integrity>KIAxfCRlShgSyB89oTqreJPNIKf3EXQvZYgoApu6Dac=</Integrity>
+      <Fingerprint>agyo777h21</Fingerprint>
+      <Integrity>aldx2Agf8OoZYnoTHTshXyK1L4lS2P+6YW3yTBLp0pc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\avaliacoes.js'))</OriginalItemSpec>
@@ -228,8 +264,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8i2gk708s6</Fingerprint>
-      <Integrity>sIAsDAQvWsB0f1Vk7F3TYETht1nIzgGBv7W+AvSPvG4=</Integrity>
+      <Fingerprint>zchnqtxvzn</Fingerprint>
+      <Integrity>o3UpKU6UmUctcHDHzMtkr12k2LONKuegv5khDUKzB0w=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\ocorrencias.js'))</OriginalItemSpec>
@@ -246,8 +282,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8rywe15m4p</Fingerprint>
-      <Integrity>DEZ6E/cg1DTNWqB0doZ91aDoiliH/JXoWCciDEOL0Bo=</Integrity>
+      <Fingerprint>1hanqpjkq1</Fingerprint>
+      <Integrity>O91BxD3YTkycPg0p+2quUg1m7xnBedQUosNG1Qa6QQ4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</OriginalItemSpec>

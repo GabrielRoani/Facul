@@ -55,26 +55,55 @@ namespace acessa_dev_web.Controllers
         public IActionResult Create()
         {
             // Garantir que os dados estão sendo carregados
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco");
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome");
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome");
+
+            var locais = _context.Locais
+                .Select(l => new { l.idLocal, l.Nome, l.Endereco, l.Latitude, l.Longitude })
+                .ToList();
+            ViewBag.LocaisJson = System.Text.Json.JsonSerializer.Serialize(locais);
+
+            // Obtém o id e nome do usuário autenticado
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            var userId = userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.id == userId);
+
+            ViewBag.UsuarioId = userId;
+            ViewBag.UsuarioNome = usuario?.Nome ?? "Usuário";
+
             return View();
         }
 
         // POST: Ocorrencias/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idUsuario,idLocal")] Ocorrencia ocorrencia)
+        public async Task<IActionResult> Create([Bind("idOcorrencia,DescricaoOcorrencia,Categoria,Severidade,Status,Data,idUsuario,idLocal")] Ocorrencia ocorrencia, [Bind("Nome,Endereco,Latitude,Longitude")] Local local)
         {
             if (ModelState.IsValid)
             {
+
+                // Verifica se já existe um local com o mesmo Nome e Endereco
+                var localExistente = await _context.Locais
+                        .FirstOrDefaultAsync(l => l.Nome == local.Nome && l.Endereco == local.Endereco);
+
+                if (localExistente == null)
+                {
+                    // Se não existe, adiciona o novo local
+                    _context.Locais.Add(local);
+                    await _context.SaveChangesAsync();
+                    ocorrencia.idLocal = local.idLocal; // associa o novo local à ocorrência
+                }
+                else
+                {
+                    // Se já existe, associa o local existente à ocorrência
+                    ocorrencia.idLocal = localExistente.idLocal;
+                }
                 _context.Add(ocorrencia);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Dashboard", "Homepage");
             }
 
             // Recarregar os dados se houver erro
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", ocorrencia.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", ocorrencia.idLocal);
             return View(ocorrencia);
         }
 
@@ -91,8 +120,8 @@ namespace acessa_dev_web.Controllers
             {
                 return NotFound();
             }
-            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Endereco", ocorrencia.idLocal);
-            ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
+            ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", ocorrencia.idLocal);
+            //ViewData["idUsuario"] = new SelectList(_context.Usuarios, "id", "Nome", ocorrencia.idUsuario);
             return View(ocorrencia);
         }
 

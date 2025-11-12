@@ -5,7 +5,7 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/avaliacoes.css" />
+    <link rel="stylesheet" href="~/css/ocorrencias.css" />
     <link rel="stylesheet" href="~/css/crud-styles.css" /> 
 }
 
@@ -71,19 +71,47 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label asp-for="idLocal" class="form-label">Local *</label>
+                    <label asp-for="idLocal" class="form-label">Nome do Local *</label>
                     <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-control" required>
                         <option value="">Selecione um local...</option>
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
+
+                <!--Dados do Local-->
+
                 <div class="form-group">
+                    <label for="Nome">Nome Fantasia *</label>
+                    <input type="text" name="Nome" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="Endereco">Endereço *</label>
+                    <input type="text" name="Endereco" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="Latitude">Latitude *</label>
+                    <input type="number" step="any" name="Latitude" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="Longitude">Longitude *</label>
+                    <input type="number" step="any" name="Longitude" class="form-control" required />
+                </div>
+
+               <!-- <div class="form-group">
                     <label asp-for="idUsuario" class="form-label">Usuário *</label>
                     <select asp-for="idUsuario" asp-items="ViewBag.idUsuario" class="form-control" required>
                         <option value="">Selecione um usuário...</option>
                     </select>
                     <span asp-validation-for="idUsuario" class="validation-error"></span>
-                </div>
+                </div>-->
+
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Usuário *</label>
+                <input type="text" class="form-control" value="@ViewBag.UsuarioNome" disabled />
+                <input type="hidden" asp-for="idUsuario" value="@ViewBag.UsuarioId" />
+                <span asp-validation-for="idUsuario" class="validation-error"></span>
             </div>
 
             <div class="modal-actions">
@@ -96,4 +124,8 @@
 
 @section Scripts {
     <script src="~/js/ocorrencias.js"></script>
+    <script>
+        // Torna os dados dos locais disponíveis para o JS
+        window.locaisData = @Html.Raw(ViewBag.LocaisJson ?? "[]");
+    </script>
 }

@@ -98,17 +98,6 @@ namespace acessa_dev_web.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Pegando ID do usuário logado
-                //var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-                //if (userIdClaim == null)
-                //{
-                // se não tiver login ativo, retorna erro ou redireciona
-                //return RedirectToAction("Login", "Account");
-                //}
-
-                //int idUsuario = int.Parse(userIdClaim.Value);
-                //avaliacao.idUsuario = idUsuario;
-
                 // Verifica se já existe um local com o mesmo Nome e Endereco
                 var localExistente = await _context.Locais
                         .FirstOrDefaultAsync(l => l.Nome == local.Nome && l.Endereco == local.Endereco);
@@ -149,6 +138,13 @@ namespace acessa_dev_web.Controllers
                 return NotFound();
             }
 
+            // Busca o local relacionado
+            var local = await _context.Locais.FindAsync(avaliacao.idLocal);
+            ViewBag.Nome = local?.Nome;
+            ViewBag.Endereco = local?.Endereco;
+            ViewBag.Latitude = local?.Latitude;
+            ViewBag.Longitude = local?.Longitude;
+
             // Verifica se o usuário logado é o dono da avaliação
             var userIdClaim = User.FindFirst("id") ?? User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
             if (userIdClaim == null || avaliacao.idUsuario != int.Parse(userIdClaim.Value))
@@ -156,6 +152,13 @@ namespace acessa_dev_web.Controllers
                 TempData["MensagemErro"] = "Você não tem permissão para editar esta avaliação.";
                 return RedirectToAction("Index");
             }
+
+            // Obtém o id e nome do usuário autenticado           
+            var userId = userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.id == userId);
+
+            ViewBag.UsuarioId = userId;
+            ViewBag.UsuarioNome = usuario?.Nome ?? "Usuário";
 
             ViewData["idLocal"] = new SelectList(_context.Locais, "idLocal", "Nome", avaliacao.idLocal);
             return View(avaliacao);

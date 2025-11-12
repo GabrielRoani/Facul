@@ -48,16 +48,20 @@
 
             <div class="form-row">
                 <div class="form-group">
-                    <label asp-for="idLocal" class="form-label">Local *</label>
-                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-input" required>
+                    <label asp-for="idLocal" class="form-label">Nome do Local *</label>
+                    <select asp-for="idLocal" asp-items="ViewBag.idLocal" class="form-control" required>
                         <option value="">Selecione um local...</option>
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
             </div>
 
-            <!-- Campo oculto para o usuário não ser editado no formulário -->
-            <input type="hidden" asp-for="idUsuario" />
+            <div class="form-group">
+                <label class="form-label">Usuário *</label>
+                <input type="text" class="form-control" value="@ViewBag.UsuarioNome" disabled />
+                <input type="hidden" asp-for="idUsuario" value="@ViewBag.UsuarioId" />
+                <span asp-validation-for="idUsuario" class="validation-error"></span>
+            </div>
 
             <div class="action-buttons">
                 <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
@@ -68,5 +72,5 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/avaliacoes.js"></script>
+    <script src="~/js/avaliacoes.js"></script>  
 }

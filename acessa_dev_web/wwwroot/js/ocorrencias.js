@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
     setupOcorrenciasSearch();
     validateOcorrenciaForm();
 
+    // Adicionar preenchimento automático dos campos do local
+    if (window.locaisData) {
+        setupLocalAutoFill(window.locaisData);
+    }
+
     // Definir data atual como padrão nos forms de criação
     const dataInput = document.getElementById('Data');
     if (dataInput && !dataInput.value && window.location.pathname.includes('/Create')) {
@@ -68,4 +73,36 @@ function showNotification(message, type = 'success') {
             notification.remove();
         }
     }, 5000);
+}
+
+function setupLocalAutoFill(locais) {
+    const selectLocal = document.querySelector('select[name="idLocal"]');
+    const nomeInput = document.querySelector('input[name="Nome"]');
+    const enderecoInput = document.querySelector('input[name="Endereco"]');
+    const latitudeInput = document.querySelector('input[name="Latitude"]');
+    const longitudeInput = document.querySelector('input[name="Longitude"]');
+
+    if (!selectLocal) return;
+
+    selectLocal.addEventListener('change', function () {
+        const selectedId = parseInt(this.value);
+        const local = locais.find(l => l.idLocal === selectedId);
+
+        nomeInput.readOnly = true;
+        enderecoInput.readOnly = true;
+        latitudeInput.readOnly = true;
+        longitudeInput.readOnly = true;
+
+        if (local) {
+            nomeInput.value = local.Nome;
+            enderecoInput.value = local.Endereco;
+            latitudeInput.value = local.Latitude;
+            longitudeInput.value = local.Longitude;
+        } else {
+            nomeInput.value = '';
+            enderecoInput.value = '';
+            latitudeInput.value = '';
+            longitudeInput.value = '';
+        }
+    });
 }
