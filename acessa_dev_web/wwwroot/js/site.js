@@ -143,3 +143,39 @@ console.log('[v0] Paleta de cores aplicada:', {
     alerta: getComputedStyle(document.documentElement).getPropertyValue('--cor-alerta'),
     erro: getComputedStyle(document.documentElement).getPropertyValue('--cor-erro')
 });
+
+<script>
+        // Mostrar / ocultar menu
+    const toggleBtn = document.getElementById('toggleAcessibilidade');
+    const opcoes = document.getElementById('acessibilidade-opcoes');
+
+        toggleBtn.addEventListener('click', () => {
+            const aberto = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !aberto);
+    opcoes.hidden = aberto;
+        });
+
+    // 🅰️ Aumentar / diminuir fonte
+    function alterarFonte(fator) {
+            const html = document.documentElement;
+    const estiloAtual = window.getComputedStyle(html).fontSize;
+    const tamanhoAtual = parseFloat(estiloAtual);
+    html.style.fontSize = (tamanhoAtual * fator) + 'px';
+        }
+
+    // 🌗 Alto contraste
+    function alternarContraste() {
+        document.body.classList.toggle('alto-contraste');
+        }
+
+    // 📖 Modo leitura
+    function modoLeitura() {
+        document.body.classList.toggle('modo-leitura');
+        }
+
+    // 🔄 Resetar
+    function resetarAcessibilidade() {
+        document.body.classList.remove('alto-contraste', 'modo-leitura');
+    document.documentElement.style.fontSize = '';
+        }
+</script>

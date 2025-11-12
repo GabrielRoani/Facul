@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<acessa_dev_web.Models.Local>
-
+@section Styles {
+    <link rel="stylesheet" href="~/css/acessibilidade.css" />
+}
 @{
     ViewData["Title"] = "Index";
 }
@@ -51,3 +53,5 @@
 }
     </tbody>
 </table>
+
+<script src="~/js/acessibilidade.js"></script>

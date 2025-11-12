@@ -8,14 +8,50 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/css/acessibilidade.css" />
 
     @RenderSection("Styles", required: false)
 </head>
 <body>
 
     <header class="header">
+
         <div class="container">
+    
             <div class="header-content">
+                <!-- 🟣 MENU DE ACESSIBILIDADE -->
+                <!-- ♿ MENU DE ACESSIBILIDADE -->
+                <div id="acessibilidade-menu" aria-label="Menu de acessibilidade">
+                    <button id="toggleAcessibilidade" aria-expanded="false" aria-controls="acessibilidade-opcoes">
+                        ♿ Acessibilidade
+                    </button>
+
+                    <div id="acessibilidade-opcoes" hidden>
+                        <button onclick="alterarFonte(1.1)" aria-label="Aumentar fonte">A+</button>
+                        <button onclick="alterarFonte(0.9)" aria-label="Diminuir fonte">A-</button>
+
+                        <button onclick="alternarContraste()" aria-label="Ativar alto contraste">Contraste</button>
+                        <button onclick="modoNoturno()" aria-label="Ativar modo noturno">Noturno</button>
+
+                        <button onclick="modoLeitura()" aria-label="Ativar modo leitura">Leitura</button>
+                        <button onclick="ativarLeituraPorHover()" aria-label="Ativar leitura automática por hover">🗣️ Leitura por hover</button>
+
+
+                        <div class="acessibilidade-subgrupo" aria-label="Modos para daltonismo">
+                            <button onclick="modoDaltonismo('protanopia')" aria-label="Ativar modo protanopia">Prot.</button>
+                            <button onclick="modoDaltonismo('deuteranopia')" aria-label="Ativar modo deuteranopia">Deut.</button>
+                            <button onclick="modoDaltonismo('tritanopia')" aria-label="Ativar modo tritanopia">Trit.</button>
+                        </div>
+                        <button onclick="alternarComandosVoz()" aria-label="Ativar comandos de voz">🎙️ Voz</button>
+
+                        <button id="toggleSom" onclick="alternarSom()" aria-label="Ativar/desativar som">
+                            🔊 Som
+                        </button>
+
+                        <button onclick="resetarAcessibilidade()" aria-label="Restaurar padrão">Resetar</button>
+                    </div>
+                </div>
                 <div class="logo">
                     <h1>Acessa<span class="logo-plus">+</span></h1>
                 </div>
@@ -34,6 +70,7 @@
                         }                        
                         <li><a href="#sobre" class="nav-link">Sobre</a></li>
                     </ul>
+
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {  
@@ -55,7 +92,9 @@
                                 </a>
                             </div>
                         }
+
                     </ul>
+
                 </nav>
                 <!--<div class="header-actions">
                     <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
@@ -66,6 +105,7 @@
                     </a>
                 </div>-->
             </div>
+
         </div>
     </header>
 
@@ -139,5 +179,28 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+    <!-- ❓ Botão flutuante de ajuda de voz -->
+    <div id="voz-manual" aria-label="Manual de comandos de voz">
+        <button id="abrirManualVoz" title="Ajuda de voz" aria-expanded="false">
+            ❓
+        </button>
+
+        <div id="manualVozModal" hidden>
+            <div class="manual-conteudo">
+                <h3>🗣️ Comandos de Voz Disponíveis</h3>
+                <ul>
+                    <li><strong>"Abrir mapa"</strong> → Vai para a página do mapa.</li>
+                    <li><strong>"Nova ocorrência"</strong> → Abre o formulário de cadastro.</li>
+                    <li><strong>"Modo noturno"</strong> → Ativa o tema escuro.</li>
+                    <li><strong>"Ativar/Desativar contraste"</strong> → Ativa alto contraste.</li>
+                    <li><strong>"Aumentar fonte"</strong> / <strong>"Diminuir fonte"</strong> → Ajusta o tamanho do texto.</li>
+                    <li><strong>"Ler página"</strong> → Ativa leitura automática.</li>
+                    <li><strong>"Parar leitura"</strong> → Interrompe a fala.</li>
+                </ul>
+                <button id="fecharManualVoz">Fechar</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

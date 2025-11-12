@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 
 @model acessa_dev_web.Models.Usuario
-
+@section Styles {
+    <link rel="stylesheet" href="~/css/acessibilidade.css" />
+}
 @{
     ViewData["Title"] = "Login";
 }
@@ -143,4 +145,6 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/acessibilidade.js"></script>
 }
+

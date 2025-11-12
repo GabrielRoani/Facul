@@ -3,8 +3,11 @@
 @{
     ViewData["Title"] = "Usuários";
 }
-
+@section Styles {
+    <link rel="stylesheet" href="~/css/acessibilidade.css" />
 <link rel="stylesheet" href="~/css/crud-styles.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/acessibilidade.css" />
+}
 
 <div class="crud-container">
     <h1>Cadastro de Usuários</h1>
@@ -37,3 +40,6 @@
         </tbody>
     </table>
 </div>
+@section Scripts {
+    <script src="~/js/acessibilidade.js"></script>
+}

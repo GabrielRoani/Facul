@@ -1,8 +1,8 @@
-:root {
+﻿:root {
     /* Cores Principais */
-    --cor-primaria: #5A189A; /* Roxo Intenso - Bot�es, Links */
-    --cor-sucesso: #52B788; /* Verde Brilhante - Confirma��es */
-    --cor-alerta: #FFD60A; /* Amarelo El�trico - Alerta/Destaque */
+    --cor-primaria: #5A189A; /* Roxo Intenso - Botões, Links */
+    --cor-sucesso: #52B788; /* Verde Brilhante - Confirmações */
+    --cor-alerta: #FFD60A; /* Amarelo Elétrico - Alerta/Destaque */
     --cor-erro: #E63946; /* Vermelho Coral - Erro/Negativo */
     /* Fundos */
     --fundo-principal: #FFFFFF; 
@@ -16,7 +16,7 @@
     --sombra-forte: 0 8px 24px rgba(0, 0, 0, 0.16);
     --borda-radius: 8px;
     --borda-radius-large: 16px;
-    /* Espa�amentos */
+    /* Espaçamentos */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -32,7 +32,7 @@
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 2rem;
     --font-size-4xl: 2.5rem;
-    /* Transi��es */
+    /* Transições */
     --transition: all 0.3s ease;
 }
 
@@ -786,5 +786,64 @@ ul {
             margin-right: 6px;
         }
 
+        /* 🎨 Estilo do botão */
+        #acessibilidade-menu {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
 
+            #acessibilidade-menu button {
+                background: #6a11cb;
+                color: white;
+                border: none;
+                padding: 0.6rem 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+                transition: background 0.3s;
+            }
+
+                #acessibilidade-menu button:hover,
+                #acessibilidade-menu button:focus {
+                    background: #50169d;
+                    outline: none;
+                }
+
+        #acessibilidade-opcoes {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* ♿ Modo alto contraste */
+        body.alto-contraste {
+            background: black !important;
+            color: yellow !important;
+        }
+
+            body.alto-contraste a {
+                color: #00ffff !important;
+            }
+
+        /* 📚 Modo leitura */
+        body.modo-leitura {
+            background: #fff8c4 !important;
+            color: #000 !important;
+        }
+
+        /* Transição suave */
+        body, html {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 }

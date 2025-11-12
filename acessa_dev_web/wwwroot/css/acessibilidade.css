@@ -1,0 +1,376 @@
+﻿/* 🟣 Menu principal */
+#acessibilidade-menu {
+    position: relative;
+    margin-left: 1rem;
+}
+
+    #acessibilidade-menu > button {
+        background: var(--cor-primaria, #6a11cb);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        #acessibilidade-menu > button:hover {
+            background: #4c089c;
+        }
+
+/* 🟣 Submenu de opções */
+#acessibilidade-opcoes {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: var(--fundo-principal, #fff);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 180px;
+    z-index: 1000;
+}
+
+    #acessibilidade-opcoes button {
+        background: #f4f4f4;
+        border: none;
+        border-radius: 6px;
+        padding: 0.4rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+    }
+
+        #acessibilidade-opcoes button:hover {
+            background: #e0e0e0;
+        }
+/* ============================
+   🎨 ESTILOS DE ACESSIBILIDADE
+============================ */
+
+/* 🌗 Alto contraste (forte) */
+body.alto-contraste {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+    body.alto-contraste a,
+    body.alto-contraste button {
+        color: #ffeb3b !important;
+        background-color: #111 !important;
+        border-color: #ffeb3b !important;
+    }
+
+    body.alto-contraste img {
+        filter: brightness(0.8) contrast(1.3);
+    }
+
+/* 🌙 MODO NOTURNO APRIMORADO */
+body.modo-noturno {
+    background-color: #0d0d0d !important; /* Preto suave */
+    color: #f5f5f5 !important; /* Texto branco */
+}
+
+    /* Links em azul claro para contraste */
+    body.modo-noturno a {
+        color: #82b1ff !important;
+    }
+
+        body.modo-noturno a:hover {
+            color: #bbdefb !important;
+        }
+
+    /* Cards, containers e seções */
+    body.modo-noturno .crud-container,
+    body.modo-noturno .stats-card,
+    body.modo-noturno .table-container,
+    body.modo-noturno .page-header,
+    body.modo-noturno header,
+    body.modo-noturno footer {
+        background-color: #1a1a1a !important; /* Cinza escuro */
+        color: #ffffff !important;
+        border-color: #333 !important;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Botões */
+    body.modo-noturno button,
+    body.modo-noturno .btn {
+        background-color: #222 !important;
+        color: #fff !important;
+        border: 1px solid #444 !important;
+    }
+
+        body.modo-noturno button:hover,
+        body.modo-noturno .btn:hover {
+            background-color: #333 !important;
+        }
+
+    /* Inputs, tabelas e formulários */
+    body.modo-noturno input,
+    body.modo-noturno select,
+    body.modo-noturno textarea {
+        background-color: #1e1e1e !important;
+        color: #fff !important;
+        border: 1px solid #444 !important;
+    }
+
+    body.modo-noturno table {
+        background-color: #1a1a1a !important;
+        color: #fff !important;
+    }
+
+    body.modo-noturno th {
+        background-color: #222 !important;
+        color: #fff !important;
+    }
+
+    body.modo-noturno td {
+        border-bottom: 1px solid #333 !important;
+    }
+
+    /* Cabeçalho e navegação */
+    body.modo-noturno .header,
+    body.modo-noturno .nav {
+        background-color: #121212 !important;
+        color: #fff !important;
+    }
+
+    /* Links do menu */
+    body.modo-noturno .nav-link {
+        color: #ddd !important;
+    }
+
+        body.modo-noturno .nav-link:hover {
+            color: #fff !important;
+        }
+
+    /* Estatísticas e números */
+    body.modo-noturno .stat-number {
+        color: #fff !important;
+    }
+
+    body.modo-noturno .stat-label {
+        color: #aaa !important;
+    }
+
+    /* Hero section */
+    body.modo-noturno .hero,
+    body.modo-noturno .hero-content,
+    body.modo-noturno .hero-text {
+        background-color: #0d0d0d !important;
+        color: #fff !important;
+    }
+
+    /* Bordas e sombras */
+    body.modo-noturno * {
+        border-color: #333 !important;
+        box-shadow: none !important;
+    }
+
+    /* Ícones e SVGs */
+    body.modo-noturno svg {
+        stroke: #f5f5f5 !important;
+        fill: #f5f5f5 !important;
+    }
+
+
+/* 📖 MODO LEITURA (versão leve e segura) */
+body.modo-leitura {
+    background-color: #fdfaf5 !important; /* fundo levemente bege */
+    color: #222 !important; /* texto escuro confortável */
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.3px !important;
+    font-family: "Georgia", "Merriweather", "Times New Roman", serif !important;
+}
+
+    /* Mantém estrutura, mas deixa os elementos mais neutros */
+    body.modo-leitura header,
+    body.modo-leitura footer,
+    body.modo-leitura nav,
+    body.modo-leitura .hero,
+    body.modo-leitura .container,
+    body.modo-leitura section {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Parágrafos e textos mais legíveis */
+    body.modo-leitura p {
+        color: #222 !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    /* Links sutis e legíveis */
+    body.modo-leitura a {
+        color: #004080 !important;
+        text-decoration: underline;
+    }
+
+    /* Títulos com destaque suave */
+    body.modo-leitura h1,
+    body.modo-leitura h2,
+    body.modo-leitura h3 {
+        color: #111 !important;
+    }
+
+/* Suaviza transições ao ativar/desativar o modo */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+    body.modo-leitura *:not(button):not(a) {
+        background: transparent !important;
+    }
+
+/* 🌈 Daltonismo - Filtros visuais */
+body.daltonismo-protanopia {
+    filter: url('#protanopia');
+}
+
+body.daltonismo-deuteranopia {
+    filter: url('#deuteranopia');
+}
+
+body.daltonismo-tritanopia {
+    filter: url('#tritanopia');
+}
+
+/* Alternativamente, se preferir, use filtros CSS simples: */
+body.daltonismo-protanopia {
+    filter: contrast(1.1) saturate(0.8) hue-rotate(-15deg);
+}
+
+body.daltonismo-deuteranopia {
+    filter: contrast(1.1) saturate(0.8) hue-rotate(15deg);
+}
+
+body.daltonismo-tritanopia {
+    filter: contrast(1.1) saturate(0.8) hue-rotate(120deg);
+}
+
+/* 🔊 Estado visual do botão de som */
+#toggleSom.ativo {
+    background: #28a745 !important;
+    color: #fff;
+}
+
+#toggleSom.desativado {
+    background: #dc3545 !important;
+    color: #fff;
+}
+
+
+/* ⚫ Alto Contraste */
+body.alto-contraste {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+    body.alto-contraste a {
+        color: yellow !important;
+    }
+
+/* 🌈 Modos para Daltonismo */
+body.daltonismo-protanopia {
+    filter: hue-rotate(30deg) saturate(1.2);
+}
+
+body.daltonismo-deuteranopia {
+    filter: hue-rotate(-20deg) saturate(1.2);
+}
+
+body.daltonismo-tritanopia {
+    filter: hue-rotate(90deg) saturate(0.8);
+}
+.lendo {
+    outline: 2px solid #6a11cb;
+    background-color: rgba(106, 17, 203, 0.1);
+}
+/* ❓ Botão flutuante de ajuda */
+#voz-manual {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1500;
+}
+
+#abrirManualVoz {
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+    #abrirManualVoz:hover {
+        background: #4c089c;
+        transform: scale(1.1);
+    }
+
+/* Modal */
+#manualVozModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.manual-conteudo {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+    .manual-conteudo h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .manual-conteudo ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .manual-conteudo li {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+#fecharManualVoz {
+    background: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    #fecharManualVoz:hover {
+        background: #4c089c;
+    }
