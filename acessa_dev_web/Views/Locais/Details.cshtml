@@ -1,42 +1,61 @@
 ﻿@model acessa_dev_web.Models.Local
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Local";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+@section Styles {
+    <link rel="stylesheet" href="~/css/acessibilidade.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/local-styles.css" asp-append-version="true" />
+}
 
-<div>
-    <h4>Local</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Endereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Latitude)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Latitude)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Longitude)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Longitude)
-        </dd>
-    </dl>
+<div class="container">
+
+    <div class="page-header">
+        <h1 class="page-title">Detalhes do Local</h1>
+        <p class="page-subtitle">Visualizando informações de: <strong>@Html.DisplayFor(model => model.Nome)</strong></p>
+    </div>
+
+    <div class="crud-container">
+
+        <dl class="details-list details-grid">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Latitude)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Longitude)
+            </dd>
+        </dl>
+
+        <div class="action-buttons">
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+            <a asp-action="Edit" asp-route-id="@Model?.idLocal" class="btn btn-primary">Editar</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.idLocal">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+@section Scripts {
+    <script src="~/js/acessibilidade.js" asp-append-version="true"></script>
+}

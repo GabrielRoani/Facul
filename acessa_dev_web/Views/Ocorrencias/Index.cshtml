@@ -5,148 +5,101 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/ocorrencias.css" />
-    <link rel="stylesheet" href="~/css/acessibilidade.css" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .main-content {
-            width: 100%;
-            min-height: calc(100vh - 200px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 1rem;
-        }
-
-        .ocorrencias-container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .container, .container-fluid {
-            max-width: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            width: 100% !important;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/ocorrencias.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/acessibilidade.css" asp-append-version="true" />
 }
 
-<div class="main-content">
-    <div class="ocorrencias-container">
-        <div class="page-header">
-            <h1 class="page-title">Ocorrências</h1>
-            <p class="page-subtitle">Gerencie as ocorrências de acessibilidade reportadas</p>
+<div class="container">
+
+    <div class="page-header">
+        <h1 class="page-title">Ocorrências</h1>
+        <p class="page-subtitle">Gerencie as ocorrências de acessibilidade reportadas</p>
+    </div>
+
+    <div class="stats-card">
+        <div class="stat-item">
+            <span class="stat-number">@Model.Count()</span>
+            <span class="stat-label">Total de Ocorrências</span>
         </div>
-
-        <div class="crud-container">
-            <div class="stats-card">
-                <div class="stat-item">
-                    <span class="stat-number">@Model.Count()</span>
-                    <span class="stat-label">Total de Ocorrências</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">@Model.Count(o => o.Status == acessa_dev_web.Models.Status.Funcional)</span>
-                    <span class="stat-label">Funcionais</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">@Model.Count(o => o.Status == acessa_dev_web.Models.Status.NaoFuncional)</span>
-                    <span class="stat-label">Não Funcionais</span>
-                </div>
-            </div>
-
-            <div class="action-bar">
-                <a href="@Url.Action("Create")" class="btn btn-primary">
-                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M12 5v14M5 12h14" />
-                    </svg>
-                    Nova Ocorrência
-                </a>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Buscar ocorrências..." class="form-input">
-                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.3-4.3" />
-                    </svg>
-                </div>
-            </div>
-
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Descrição</th>
-                            <th>Local</th>
-                            <th>Categoria</th>
-                            <th>Severidade</th>
-                            <th>Status</th>
-                            <th>Data</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    <div class="ocorrencia-title">
-                                        <strong>@(item.DescricaoOcorrencia.Length > 50 ? item.DescricaoOcorrencia.Substring(0, 50) + "..." : item.DescricaoOcorrencia)</strong>
-                                    </div>
-                                </td>
-                                <td>@item.Local?.Endereco</td>
-                                <td>
-                                    <span class="categoria-badge">@item.Categoria</span>
-                                </td>
-                                <td>
-                                    <span class="status-badge prioridade-@item.Severidade.ToString().ToLower()">
-                                        @item.Severidade
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="status-badge status-@item.Status.ToString().ToLower().Replace(" ", "-")">
-                                        @item.Status
-                                    </span>
-                                </td>
-                                <td>@item.Data.ToString("dd/MM/yyyy")</td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <a href="@Url.Action("Edit", new { id = item.idOcorrencia })" class="btn btn-sm btn-secondary" title="Editar">
-                                            ✏️ Editar
-                                        </a>
-                                        <a href="@Url.Action("Details", new { id = item.idOcorrencia })" class="btn btn-sm btn-outline" title="Detalhes">
-                                            👁️ Detalhes
-                                        </a>
-                                        <a href="@Url.Action("Delete", new { id = item.idOcorrencia })" class="btn btn-sm btn-danger" title="Excluir">
-                                            🗑️ Excluir
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                        @if (!Model.Any())
-                        {
-                            <tr>
-                                <td colspan="7" class="text-center">
-                                    📝 Nenhuma ocorrência encontrada
-                                    <br><small>Clique em "Nova Ocorrência" para começar</small>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
+        <div class="stat-item">
+            <span class="stat-number">@Model.Count(o => o.Status == acessa_dev_web.Models.Status.Funcional)</span>
+            <span class="stat-label">Funcionais</span>
         </div>
+        <div class="stat-item">
+            <span class="stat-number">@Model.Count(o => o.Status == acessa_dev_web.Models.Status.NaoFuncional)</span>
+            <span class="stat-label">Não Funcionais</span>
+        </div>
+    </div>
+
+    <div class="action-bar">
+        <a href="@Url.Action("Create")" class="btn btn-primary">
+            + Nova Ocorrência
+        </a>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar ocorrências..." class="form-input">
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Local</th>
+                    <th>Categoria</th>
+                    <th>Severidade</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="ocorrencia-title">
+                                <strong>@(item.DescricaoOcorrencia.Length > 50 ? item.DescricaoOcorrencia.Substring(0, 50) + "..." : item.DescricaoOcorrencia)</strong>
+                            </div>
+                        </td>
+                        <td>@item.Local?.Endereco</td>
+                        <td>
+                            <span class="categoria-badge">@item.Categoria</span>
+                        </td>
+                        <td>
+                            <span class="status-badge prioridade-@item.Severidade.ToString().ToLower()">
+                                @item.Severidade
+                            </span>
+                        </td>
+                        <td>
+                            <span class="status-badge status-@item.Status.ToString().ToLower().Replace("ã", "a")">
+                                @item.Status
+                            </span>
+                        </td>
+                        <td>@item.Data.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <div class="action-buttons">
+                                <a href="@Url.Action("Edit", new { id = item.idOcorrencia })" class="btn btn-sm btn-secondary">Editar</a>
+                                <a href="@Url.Action("Details", new { id = item.idOcorrencia })" class="btn btn-sm btn-outline">Detalhes</a>
+                                <a href="@Url.Action("Delete", new { id = item.idOcorrencia })" class="btn btn-sm btn-danger">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="7" class="text-center">
+                            📝 Nenhuma ocorrência encontrada
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
 
 @section Scripts {
-    <script src="~/js/ocorrencias.js"></script>
-    <script src="~/js/acessibilidade.js"></script>
+    <script src="~/js/ocorrencias.js" asp-append-version="true"></script>
+    <script src="~/js/acessibilidade.js" asp-append-version="true"></script>
 }
