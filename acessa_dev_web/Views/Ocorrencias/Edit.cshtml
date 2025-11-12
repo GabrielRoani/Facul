@@ -5,7 +5,7 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/ocorrencias.css" />
+    <link rel="stylesheet" href="@Url.Content("~/css/ocorrencias.css")" />
 }
 
 <div class="container">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="crud-container">
-        <form asp-action="Edit" class="modal-form" id="ocorrenciaForm">
+        <form asp-action="Edit" id="ocorrenciaForm">
             @Html.AntiForgeryToken()
             <input type="hidden" asp-for="idOcorrencia" />
 
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="modal-actions">
+            <div class="action-buttons">
                 <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
             </div>

@@ -5,7 +5,7 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/avaliacoes.css" />
+    <link rel="stylesheet" href="~/css/avaliacoes.css" asp-append-version="true" />
 }
 
 <div class="container">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="crud-container">
-        <form asp-action="Edit" class="modal-form">
+        <form asp-action="Edit">
             @Html.AntiForgeryToken()
             <input type="hidden" asp-for="idAvaliacao" />
 
@@ -54,13 +54,12 @@
                     </select>
                     <span asp-validation-for="idLocal" class="validation-error"></span>
                 </div>
-
-                <!-- Campo oculto do usuário (não editável) -->
-                <input type="hidden" asp-for="idUsuario" />
             </div>
 
+            <!-- Campo oculto para o usuário não ser editado no formulário -->
+            <input type="hidden" asp-for="idUsuario" />
 
-            <div class="modal-actions">
+            <div class="action-buttons">
                 <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
             </div>
