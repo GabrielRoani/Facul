@@ -18,9 +18,8 @@
     <header class="header">
 
         <div class="container">
-    
+
             <div class="header-content">
-                <!-- 🟣 MENU DE ACESSIBILIDADE -->
                 <!-- ♿ MENU DE ACESSIBILIDADE -->
                 <div id="acessibilidade-menu" aria-label="Menu de acessibilidade">
                     <button id="toggleAcessibilidade" aria-expanded="false" aria-controls="acessibilidade-opcoes">
@@ -67,43 +66,29 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <li><a href="/Usuarios" class="nav-link">Usuários</a></li>
-                        }                        
+                        }
                         <li><a href="#sobre" class="nav-link">Sobre</a></li>
                     </ul>
 
-                    <ul class="navbar-nav">
+                    <div class="header-actions">
                         @if (User.Identity.IsAuthenticated)
-                        {  
-                            <li class="nav-item header-user-actions" style="margin-bottom: 0;">
-                                <span class="nav-link text-dark" style="padding-right: 0;">Olá, @User.Identity.Name</span>
-                            </li>
-                            <li class="nav-item header-user-actions" style="margin-bottom: 0;">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Logout" style="padding-left: 0;">Sair</a>
-                            </li>
+                        {
+                            <div class="user-info">
+                                <span class="user-greeting">Olá, @User.Identity.Name</span>
+                                <a class="btn btn-secondary btn-logout" asp-controller="Usuarios" asp-action="Logout">Sair</a>
+                            </div>
                         }
                         else
                         {
-                            <div class="header-actions">
-                                <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
-                                    Entrar
-                                </a>
-                                <a class="btn btn-primary" asp-controller="Usuarios" asp-action="Create">
-                                    Cadastrar
-                                </a>
-                            </div>
+                            <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
+                                Entrar
+                            </a>
+                            <a class="btn btn-primary" asp-controller="Usuarios" asp-action="Create">
+                                Cadastrar
+                            </a>
                         }
-
-                    </ul>
-
+                    </div>
                 </nav>
-                <!--<div class="header-actions">
-                    <a class="btn btn-secondary" asp-controller="Usuarios" asp-action="Login">
-                        Entrar
-                    </a>
-                    <a class="btn btn-primary" asp-controller="Usuarios" asp-action="Create">
-                        Cadastrar
-                    </a>
-                </div>-->
             </div>
 
         </div>
@@ -177,6 +162,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/acessibilidade.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
     <!-- ❓ Botão flutuante de ajuda de voz -->
