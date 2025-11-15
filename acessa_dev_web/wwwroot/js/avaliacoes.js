@@ -94,7 +94,8 @@ function setupLocalAutoFill(locais) {
             enderecoInput.value = local.Endereco;
             latitudeInput.value = local.Latitude;
             longitudeInput.value = local.Longitude;
-        } else {
+        } 
+        else {
             nomeInput.value = '';
             enderecoInput.value = '';
             latitudeInput.value = '';

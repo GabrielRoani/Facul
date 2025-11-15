@@ -1516,7 +1516,6 @@ C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\ac
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Memory.Data.dll
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
@@ -1690,12 +1689,6 @@ C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\ac
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.build.json
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.development.json
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets\msbuild.acessa_dev_web.Microsoft.AspNetCore.StaticWebAssets.props
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets\msbuild.acessa_dev_web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets\msbuild.build.acessa_dev_web.props
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.acessa_dev_web.props
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.acessa_dev_web.props
-C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.pack.json
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\acessa_d.1CCDD9A2.Up2Date
 C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\acessa_dev_web.dll
@@ -2839,3 +2832,9 @@ C:\Users\jucmo\OneDrive\Área de Trabalho\Nova pasta\pmv-ads-2025-2-e2-proj-int-
 C:\Users\jucmo\OneDrive\Área de Trabalho\Nova pasta\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\acessa_dev_web.pdb
 C:\Users\jucmo\OneDrive\Área de Trabalho\Nova pasta\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\acessa_dev_web.genruntimeconfig.cache
 C:\Users\jucmo\OneDrive\Área de Trabalho\Nova pasta\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\ref\acessa_dev_web.dll
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\bin\Debug\net8.0\refs\System.Formats.Asn1.dll
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\obj\Debug\net8.0\staticwebassets.build.json.cache

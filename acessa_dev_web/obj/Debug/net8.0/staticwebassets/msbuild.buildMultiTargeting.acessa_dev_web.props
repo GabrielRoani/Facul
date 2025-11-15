@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\acessa_dev_web.props" />
-</Project>

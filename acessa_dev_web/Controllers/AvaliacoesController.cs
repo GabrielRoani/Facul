@@ -29,7 +29,7 @@ namespace acessa_dev_web.Controllers
 
             // Cálculo da média de notas por local
             var mediasPorLocal = avaliacoes
-                .GroupBy(a => a.Local.Endereco)
+                .GroupBy(a => a.Local.Nome)
                 .Select(g => new
                 {
                     Local = g.Key,
@@ -39,12 +39,12 @@ namespace acessa_dev_web.Controllers
 
             // Envia as médias para a View
             ViewBag.MediasPorLocal = mediasPorLocal
-    .Select(m => new Dictionary<string, object>
-    {
-        { "Local", m.Local },
-        { "Media", m.Media }
-    })
-    .ToList();
+            .Select(m => new Dictionary<string, object>
+            {
+                { "Local", m.Local },
+                { "Media", m.Media }
+            })
+            .ToList();
 
 
             return View(avaliacoes);
@@ -139,6 +139,12 @@ namespace acessa_dev_web.Controllers
             }
 
             // Busca o local relacionado
+
+            var locais = _context.Locais
+                .Select(l => new { l.idLocal, l.Nome, l.Endereco, l.Latitude, l.Longitude })
+                .ToList();
+            ViewBag.LocaisJson = System.Text.Json.JsonSerializer.Serialize(locais);
+
             var local = await _context.Locais.FindAsync(avaliacao.idLocal);
             ViewBag.Nome = local?.Nome;
             ViewBag.Endereco = local?.Endereco;

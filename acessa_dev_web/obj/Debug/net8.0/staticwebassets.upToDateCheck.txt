@@ -5,12 +5,15 @@ wwwroot\css\crud-styles.css
 wwwroot\css\homepage.css
 wwwroot\css\local-styles.css
 wwwroot\css\login-styles.css
+wwwroot\css\maps.css
 wwwroot\css\ocorrencias.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\acessibilidade.js
 wwwroot\js\avaliacoes.js
 wwwroot\js\home-dashboard.js
+wwwroot\js\MapScript.js
+wwwroot\js\newFile.js
 wwwroot\js\ocorrencias.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -70,5 +73,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\maps.css
-wwwroot\js\MapScript.js
