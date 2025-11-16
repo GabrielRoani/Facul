@@ -17,161 +17,161 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = acessa_dev_web
 build_property.RootNamespace = acessa_dev_web
-build_property.ProjectDir = C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web\
+build_property.ProjectDir = /Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\MARCOS\PUC\Eixo2\pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades\acessa_dev_web
+build_property.MSBuildProjectDirectory = /Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY29lc1xDcmVhdGUuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhbGlhY29lcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY29lc1xEZWxldGUuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhbGlhY29lcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY29lc1xEZXRhaWxzLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhbGlhY29lcy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY29lc1xFZGl0LmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhbGlhY29lcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY29lc1xJbmRleC5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Avaliacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhbGlhY29lcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Homepage/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZXBhZ2VcRGFzaGJvYXJkLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9sb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Maps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9NYXBzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Maps.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYXBzLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Homepage/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZXBhZ2UvRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWlzXENyZWF0ZS5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYWlzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWlzXERlbGV0ZS5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYWlzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWlzXERldGFpbHMuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYWlzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWlzXEVkaXQuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYWlzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWlzXEluZGV4LmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Locais/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYWlzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWFBdmFsaWFjb2VzXENyZWF0ZS5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWFBdmFsaWFjb2VzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWFBdmFsaWFjb2VzXERlbGV0ZS5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWFBdmFsaWFjb2VzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWFBdmFsaWFjb2VzXERldGFpbHMuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWFBdmFsaWFjb2VzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWFBdmFsaWFjb2VzXEVkaXQuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWFBdmFsaWFjb2VzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWFBdmFsaWFjb2VzXEluZGV4LmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/MediaAvaliacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVkaWFBdmFsaWFjb2VzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NvcnJlbmNpYXNcQ3JlYXRlLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2NvcnJlbmNpYXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NvcnJlbmNpYXNcRGVsZXRlLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2NvcnJlbmNpYXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NvcnJlbmNpYXNcRGV0YWlscy5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2NvcnJlbmNpYXMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NvcnJlbmNpYXNcRWRpdC5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2NvcnJlbmNpYXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NvcnJlbmNpYXNcSW5kZXguY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Ocorrencias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT2NvcnJlbmNpYXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/AccessDenied.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpb3MvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MARCOS/PUC/Eixo2/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-jebyr8lx2q
+[/Users/gabrielcazzuniroani/Documents/github/pmv-ads-2025-2-e2-proj-int-t7-g2-reducao-de-desigualdades/acessa_dev_web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8aylphtvax
